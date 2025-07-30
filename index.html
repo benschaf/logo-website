@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Logopädie Praxis Eva Sagmeister - Professionelle Sprachtherapie für Kinder und Erwachsene in Musterstadt">
+    <meta name="keywords" content="Logopädie, Sprachtherapie, Kinderlogopädie, Erwachsenentherapie, Stimmtherapie">
+    <title>Logopädie Praxis Eva Sagmeister</title>
+    
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/8f0b8db894.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50" data-theme="default">
+    <!-- Navigation -->
+    <nav class="nav-dark shadow-lg fixed w-full top-0 z-50" role="navigation" aria-label="Hauptnavigation">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Brand -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
+                        <span class="text-white font-bold text-lg">ES</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Eva Sagmeister</h1>
+                        <p class="text-sm text-gray-300">Logopädie Praxis</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8" role="menubar">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="home">
+                        <i class="fas fa-home text-sm" aria-hidden="true"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="about">
+                        <i class="fas fa-user text-sm" aria-hidden="true"></i>
+                        <span>Über mich</span>
+                    </a>
+                    <a href="#services" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="services">
+                        <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
+                        <span>Leistungen</span>
+                    </a>
+                    <a href="#info" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="info">
+                        <i class="fas fa-info-circle text-sm" aria-hidden="true"></i>
+                        <span>Informationen</span>
+                    </a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="contact">
+                        <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                        <span>Kontakt</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors" id="mobile-menu-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars text-gray-300" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-btn">
+                <div class="py-2 space-y-2">
+                    <a href="#home" class="mobile-menu-item" role="menuitem" data-section="home">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="mobile-menu-item" role="menuitem" data-section="about">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <span>Über mich</span>
+                    </a>
+                    <a href="#services" class="mobile-menu-item" role="menuitem" data-section="services">
+                        <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                        <span>Leistungen</span>
+                    </a>
+                    <a href="#info" class="mobile-menu-item" role="menuitem" data-section="info">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        <span>Informationen</span>
+                    </a>
+                    <a href="#contact" class="mobile-menu-item" role="menuitem" data-section="contact">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Kontakt</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero-parallax pt-20" aria-labelledby="hero-title">
+            <div class="hero-background" aria-hidden="true"></div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="text-center">
+                        <h2 id="hero-title" class="text-5xl font-bold mb-6 text-gray-800">Willkommen in meiner Logopädie-Praxis</h2>
+                        <p class="text-xl mb-8 text-gray-700">Professionelle Sprachtherapie für Kinder und Erwachsene. Mit individueller
+                            Betreuung und modernen Therapiemethoden unterstütze ich Sie auf Ihrem Weg zu besserer
+                            Kommunikation.</p>
+                        <div class="space-x-4">
+                            <a href="#contact" class="btn-primary" aria-label="Termin vereinbaren">
+                                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                                <span>Termin vereinbaren</span>
+                            </a>
+                            <a href="#about" class="btn-secondary" aria-label="Mehr über die Praxis erfahren">
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                <span>Mehr erfahren</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white pt-24" aria-labelledby="about-title">
+            <div class="max-w-6xl mx-auto px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Eva Sagmeister - Logopädin" class="rounded-2xl shadow-lg w-full h-[60vh] object-cover">
+                    </div>
+                    <div>
+                        <h3 id="about-title" class="text-4xl font-bold text-gray-800 mb-6">Über mich</h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Mein Name ist Eva Sagmeister und ich bin seit über 10 Jahren als Logopädin tätig. Mit
+                            Leidenschaft und Fachwissen begleite ich Menschen jeden Alters dabei, ihre
+                            Kommunikationsfähigkeiten zu verbessern und sprachliche Herausforderungen zu meistern.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Meine Ausbildung zur staatlich anerkannten Logopädin habe ich 2012 abgeschlossen. Seitdem bilde
+                            ich mich kontinuierlich weiter, um meinen Patienten stets die bestmögliche Therapie bieten zu
+                            können.
+                        </p>
+                        <div class="space-y-3" role="list">
+                            <div class="flex items-center space-x-3" role="listitem">
+                                <div class="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Staatlich anerkannte Logopädin</span>
+                            </div>
+                            <div class="flex items-center space-x-3" role="listitem">
+                                <div class="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Über 10 Jahre Berufserfahrung</span>
+                            </div>
+                            <div class="flex items-center space-x-3" role="listitem">
+                                <div class="w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
+                                    <i class="fas fa-check text-white text-xs"></i>
+                                </div>
+                                <span class="text-gray-700">Regelmäßige Fortbildungen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 bg-gray-50" aria-labelledby="services-title">
+            <div class="max-w-6xl mx-auto px-8">
+                <div class="text-center mb-12">
+                    <h3 id="services-title" class="text-4xl font-bold text-gray-800 mb-4">Meine Leistungen</h3>
+                    <p class="text-xl text-gray-600">Individuelle Therapieansätze für verschiedene Sprach- und
+                        Kommunikationsstörungen</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8" role="list">
+                    <div class="flip-card cursor-pointer" role="listitem" data-service="kinderlogopadie">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Kinderlogopädie" class="w-full h-48 object-cover rounded-xl mb-6">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-4">Kinderlogopädie</h4>
+                                <p class="text-gray-600 mb-4">Spielerische Therapie für Kinder mit Sprachentwicklungsstörungen,
+                                    Artikulationsproblemen und Stottern.</p>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>• Sprachentwicklungsverzögerung</li>
+                                    <li>• Artikulationsstörungen</li>
+                                    <li>• Stottern und Poltern</li>
+                                </ul>
+                                <p class="text-blue-600 text-sm mt-4 font-medium flex items-center justify-center space-x-2">
+                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                    <span>Klicken Sie für mehr Details</span>
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="text-2xl font-bold mb-4">Kinderlogopädie</h4>
+                                <p class="text-sm mb-4">
+                                    In der Kinderlogopädie arbeite ich mit spielerischen und kindgerechten Methoden. 
+                                    Die Therapie wird individuell an das Alter und die Entwicklungsstufe des Kindes angepasst.
+                                </p>
+                                <p class="text-sm mb-4">
+                                    <strong>Behandlungsdauer:</strong> 30-45 Minuten pro Sitzung<br>
+                                    <strong>Häufigkeit:</strong> 1-2x pro Woche<br>
+                                    <strong>Altersgruppe:</strong> 2-18 Jahre
+                                </p>
+                                <p class="text-sm">
+                                    Die Eltern werden aktiv in die Therapie einbezogen und erhalten regelmäßige Beratung für die Übungen zu Hause.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card cursor-pointer" role="listitem" data-service="erwachsenentherapie">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Erwachsenentherapie" class="w-full h-48 object-cover rounded-xl mb-6">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-4">Erwachsenentherapie</h4>
+                                <p class="text-gray-600 mb-4">Behandlung von Aphasie, Dysarthrie und anderen neurologischen
+                                    Sprachstörungen bei Erwachsenen.</p>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>• Aphasie nach Schlaganfall</li>
+                                    <li>• Dysarthrie</li>
+                                    <li>• Schluckstörungen</li>
+                                </ul>
+                                <p class="text-blue-600 text-sm mt-4 font-medium flex items-center justify-center space-x-2">
+                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                    <span>Klicken Sie für mehr Details</span>
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="text-2xl font-bold mb-4">Erwachsenentherapie</h4>
+                                <p class="text-sm mb-4">
+                                    Die Erwachsenentherapie konzentriert sich auf die Wiederherstellung der Kommunikationsfähigkeit 
+                                    nach neurologischen Erkrankungen oder Verletzungen.
+                                </p>
+                                <p class="text-sm mb-4">
+                                    <strong>Behandlungsdauer:</strong> 45-60 Minuten pro Sitzung<br>
+                                    <strong>Häufigkeit:</strong> 2-3x pro Woche<br>
+                                    <strong>Zielgruppe:</strong> Erwachsene nach Schlaganfall, Unfall oder Erkrankung
+                                </p>
+                                <p class="text-sm">
+                                    Moderne Therapiemethoden und computergestützte Übungen unterstützen den Heilungsprozess optimal.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card cursor-pointer" role="listitem" data-service="stimmtherapie">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Stimmtherapie" class="w-full h-48 object-cover rounded-xl mb-6">
+                                <h4 class="text-2xl font-bold text-gray-800 mb-4">Stimmtherapie</h4>
+                                <p class="text-gray-600 mb-4">Professionelle Stimmbildung und Behandlung von Stimmstörungen für
+                                    Beruf und Alltag.</p>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>• Heiserkeit</li>
+                                    <li>• Stimmüberlastung</li>
+                                    <li>• Berufliche Stimmnutzung</li>
+                                </ul>
+                                <p class="text-blue-600 text-sm mt-4 font-medium flex items-center justify-center space-x-2">
+                                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                    <span>Klicken Sie für mehr Details</span>
+                                </p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4 class="text-2xl font-bold mb-4">Stimmtherapie</h4>
+                                <p class="text-sm mb-4">
+                                    Die Stimmtherapie richtet sich an Menschen, die beruflich viel sprechen müssen 
+                                    oder unter Stimmproblemen leiden.
+                                </p>
+                                <p class="text-sm mb-4">
+                                    <strong>Behandlungsdauer:</strong> 45 Minuten pro Sitzung<br>
+                                    <strong>Häufigkeit:</strong> 1-2x pro Woche<br>
+                                    <strong>Zielgruppe:</strong> Lehrer, Sänger, Call-Center Mitarbeiter, etc.
+                                </p>
+                                <p class="text-sm">
+                                    Atemtechniken und Stimmübungen helfen dabei, die Stimme gesund und belastbar zu halten.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Section -->
+        <section id="info" class="py-16 bg-white" aria-labelledby="info-title">
+            <div class="max-w-6xl mx-auto px-8">
+                <div class="text-center mb-12">
+                    <h3 id="info-title" class="text-4xl font-bold text-gray-800 mb-4">Informationen</h3>
+                    <p class="text-xl text-gray-600">Wichtige Details zu Ihrer Behandlung</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Praxis Informationen" class="rounded-2xl shadow-lg w-full mb-6">
+                    </div>
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center space-x-2">
+                                <i class="fas fa-clipboard-list text-blue-600" aria-hidden="true"></i>
+                                <span>Ablauf der Behandlung</span>
+                            </h4>
+                            <p class="text-gray-600 mb-4">
+                                Jede Therapie beginnt mit einer ausführlichen Diagnostik. Basierend auf den Ergebnissen
+                                erstelle ich einen individuellen Behandlungsplan, der regelmäßig an Ihre Fortschritte
+                                angepasst wird.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center space-x-2">
+                                <i class="fas fa-credit-card text-blue-600" aria-hidden="true"></i>
+                                <span>Kostenübernahme</span>
+                            </h4>
+                            <p class="text-gray-600 mb-4">
+                                Die Behandlungskosten werden in der Regel von den gesetzlichen und privaten Krankenkassen
+                                übernommen. Gerne berate ich Sie ausführlich zu den Modalitäten.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center space-x-2">
+                                <i class="fas fa-home text-blue-600" aria-hidden="true"></i>
+                                <span>Hausbesuche</span>
+                            </h4>
+                            <p class="text-gray-600 mb-4">
+                                Bei medizinischer Notwendigkeit biete ich auch Hausbesuche an. Dies ist besonders für
+                                Patienten mit eingeschränkter Mobilität eine wichtige Option.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-blue-50" aria-labelledby="contact-title">
+            <div class="max-w-6xl mx-auto px-8">
+                <div class="text-center mb-12">
+                    <h3 id="contact-title" class="text-4xl font-bold text-gray-800 mb-4">Kontakt</h3>
+                    <p class="text-xl text-gray-600">Vereinbaren Sie einen Termin oder nehmen Sie Kontakt mit mir auf</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
+                            <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
+                            <span>Kontaktformular</span>
+                        </h4>
+                        <form class="space-y-6" id="contact-form" novalidate>
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                    <i class="fas fa-user text-blue-600" aria-hidden="true"></i>
+                                    <span>Vor- und Nachname</span>
+                                </label>
+                                <input type="text" id="name" name="name" required
+                                    class="form-input"
+                                    placeholder="Ihr Name">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                    <i class="fas fa-phone text-blue-600" aria-hidden="true"></i>
+                                    <span>Telefon</span>
+                                </label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="form-input"
+                                    placeholder="Ihre Telefonnummer">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                    <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
+                                    <span>E-Mail</span>
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                    class="form-input"
+                                    placeholder="Ihre E-Mail-Adresse">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                    <i class="fas fa-comment text-blue-600" aria-hidden="true"></i>
+                                    <span>Nachricht</span>
+                                </label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="form-input"
+                                    placeholder="Ihre Nachricht"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                <span>Nachricht senden</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
+                                <i class="fas fa-map-marker-alt text-blue-600" aria-hidden="true"></i>
+                                <span>Praxis-Informationen</span>
+                            </h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
+                                        <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">Adresse</p>
+                                        <p class="text-gray-600">Musterstraße 123<br>12345 Musterstadt</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
+                                        <i class="fas fa-phone text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">Telefon</p>
+                                        <p class="text-gray-600">+49 123 456789</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
+                                        <i class="fas fa-envelope text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">E-Mail</p>
+                                        <p class="text-gray-600">info@logopaedie-sagmeister.de</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
+                                <i class="fas fa-clock text-blue-600" aria-hidden="true"></i>
+                                <span>Sprechzeiten</span>
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Montag - Donnerstag:</span>
+                                    <span class="text-gray-600">8:00 - 18:00 Uhr</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Freitag:</span>
+                                    <span class="text-gray-600">8:00 - 16:00 Uhr</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-700">Samstag:</span>
+                                    <span class="text-gray-600">Nach Vereinbarung</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12" role="contentinfo">
+        <div class="max-w-6xl mx-auto px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
+                            <span class="text-white font-bold text-lg">ES</span>
+                        </div>
+                        <div>
+                            <h5 class="text-lg font-bold">Eva Sagmeister</h5>
+                            <p class="text-sm text-gray-400">Logopädie Praxis</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">
+                        Professionelle Sprachtherapie mit individueller Betreuung für Kinder und Erwachsene.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-bold mb-4 flex items-center space-x-2">
+                        <i class="fas fa-link text-blue-400" aria-hidden="true"></i>
+                        <span>Schnelllinks</span>
+                    </h5>
+                    <nav class="space-y-2" role="navigation" aria-label="Footer Navigation">
+                        <a href="#home" class="footer-link">
+                            <i class="fas fa-home text-sm" aria-hidden="true"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#about" class="footer-link">
+                            <i class="fas fa-user text-sm" aria-hidden="true"></i>
+                            <span>Über mich</span>
+                        </a>
+                        <a href="#services" class="footer-link">
+                            <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
+                            <span>Leistungen</span>
+                        </a>
+                        <a href="#contact" class="footer-link">
+                            <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                            <span>Kontakt</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-bold mb-4 flex items-center space-x-2">
+                        <i class="fas fa-address-card text-blue-400" aria-hidden="true"></i>
+                        <span>Kontakt</span>
+                    </h5>
+                    <address class="space-y-2 text-gray-400 not-italic">
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
+                            <span>Musterstraße 123</span>
+                        </p>
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
+                            <span>12345 Musterstadt</span>
+                        </p>
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-sm" aria-hidden="true"></i>
+                            <span>Tel: +49 123 456789</span>
+                        </p>
+                        <p class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                            <span>info@logopaedie-sagmeister.de</span>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2025 Logopädie Praxis Eva Sagmeister. Alle Rechte vorbehalten.
+                    <a href="#" class="hover:text-white transition-colors">Datenschutz</a> |
+                    <a href="#" class="hover:text-white transition-colors">Impressum</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js" type="module"></script>
+</body>
+
+</html>
