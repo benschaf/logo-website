@@ -2,1210 +2,1387 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Logopädie Praxis Eva Sagmeister - Professionelle Sprachtherapie für Kinder und Erwachsene in Musterstadt">
-    <meta name="keywords" content="Logopädie, Sprachtherapie, Kinderlogopädie, Erwachsenentherapie, Stimmtherapie">
-    <title>Logopädie Praxis Eva Sagmeister</title>
-    
-    <!-- External Dependencies -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/8f0b8db894.js" crossorigin="anonymous"></script>
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Logopädie Praxis Eva Sagmeister - Professionelle Sprachtherapie für Kinder und Erwachsene in Musterstadt" />
+  <meta name="keywords" content="Logopädie, Sprachtherapie, Kinderlogopädie, Erwachsenentherapie, Stimmtherapie" />
+  <title>Logopädie Praxis Eva Sagmeister</title>
+
+  <!-- External Dependencies -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/8f0b8db894.js" crossorigin="anonymous"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="bg-gray-50">
-    <!-- Navigation -->
+  <body class="bg-gray-50">
+  <!-- Navigation -->
     <nav class="nav-dark fixed w-full top-0 z-50" role="navigation" aria-label="Hauptnavigation">
-        <div class="max-w-6xl mx-auto px-8">
-            <div class="flex justify-between items-center py-4">
-                <!-- Logo/Brand -->
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
-                        <span class="text-white font-bold text-lg">ES</span>
+    <div class="max-w-6xl mx-auto px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Logo/Brand -->
+        <div class="flex items-center space-x-2">
+          <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
+            <span class="font-bold text-lg">ES</span>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold ">Eva Sagmeister</h1>
+              <p class="text-sm text-gray-900">Logopädie Praxis</p>
+          </div>
+        </div>
+
+        <!-- Desktop Menu -->
+          <div id="desktop-menu" class="hidden md:flex space-x-8 relative" role="menubar">
+            <a href="#home"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
+            role="menuitem" data-section="home">
+              <i class="fas fa-home text-sm" aria-hidden="true"></i>
+            <span>Home</span>
+          </a>
+          <a href="#about"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
+            role="menuitem" data-section="about">
+            <i class="fas fa-user text-sm" aria-hidden="true"></i>
+            <span>Über mich</span>
+          </a>
+          <a href="#services"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
+            role="menuitem" data-section="services">
+            <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
+            <span>Leistungen</span>
+          </a>
+          <a href="#info"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
+            role="menuitem" data-section="info">
+            <i class="fas fa-info-circle text-sm" aria-hidden="true"></i>
+            <span>Informationen</span>
+          </a>
+          <a href="#contact"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
+            role="menuitem" data-section="contact">
+            <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+            <span>Kontakt</span>
+          </a>
+            <!-- underline indicator injected by JS -->
+        </div>
+
+        <!-- Mobile Menu Button -->
+          <button class="md:hidden p-2 hover:bg-gray-200 rounded-lg transition-colors" id="mobile-menu-btn"
+          aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fas fa-bars text-black" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden hidden" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-btn">
+        <div class="py-2 space-y-2 text-right">
+          <a href="#home" class="mobile-menu-item" role="menuitem" data-section="home">
+            <span>Home</span>
+            <i class="fas fa-home" aria-hidden="true"></i>
+          </a>
+          <a href="#about" class="mobile-menu-item" role="menuitem" data-section="about">
+            <span>Über mich</span>
+            <i class="fas fa-user" aria-hidden="true"></i>
+          </a>
+          <a href="#services" class="mobile-menu-item" role="menuitem" data-section="services">
+            <span>Leistungen</span>
+            <i class="fas fa-stethoscope" aria-hidden="true"></i>
+          </a>
+          <a href="#info" class="mobile-menu-item" role="menuitem" data-section="info">
+            <span>Informationen</span>
+            <i class="fas fa-info-circle" aria-hidden="true"></i>
+          </a>
+          <a href="#contact" class="mobile-menu-item" role="menuitem" data-section="contact">
+            <span>Kontakt</span>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main role="main">
+    <!-- Hero Section -->
+    <section id="home" class="py-16 pt-24 bg-gray-50" aria-labelledby="hero-title">
+      <div class="max-w-7xl mx-auto px-8">
+        <!-- Hero Content (no card) -->
+        <div class="grid gap-6">
+          <div class="lg:col-span-3">
+            <div class="max-w-5xl">
+              <h1 id="hero-title" class="leading-tight">
+                <span class="block text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 tracking-tight">Willkommen</span>
+                <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mt-2">in meiner Logopädie-Praxis</span>
+              </h1>
+              <p class="mt-6 text-xl text-gray-700 max-w-3xl">
+                Professionelle Sprachtherapie für Kinder und Erwachsene.
+              </p>
+              <p class="mt-3 text-lg text-gray-600 max-w-3xl">
+                Mit individueller Betreuung und modernen Therapiemethoden unterstütze ich Sie auf Ihrem Weg zu besserer Kommunikation.
+              </p>
+              <div class="mt-8">
+                <a href="#contact" class="btn-primary text-base md:text-lg px-8 py-4" aria-label="Termin vereinbaren">
+                  <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                  <span>Termin vereinbaren</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Info Cards -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6">
+          <div>
+            <div class="card-bento card-bento--green">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-green-600">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div>
+                  <h3 class="card-bento__title">Kinderlogopädie</h3>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Spielerische Therapie & kindgerechte Methoden
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card-bento card-bento--purple">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-purple-600">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <div>
+                  <h3 class="card-bento__title">Erwachsenentherapie</h3>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Neurologische & funktionelle Störungen
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card-bento card-bento--orange">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-orange-600">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div>
+                  <h3 class="card-bento__title">Hausbesuche</h3>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Bei medizinischer Notwendigkeit möglich
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card-bento card-bento--teal">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-teal-600">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div>
+                  <h3 class="card-bento__title">Kassenleistung</h3>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Alle gesetzlichen Krankenkassen
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspirational Quote -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-8">
+        <div class="quote-card card-bento">
+          <div class="card-bento__body card-bento__body--full-padding text-center">
+            <p class="card-bento__content">
+              „Die Sprache begleitet mich nicht nur beruflich, sondern auch
+              ganz persönlich im Alltag mit meinen eigenen Kindern."
+            </p>
+            <p class="text-sm text-gray-600 mt-4 font-normal not-italic">
+              — Eva Sagmeister
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50" aria-labelledby="about-title">
+      <div class="max-w-7xl mx-auto px-8">
+        <!-- Simplified two-column layout -->
+        <div class="grid gap-8 lg:grid-cols-2 items-start">
+          <!-- Text content (no card) -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div>
+                <h3 id="about-title" class="text-3xl font-bold text-gray-800">Über mich</h3>
+                <p class="text-gray-600">29 Jahre, Logopädin & Mutter von drei Kindern</p>
+              </div>
+            </div>
+            <div class="prose prose-blue max-w-none text-gray-700">
+              <p>
+                Mein Name ist Eva Sagmeister, ich bin 29 Jahre alt, staatlich anerkannte Logopädin und Mutter von drei
+                wunderbaren Kindern im Alter von 6, 4 und 2 Jahren.
+              </p>
+              <p>
+                Die Sprache begleitet mich nicht nur beruflich, sondern auch ganz persönlich im Alltag mit meinen eigenen
+                Kindern. Ich weiß, wie vielfältig, herausfordernd und gleichzeitig faszinierend die sprachliche
+                Entwicklung sein kann.
+              </p>
+              <p class="mt-6 text-lg">
+                Die Erfahrungen aus meinem Familienalltag bereichern meine Arbeit und schenken mir ein feines Gespür für
+                die Bedürfnisse meiner Patientinnen und Patienten – unabhängig von Alter oder Lebenssituation.
+              </p>
+              <p>
+                Meine Ausbildung zur Logopädin absolvierte ich bis 2017 an der Medau-Schule. Im Anschluss war ich drei Jahre
+                in einer logopädischen Praxis angestellt und konnte dort in verschiedenen Fachbereichen wertvolle Erfahrung
+                sammeln – unter anderem in der Therapie von Kindern, Jugendlichen und Erwachsenen.
+              </p>
+              <p>
+                Nach meiner Elternzeit fühle ich mich nun bereit, meinen eigenen Weg zu gehen – mit Herz, Fachwissen und
+                einem offenen Ohr für Ihre Anliegen.
+              </p>
+            </div>
+          </div>
+
+          <!-- Profile Image Card -->
+          <div>
+            <div class="card-bento">
+              <div class="card-bento__body card-bento__body--full-padding p-0">
+                <img
+                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  alt="Eva Sagmeister - Logopädin" class="w-full h-full object-cover rounded-2xl" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small facts grid -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+          <div>
+            <div class="card-bento card-bento--emerald">
+              <div class="card-bento__header">
+                <div>
+                  <h4 class="card-bento__title">Ausbildung</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">Medau-Schule bis 2017</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card-bento card-bento--amber">
+              <div class="card-bento__header">
+                <div>
+                  <h4 class="card-bento__title">Erfahrung</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">3 Jahre Praxiserfahrung</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card-bento card-bento--rose">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-rose-600  text-white">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Familie</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">Mutter von drei Kindern</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card-bento card-bento--indigo">
+              <div class="card-bento__header">
+                <div>
+                  <h4 class="card-bento__title">Zielgruppe</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">Kinder, Jugendliche, Erwachsene</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspirational Quote 2 -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-8">
+        <div class="quote-card card-bento">
+          <div class="card-bento__body card-bento__body--full-padding text-center">
+            <p class="card-bento__content">
+              „Mit Herz, Fachwissen und einem offenen Ohr für Ihre Anliegen."
+            </p>
+            <p class="text-sm text-gray-600 mt-4 font-normal not-italic">
+              — Mein Therapieansatz
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50" aria-labelledby="services-title">
+      <div class="max-w-7xl mx-auto px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h3 id="services-title" class="text-4xl font-bold text-gray-800 mb-4">
+            Meine Leistungen
+          </h3>
+          <p class="text-xl text-gray-600 mb-6 max-w-4xl mx-auto">
+            Bei einem Erstgespräch (Anamnese) nehme ich mir Zeit, um Ihren
+            aktuellen Stand sorgfältig zu erfassen. Durch gezielte
+            Beobachtungen, Fragen und gegebenenfalls diagnostische Tests
+            ermittle ich das genaue logopädische Störungsbild.
+          </p>
+          <p class="max-w-4xl mx-auto bg-blue-50 border border-blue-100 text-blue-800 rounded-xl px-6 py-4">
+            Auf dieser Grundlage plane ich eine individuell auf Sie oder Ihr Kind abgestimmte logopädische Therapie,
+            die sich an den jeweiligen Bedürfnissen und Zielen orientiert.
+          </p>
+        </div>
+
+        <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
+          <!-- Children's Services Main Card -->
+          <div>
+            <div class="card-bento card-bento--pink">
+              <div class="card-bento__header">
+                <div class="card-bento__icon card-bento__icon--large bg-pink-600">
+                  <i class="fas fa-child"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title card-bento__title--large">
+                    Logopädie für Kinder
+                  </h4>
+                  <p class="card-bento__subtitle">
+                    Spielerische Therapie & kindgerechte Methoden
+                  </p>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Spezialisierte Behandlung für Kinder mit individuellen,
+                  kindgerechten Methoden und spielerischen Ansätzen.
+                </p>
+                <div class="card-bento__footer">
+                  <button id="children-toggle" class="card-bento__action" aria-expanded="false"
+                    aria-controls="children-services">
+                    <span>Alle Behandlungsbereiche anzeigen</span>
+                    <i class="fas fa-chevron-down transition-transform" id="children-chevron"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Adults Services Main Card -->
+          <div>
+            <div class="card-bento card-bento--cyan">
+              <div class="card-bento__header">
+                <div class="card-bento__icon card-bento__icon--large bg-cyan-600">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title card-bento__title--large">
+                    Logopädie für Erwachsene
+                  </h4>
+                  <p class="card-bento__subtitle">
+                    Neurologische & funktionelle Störungen
+                  </p>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Behandlung neurologischer und funktioneller Sprach-, Sprech-
+                  und Stimmstörungen bei Erwachsenen.
+                </p>
+                <div class="card-bento__footer">
+                  <button id="adults-toggle" class="card-bento__action" aria-expanded="false"
+                    aria-controls="adults-services">
+                    <span>Alle Behandlungsbereiche anzeigen</span>
+                    <i class="fas fa-chevron-down transition-transform" id="adults-chevron"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Treatment Info Cards -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 mt-6">
+          <div>
+            <div class="card-bento card-bento--green">
+              <div class="card-bento__header">
+                <div>
+                  <h4 class="card-bento__title">Kinder-Behandlung</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  <strong>Dauer:</strong> 30-45 Min
+                </p>
+                <p class="card-bento__content">
+                  <strong>Häufigkeit:</strong> 1-2x pro Woche
+                </p>
+                <p class="card-bento__content">
+                  <strong>Besonderheit:</strong> Eltern werden aktiv
+                  einbezogen
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card-bento card-bento--violet">
+              <div class="card-bento__header">
+                <div>
+                  <h4 class="card-bento__title">Erwachsenen-Behandlung</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  <strong>Dauer:</strong> 45-60 Min
+                </p>
+                <p class="card-bento__content">
+                  <strong>Häufigkeit:</strong> 2-3x pro Woche
+                </p>
+                <p class="card-bento__content">
+                  <strong>Besonderheit:</strong> Moderne computergestützte
+                  Methoden
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Services (Hidden by default) -->
+        <div id="children-services" class="hidden mt-8">
+          <h5 class="text-2xl font-bold text-gray-800 mb-6">
+            Behandlungsbereiche für Kinder
+          </h5>
+          <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <div class="card-bento card-bento--red">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-red-600">
+                    <i class="fas fa-volume-up"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Dyslalie</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Sprech- und Artikulationsstörungen – darunter fallen
+                    phonetische und phonologische Auffälligkeiten wie das
+                    fehlerhafte Bilden oder Auslassen von Lauten (z. B.
+                    „Tatze" statt „Katze").
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--orange">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-orange-600">
+                    <i class="fas fa-ear"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Hörstörungen</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Unterstützung bei Sprachentwicklungsverzögerungen und
+                    -störungen, die im Zusammenhang mit einer
+                    Hörbeeinträchtigung stehen – unabhängig davon, ob diese
+                    von Geburt an besteht oder später auftritt.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--yellow">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-yellow-600">
+                    <i class="fas fa-language"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Dysgrammatismus</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Schwierigkeiten beim korrekten Bilden von Sätzen oder bei
+                    der Beugung von Wörtern – z. B. falsche Satzstellungen
+                    oder fehlerhafte Pluralformen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--lime">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-lime-600">
+                    <i class="fas fa-comment-medical"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Rhinophonie</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Näseln beim Sprechen, das durch Fehlfunktionen im
+                    Gaumensegelbereich oder strukturelle Besonderheiten
+                    entsteht – z. B. bei Lippen-Kiefer-Gaumenspalten.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--emerald">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-emerald-600">
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">AVWS</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Auditive Wahrnehmungs- und Verarbeitungsstörungen:
+                    Schwierigkeiten, Gehörtes richtig zu erkennen, zu
+                    unterscheiden oder zu verarbeiten – obwohl das Hörvermögen
+                    medizinisch unauffällig ist.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--teal">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-teal-600">
+                    <i class="fas fa-book-open"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Wortschatz</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Eingeschränkter Wortschatz: Auffälligkeiten beim Verstehen
+                    (passiver Wortschatz) oder beim aktiven Gebrauch von
+                    Wörtern – z. B. bei Kindern, die deutlich weniger sprechen
+                    als Gleichaltrige.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--sky">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-sky-600">
+                    <i class="fas fa-child"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">
+                      Sprachentwicklungsstörungen
+                    </h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Allgemeine Auffälligkeiten in mehreren sprachlichen
+                    Bereichen wie Wortschatz, Grammatik, Aussprache oder
+                    Sprachverständnis – häufig sichtbar im frühen Kindesalter.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--indigo">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-indigo-600">
+                    <i class="fas fa-puzzle-piece"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Besonderer Förderbedarf</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Therapie bei tiefgreifenden Entwicklungsstörungen und
+                    besonderem Förderbedarf: Spezialisierte Behandlung für
+                    Kinder mit Syndromen oder besonderen
+                    Entwicklungsbedürfnissen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--purple">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-purple-600">
+                    <i class="fas fa-smile"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Myofunktion</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Myofunktionelle Störungen: Ungleichgewicht oder
+                    Fehlfunktionen der Mund- und Gesichtsmuskulatur – z. B.
+                    eine falsche Zungenruhelage oder -bewegung.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="adults-services" class="hidden mt-8">
+          <h5 class="text-2xl font-bold text-gray-800 mb-6">
+            Behandlungsbereiche für Erwachsene
+          </h5>
+          <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <div class="card-bento card-bento--red">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-red-600">
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Aphasie</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Sprach- und Sprechstörungen, oft nach Schlaganfall oder
+                    anderen neurologischen Erkrankungen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--orange">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-orange-600">
+                    <i class="fas fa-cog"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Sprechapraxie</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Störung der Planung der Artikulationsbewegungen –
+                    Schwierigkeiten bei der koordinierten Ausführung von
+                    Sprechbewegungen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--yellow">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-yellow-600">
+                    <i class="fas fa-microphone"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Dysarthrie</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Koordinationsstörung von Stimme, Artikulation und Atmung –
+                    beeinträchtigt die Verständlichkeit des Sprechens.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--emerald">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-emerald-600">
+                    <i class="fas fa-utensils"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Dysphagie</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Schluckstörungen, die verschiedene Ursachen haben können
+                    und eine spezialisierte Behandlung erfordern.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--sky">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-sky-600">
+                    <i class="fas fa-volume-up"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Dysphonie</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Stimmstörungen verschiedener Ursachen – von funktionellen
+                    bis hin zu organischen Problemen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="card-bento card-bento--purple">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-purple-600">
+                    <i class="fas fa-user-injured"></i>
+                  </div>
+                  <div>
+                    <h6 class="card-bento__title">Facialisparesen</h6>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Lähmungen der Gesichtsmuskulatur, die sich auf Mimik und
+                    Sprechfähigkeit auswirken können.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-12">
+          <div class="card-bento card-bento--blue">
+            <div class="card-bento__header">
+              <div class="card-bento__icon card-bento__icon--large bg-blue-600">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="card-bento__title card-bento__title--large">
+                  Benötigen Sie eine Beratung?
+                </h4>
+                <p class="card-bento__subtitle text-blue-100">
+                  Gerne berate ich Sie ausführlich über die passende Therapie
+                  für Sie oder Ihr Kind.
+                </p>
+              </div>
+            </div>
+            <div class="card-bento__footer">
+              <a href="#contact"
+                class="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors">
+                <i class="fas fa-phone"></i>
+                <span>Jetzt Termin vereinbaren</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspirational Quote 3 -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-8">
+        <div class="quote-card card-bento">
+          <div class="card-bento__body card-bento__body--full-padding text-center">
+            <p class="card-bento__content">
+              „Jeder Fortschritt beginnt mit dem ersten Wort."
+            </p>
+            <p class="text-sm text-gray-600 mt-4 font-normal not-italic">
+              — Meine Überzeugung
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Information Section -->
+    <section id="info" class="py-16 bg-gray-50" aria-labelledby="info-title">
+      <div class="max-w-7xl mx-auto px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h3 id="info-title" class="text-4xl font-bold text-gray-800 mb-4">
+            Wichtige Informationen
+          </h3>
+          <p class="text-xl text-gray-600">
+            Alles was Sie über die Behandlung wissen müssen
+          </p>
+        </div>
+
+        <!-- Top row: image + prescription card -->
+        <div class="grid gap-6 lg:grid-cols-2">
+          <!-- Practice Image Card -->
+          <div>
+            <div class="card-bento">
+              <div class="card-bento__body card-bento__body--full-padding p-0">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  alt="Praxis Informationen" class="w-full h-full object-cover rounded-2xl" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Prescription Requirements -->
+          <div>
+            <div class="card-bento card-bento--red">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-red-600">
+                  <i class="fas fa-prescription-bottle-alt"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">
+                    Ärztliche Verordnung erforderlich
+                  </h4>
+                  <p class="card-bento__subtitle">
+                    Rezept ist Voraussetzung für die Behandlung
+                  </p>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Bitte beachten Sie, dass eine logopädische Behandlung nur
+                  mit einer gültigen ärztlichen Verordnung (Rezept) möglich
+                  ist, sowohl in der Praxis als auch bei Hausbesuchen.
+                </p>
+                <div class="bg-white/50 p-3 rounded-lg mb-3">
+                  <p class="text-sm text-red-800">
+                    <strong>Ausstellende Ärzte:</strong> Kinderarzt, Hausarzt,
+                    HNO-Arzt, Phoniater, Zahnarzt, Kieferorthopäde oder
+                    Neurologe
+                  </p>
+                </div>
+                <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
+                  <p class="text-sm text-yellow-800">
+                    <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
+                    <strong>Wichtig:</strong> Das Rezept verliert 28 Tage nach
+                    dem Ausstellungsdatum seine Gültigkeit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features grid -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+          <!-- Insurance Coverage -->
+          <div>
+            <div class="card-bento card-bento--green">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-green-600">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Kassenleistung</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  In meiner Praxis sowie bei Hausbesuchen werden Patientinnen
+                  und Patienten aller gesetzlichen Krankenkassen behandelt.
+                </p>
+                <div class="space-y-2">
+                  <div class="flex items-center space-x-2 text-green-700">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="text-sm font-medium">Alle gesetzlichen Krankenkassen</span>
+                  </div>
+                  <div class="flex items-center space-x-2 text-green-700">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="text-sm font-medium">Private Krankenkassen</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cancellation Policy -->
+          <div>
+            <div class="card-bento card-bento--blue">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-blue-600">
+                  <i class="fas fa-calendar-times"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Terminabsagen</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Bei kurzfristigen Absagen (weniger als 24 Stunden vorher)
+                  oder nicht wahrgenommenen Terminen muss der Ausfall gemäß §
+                  615 BGB privat berechnet werden.
+                </p>
+                <div class="bg-white/50 p-3 rounded-lg">
+                  <p class="text-sm text-blue-800">
+                    <strong>Grund:</strong> Die Zeit ist speziell für Sie
+                    reserviert und kann kurzfristig nicht neu vergeben werden.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Features -->
+          <div>
+            <div class="card-bento card-bento--purple">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-purple-600">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Hausbesuche möglich</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Bei medizinischer Notwendigkeit und eingeschränkter
+                  Mobilität
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card-bento card-bento--teal">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-teal-600">
+                  <i class="fas fa-stethoscope"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Individuelle Diagnostik</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Ausführliche Anamnese und gezielte Tests
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card-bento card-bento--orange">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-orange-600">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Familienorientiert</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <p class="card-bento__content">
+                  Einbeziehung der Familie in den Therapieprozess
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opening Hours -->
+        <div class="mt-6">
+          <div class="card-bento card-bento--purple">
+            <div class="card-bento__header">
+              <div class="card-bento__icon bg-purple-600">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="card-bento__title">Sprechzeiten</h4>
+                <p class="card-bento__subtitle">Termine nach Vereinbarung</p>
+              </div>
+            </div>
+            <div class="card-bento__body">
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700 font-medium">Montag - Donnerstag:</span>
+                  <span class="text-gray-600">8:00 - 18:00 Uhr</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700 font-medium">Freitag:</span>
+                  <span class="text-gray-600">8:00 - 16:00 Uhr</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700 font-medium">Samstag:</span>
+                  <span class="text-gray-600">Nach Vereinbarung</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thank you message (no card) -->
+        <p class="text-center text-gray-700 mt-6">
+          Vielen Dank für Ihr Verständnis! Diese Regelungen helfen mir dabei, Ihnen eine professionelle und planbare
+          Behandlung zu bieten.
+        </p>
+      </div>
+    </section>
+
+    <!-- Inspirational Quote 4 -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-8">
+        <div class="quote-card card-bento">
+          <div class="card-bento__body card-bento__body--full-padding text-center">
+            <p class="card-bento__content">
+              „Ich freue mich darauf, Sie oder Ihr Kind ein Stück des Weges
+              begleiten zu dürfen."
+            </p>
+            <p class="text-sm text-gray-600 mt-4 font-normal not-italic">
+              — Eva Sagmeister
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50" aria-labelledby="contact-title">
+      <div class="max-w-7xl mx-auto px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <h3 id="contact-title" class="text-4xl font-bold text-gray-800 mb-4">
+            Kontakt
+          </h3>
+          <p class="text-xl text-gray-600">
+            Vereinbaren Sie einen Termin oder nehmen Sie Kontakt mit mir auf
+          </p>
+        </div>
+
+        <div class="grid gap-6 grid-cols-1 lg:grid-cols-3">
+          <!-- Contact Form Card -->
+          <div class="lg:col-span-2">
+            <div class="card-bento card-bento--blue">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-blue-600">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Kontaktformular</h4>
+                  <p class="card-bento__subtitle">
+                    Schreiben Sie mir eine Nachricht
+                  </p>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <form class="space-y-6" id="contact-form" novalidate>
+                  <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                      <i class="fas fa-user text-blue-600" aria-hidden="true"></i>
+                      <span>Vor- und Nachname</span>
+                    </label>
+                    <input type="text" id="name" name="name" required class="form-input" placeholder="Ihr Name" />
+                  </div>
+                  <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                      <i class="fas fa-phone text-blue-600" aria-hidden="true"></i>
+                      <span>Telefon</span>
+                    </label>
+                    <input type="tel" id="phone" name="phone" required class="form-input"
+                      placeholder="Ihre Telefonnummer" />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                      <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
+                      <span>E-Mail</span>
+                    </label>
+                    <input type="email" id="email" name="email" required class="form-input"
+                      placeholder="Ihre E-Mail-Adresse" />
+                  </div>
+                  <div>
+                    <label for="message"
+                      class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                      <i class="fas fa-comment text-blue-600" aria-hidden="true"></i>
+                      <span>Nachricht</span>
+                    </label>
+                    <textarea id="message" name="message" rows="4" required class="form-input"
+                      placeholder="Ihre Nachricht"></textarea>
+                  </div>
+                  <button type="submit" class="card-bento__action w-full">
+                    <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    <span>Nachricht senden</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Practice Info Card -->
+          <div>
+            <div class="card-bento card-bento--green">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-green-600">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4 class="card-bento__title">Praxis-Adresse</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <div class="space-y-3">
+                  <div class="flex items-start space-x-3">
+                    <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mt-1"
+                      aria-hidden="true">
+                      <i class="fas fa-map-marker-alttext-xs"></i>
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-white">Eva Sagmeister</h1>
-                        <p class="text-sm text-gray-300">Logopädie Praxis</p>
+                      <p class="card-bento__content">
+                        Musterstraße 123<br />12345 Musterstadt
+                      </p>
                     </div>
+                  </div>
                 </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8" role="menubar">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="home">
-                        <i class="fas fa-home text-sm" aria-hidden="true"></i>
-                        <span>Home</span>
-                    </a>
-                    <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="about">
-                        <i class="fas fa-user text-sm" aria-hidden="true"></i>
-                        <span>Über mich</span>
-                    </a>
-                    <a href="#services" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="services">
-                        <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
-                        <span>Leistungen</span>
-                    </a>
-                    <a href="#info" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="info">
-                        <i class="fas fa-info-circle text-sm" aria-hidden="true"></i>
-                        <span>Informationen</span>
-                    </a>
-                    <a href="#contact" class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1" role="menuitem" data-section="contact">
-                        <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                        <span>Kontakt</span>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors" id="mobile-menu-btn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
-                    <i class="fas fa-bars text-gray-300" aria-hidden="true"></i>
-                </button>
+              </div>
             </div>
+          </div>
 
-            <!-- Mobile Menu -->
-            <div class="md:hidden hidden" id="mobile-menu" role="menu" aria-labelledby="mobile-menu-btn">
-                <div class="py-2 space-y-2 text-right">
-                    <a href="#home" class="mobile-menu-item" role="menuitem" data-section="home">
-                        <span>Home</span>
-                        <i class="fas fa-home" aria-hidden="true"></i>
-                    </a>
-                    <a href="#about" class="mobile-menu-item" role="menuitem" data-section="about">
-                        <span>Über mich</span>
-                        <i class="fas fa-user" aria-hidden="true"></i>
-                    </a>
-                    <a href="#services" class="mobile-menu-item" role="menuitem" data-section="services">
-                        <span>Leistungen</span>
-                        <i class="fas fa-stethoscope" aria-hidden="true"></i>
-                    </a>
-                    <a href="#info" class="mobile-menu-item" role="menuitem" data-section="info">
-                        <span>Informationen</span>
-                        <i class="fas fa-info-circle" aria-hidden="true"></i>
-                    </a>
-                    <a href="#contact" class="mobile-menu-item" role="menuitem" data-section="contact">
-                        <span>Kontakt</span>
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                    </a>
+          <!-- Contact Details Card -->
+          <div>
+            <div class="card-bento card-bento--orange">
+              <div class="card-bento__header">
+                <div class="card-bento__icon bg-orange-600 text-white">
+                  <i class="fas fa-phone"></i>
                 </div>
+                <div>
+                  <h4 class="card-bento__title">Kontaktdaten</h4>
+                </div>
+              </div>
+              <div class="card-bento__body">
+                <div class="space-y-3">
+                  <div class="flex items-start space-x-3">
+                    <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1"
+                      aria-hidden="true">
+                      <i class="fas fa-phone text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <p class="card-bento__content">+49 123 456789</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1"
+                      aria-hidden="true">
+                      <i class="fas fa-envelope text-white text-xs"></i>
+                    </div>
+                    <div>
+                      <p class="card-bento__content">
+                        info@logopaedie-sagmeister.de
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </nav>
+          </div>
 
-    <!-- Main Content -->
-    <main role="main">
-        <!-- Hero Section -->
-        <section id="home" class="py-16 pt-24 bg-gray-50" aria-labelledby="hero-title">
-            <div class="max-w-7xl mx-auto px-8">
-                <div class="bento-grid">
-                    <!-- Main Hero Card -->
-                    <div class="bento-grid__item--wide">
-                        <div class="card-bento card-bento--blue">
-                            <div class="card-bento__header card-bento__header--with-bg">
-                                <div class="card-bento__icon card-bento__icon--large bg-blue-600 text-white">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <div>
-                                    <h2 id="hero-title" class="card-bento__title card-bento__title--large">Willkommen in meiner Logopädie-Praxis</h2>
-                                    <p class="card-bento__subtitle">Professionelle Sprachtherapie für alle Altersgruppen</p>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content text-lg">Professionelle Sprachtherapie für Kinder und Erwachsene. Mit individueller
-                                    Betreuung und modernen Therapiemethoden unterstütze ich Sie auf Ihrem Weg zu besserer
-                                    Kommunikation.</p>
-                                <div class="flex flex-wrap gap-3 mt-6">
-                                    <a href="#contact" class="card-bento__action" aria-label="Termin vereinbaren">
-                                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
-                                        <span>Termin vereinbaren</span>
-                                    </a>
-                                    <a href="#about" class="card-bento__action card-bento__action--secondary" aria-label="Mehr über die Praxis erfahren">
-                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                        <span>Mehr erfahren</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Quick Info Cards -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--green">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-green-600 text-white">
-                                    <i class="fas fa-child"></i>
-                                </div>
-                                <div>
-                                    <h3 class="card-bento__title">Kinderlogopädie</h3>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Spielerische Therapie & kindgerechte Methoden</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--purple">
-                            <div class="card-bento__header">
-                                <div>
-                                    <h3 class="card-bento__title">Erwachsenentherapie</h3>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Neurologische & funktionelle Störungen</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--orange">
-                            <div class="card-bento__header">
-                                <div>
-                                    <h3 class="card-bento__title">Hausbesuche</h3>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Bei medizinischer Notwendigkeit möglich</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--teal">
-                            <div class="card-bento__header">
-                                <div>
-                                    <h3 class="card-bento__title">Kassenleistung</h3>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Alle gesetzlichen Krankenkassen</p>
-                            </div>
-                        </div>
-                    </div>
+          <!-- Call to Action Card -->
+          <div class="lg:col-span-3">
+            <div class="card-bento card-bento--teal">
+              <div class="card-bento__body card-bento__body--full-padding text-center">
+                <div class="card-bento__icon card-bento__icon--large bg-teal-600 text-white mx-auto mb-4">
+                  <i class="fas fa-calendar-check"></i>
                 </div>
-            </div>
-        </section>
-
-        <!-- Inspirational Quote -->
-        <section class="py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-8">
-                <div class="quote-card card-bento">
-                    <div class="card-bento__body card-bento__body--full-padding text-center">
-                        <p class="card-bento__content">
-                            „Die Sprache begleitet mich nicht nur beruflich, sondern auch ganz persönlich im Alltag mit meinen eigenen Kindern."
-                        </p>
-                        <p class="text-sm text-gray-600 mt-4 font-normal not-italic">— Eva Sagmeister</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-16 bg-gray-50" aria-labelledby="about-title">
-            <div class="max-w-7xl mx-auto px-8">
-                <div class="bento-grid">
-                    <!-- Mixed Layout Group: Image + Content on left, two stacked cards on right -->
-                    <div class="bento-grid__group">
-                        <div class="bento-grid__group-main">
-                            <!-- About Content Card -->
-                            <div class="card-bento card-bento--blue h-full">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-blue-600 text-white">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div>
-                                        <h3 id="about-title" class="card-bento__title card-bento__title--large">Über mich</h3>
-                                        <p class="card-bento__subtitle">29 Jahre, Logopädin & Mutter von drei Kindern</p>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">
-                                        Mein Name ist Eva Sagmeister, ich bin 29 Jahre alt, staatlich anerkannte Logopädin und Mutter von drei wunderbaren Kindern im Alter von 6, 4 und 2 Jahren.
-                                    </p>
-                                    <p class="card-bento__content">
-                                        Die Sprache begleitet mich nicht nur beruflich, sondern auch ganz persönlich im Alltag mit meinen eigenen Kindern. Ich weiß, wie vielfältig, herausfordernd und gleichzeitig faszinierend die sprachliche Entwicklung sein kann.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bento-grid__group-side">
-                            <!-- Experience Card -->
-                            <div class="card-bento card-bento--emerald">
-                                <div class="card-bento__header">
-                                    <div>
-                                        <h4 class="card-bento__title">Ausbildung</h4>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Medau-Schule bis 2017</p>
-                                </div>
-                            </div>
-
-                            <!-- Work Experience Card -->
-                            <div class="card-bento card-bento--amber">
-                                <div class="card-bento__header">
-                                    <div>
-                                        <h4 class="card-bento__title">Erfahrung</h4>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">3 Jahre Praxiserfahrung in verschiedenen Fachbereichen</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Profile Image Card -->
-                    <div class="bento-grid__item--medium">
-                        <div class="card-bento">
-                            <div class="card-bento__body card-bento__body--full-padding p-0">
-                                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                    alt="Eva Sagmeister - Logopädin" class="w-full h-full object-cover rounded-2xl">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Philosophy Card -->
-                    <div class="bento-grid__item--wide">
-                        <div class="card-bento card-bento--pink">
-                            <div class="card-bento__body">
-                                <p class="card-bento__content text-lg">
-                                    Die Erfahrungen aus meinem Familienalltag bereichern meine Arbeit und schenken mir ein feines Gespür für die Bedürfnisse meiner Patientinnen und Patienten – unabhängig von Alter oder Lebenssituation.
-                                </p>
-                                <p class="card-bento__content">
-                                    Meine Ausbildung zur Logopädin absolvierte ich bis 2017 an der Medau-Schule. Im Anschluss war ich drei Jahre in einer logopädischen Praxis angestellt und konnte dort in verschiedenen Fachbereichen wertvolle Erfahrung sammeln unter anderem in der Therapie von Kindern, Jugendlichen und Erwachsenen.
-                                </p>
-                                <p class="card-bento__content">
-                                    Nach meiner Elternzeit fühle ich mich nun bereit, meinen eigenen Weg zu gehen, mit Herz, Fachwissen und einem offenen Ohr für Ihre Anliegen. Ich freue mich darauf, Sie oder Ihr Kind ein Stück des Weges begleiten zu dürfen.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Key Facts Cards -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--rose">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-rose-600 text-white">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Familie</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Mutter von drei Kindern (6, 4 und 2 Jahre alt)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--indigo">
-                            <div class="card-bento__header">
-                                <div>
-                                    <h4 class="card-bento__title">Zielgruppe</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Erfahrung mit Kindern, Jugendlichen und Erwachsenen</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Inspirational Quote 2 -->
-        <section class="py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-8">
-                <div class="quote-card card-bento">
-                    <div class="card-bento__body card-bento__body--full-padding text-center">
-                        <p class="card-bento__content">
-                            „Mit Herz, Fachwissen und einem offenen Ohr für Ihre Anliegen."
-                        </p>
-                        <p class="text-sm text-gray-600 mt-4 font-normal not-italic">— Mein Therapieansatz</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-16 bg-gray-50" aria-labelledby="services-title">
-            <div class="max-w-7xl mx-auto px-8">
-                <!-- Section Header -->
-                <div class="text-center mb-12">
-                    <h3 id="services-title" class="text-4xl font-bold text-gray-800 mb-4">Meine Leistungen</h3>
-                    <p class="text-xl text-gray-600 mb-6 max-w-4xl mx-auto">
-                        Bei einem Erstgespräch (Anamnese) nehme ich mir Zeit, um Ihren aktuellen Stand sorgfältig zu erfassen. Durch gezielte Beobachtungen, Fragen und gegebenenfalls diagnostische Tests ermittle ich das genaue logopädische Störungsbild.
-                    </p>
-                    <div class="card-bento card-bento--blue max-w-4xl mx-auto">
-                        <div class="card-bento__body card-bento__body--full-padding">
-                            <p class="card-bento__content text-blue-800 font-medium text-center">
-                                Auf dieser Grundlage plane ich eine individuell auf Sie oder Ihr Kind abgestimmte logopädische Therapie, die sich an den jeweiligen Bedürfnissen und Zielen orientiert.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-grid">
-                    <!-- Children's Services Main Card -->
-                    <div class="bento-grid__item--large">
-                        <div class="card-bento card-bento--pink">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon card-bento__icon--large bg-pink-600 text-white">
-                                    <i class="fas fa-child"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title card-bento__title--large">Logopädie für Kinder</h4>
-                                    <p class="card-bento__subtitle">Spielerische Therapie & kindgerechte Methoden</p>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">
-                                    Spezialisierte Behandlung für Kinder mit individuellen, kindgerechten Methoden und spielerischen Ansätzen.
-                                </p>
-                                <div class="card-bento__footer">
-                                    <button id="children-toggle" class="card-bento__action" aria-expanded="false" aria-controls="children-services">
-                                        <span>Alle Behandlungsbereiche anzeigen</span>
-                                        <i class="fas fa-chevron-down transition-transform" id="children-chevron"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Adults Services Main Card -->
-                    <div class="bento-grid__item--large">
-                        <div class="card-bento card-bento--cyan">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon card-bento__icon--large bg-cyan-600 text-white">
-                                    <i class="fas fa-user-md"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title card-bento__title--large">Logopädie für Erwachsene</h4>
-                                    <p class="card-bento__subtitle">Neurologische & funktionelle Störungen</p>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">
-                                    Behandlung neurologischer und funktioneller Sprach-, Sprech- und Stimmstörungen bei Erwachsenen.
-                                </p>
-                                <div class="card-bento__footer">
-                                    <button id="adults-toggle" class="card-bento__action" aria-expanded="false" aria-controls="adults-services">
-                                        <span>Alle Behandlungsbereiche anzeigen</span>
-                                        <i class="fas fa-chevron-down transition-transform" id="adults-chevron"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Treatment Info Cards -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--green">
-                            <div class="card-bento__header">
-                                <div>
-                                    <h4 class="card-bento__title">Kinder-Behandlung</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content"><strong>Dauer:</strong> 30-45 Min</p>
-                                <p class="card-bento__content"><strong>Häufigkeit:</strong> 1-2x pro Woche</p>
-                                <p class="card-bento__content"><strong>Besonderheit:</strong> Eltern werden aktiv einbezogen</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--violet">
-                            <div class="card-bento__header">
-                                <div>
-                                    <h4 class="card-bento__title">Erwachsenen-Behandlung</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content"><strong>Dauer:</strong> 45-60 Min</p>
-                                <p class="card-bento__content"><strong>Häufigkeit:</strong> 2-3x pro Woche</p>
-                                <p class="card-bento__content"><strong>Besonderheit:</strong> Moderne computergestützte Methoden</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Detailed Services (Hidden by default) -->
-                <div id="children-services" class="hidden mt-8">
-                    <h5 class="text-2xl font-bold text-gray-800 mb-6">Behandlungsbereiche für Kinder</h5>
-                    <div class="bento-grid">
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--red">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-red-600 text-white">
-                                        <i class="fas fa-volume-up"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Dyslalie</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Sprech- und Artikulationsstörungen – darunter fallen phonetische und phonologische Auffälligkeiten wie das fehlerhafte Bilden oder Auslassen von Lauten (z. B. „Tatze" statt „Katze").</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--orange">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-orange-600 text-white">
-                                        <i class="fas fa-ear"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Hörstörungen</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Unterstützung bei Sprachentwicklungsverzögerungen und -störungen, die im Zusammenhang mit einer Hörbeeinträchtigung stehen – unabhängig davon, ob diese von Geburt an besteht oder später auftritt.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--yellow">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-yellow-600 text-white">
-                                        <i class="fas fa-language"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Dysgrammatismus</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Schwierigkeiten beim korrekten Bilden von Sätzen oder bei der Beugung von Wörtern – z. B. falsche Satzstellungen oder fehlerhafte Pluralformen.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--lime">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-lime-600 text-white">
-                                        <i class="fas fa-comment-medical"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Rhinophonie</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Näseln beim Sprechen, das durch Fehlfunktionen im Gaumensegelbereich oder strukturelle Besonderheiten entsteht – z. B. bei Lippen-Kiefer-Gaumenspalten.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--emerald">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-emerald-600 text-white">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">AVWS</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Auditive Wahrnehmungs- und Verarbeitungsstörungen: Schwierigkeiten, Gehörtes richtig zu erkennen, zu unterscheiden oder zu verarbeiten – obwohl das Hörvermögen medizinisch unauffällig ist.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--teal">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-teal-600 text-white">
-                                        <i class="fas fa-book-open"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Wortschatz</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Eingeschränkter Wortschatz: Auffälligkeiten beim Verstehen (passiver Wortschatz) oder beim aktiven Gebrauch von Wörtern – z. B. bei Kindern, die deutlich weniger sprechen als Gleichaltrige.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--medium">
-                            <div class="card-bento card-bento--sky">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-sky-600 text-white">
-                                        <i class="fas fa-child"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Sprachentwicklungsstörungen</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Allgemeine Auffälligkeiten in mehreren sprachlichen Bereichen wie Wortschatz, Grammatik, Aussprache oder Sprachverständnis – häufig sichtbar im frühen Kindesalter.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--medium">
-                            <div class="card-bento card-bento--indigo">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-indigo-600 text-white">
-                                        <i class="fas fa-puzzle-piece"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Besonderer Förderbedarf</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Therapie bei tiefgreifenden Entwicklungsstörungen und besonderem Förderbedarf: Spezialisierte Behandlung für Kinder mit Syndromen oder besonderen Entwicklungsbedürfnissen.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--purple">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-purple-600 text-white">
-                                        <i class="fas fa-smile"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Myofunktion</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Myofunktionelle Störungen: Ungleichgewicht oder Fehlfunktionen der Mund- und Gesichtsmuskulatur – z. B. eine falsche Zungenruhelage oder -bewegung.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="adults-services" class="hidden mt-8">
-                    <h5 class="text-2xl font-bold text-gray-800 mb-6">Behandlungsbereiche für Erwachsene</h5>
-                    <div class="bento-grid">
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--red">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-red-600 text-white">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Aphasie</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Sprach- und Sprechstörungen, oft nach Schlaganfall oder anderen neurologischen Erkrankungen.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--orange">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-orange-600 text-white">
-                                        <i class="fas fa-cog"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Sprechapraxie</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Störung der Planung der Artikulationsbewegungen – Schwierigkeiten bei der koordinierten Ausführung von Sprechbewegungen.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--yellow">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-yellow-600 text-white">
-                                        <i class="fas fa-microphone"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Dysarthrie</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Koordinationsstörung von Stimme, Artikulation und Atmung – beeinträchtigt die Verständlichkeit des Sprechens.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--emerald">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-emerald-600 text-white">
-                                        <i class="fas fa-utensils"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Dysphagie</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Schluckstörungen, die verschiedene Ursachen haben können und eine spezialisierte Behandlung erfordern.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--sky">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-sky-600 text-white">
-                                        <i class="fas fa-volume-up"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Dysphonie</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Stimmstörungen verschiedener Ursachen – von funktionellen bis hin zu organischen Problemen.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bento-grid__item--small">
-                            <div class="card-bento card-bento--purple">
-                                <div class="card-bento__header">
-                                    <div class="card-bento__icon bg-purple-600 text-white">
-                                        <i class="fas fa-user-injured"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="card-bento__title">Facialisparesen</h6>
-                                    </div>
-                                </div>
-                                <div class="card-bento__body">
-                                    <p class="card-bento__content">Lähmungen der Gesichtsmuskulatur, die sich auf Mimik und Sprechfähigkeit auswirken können.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Call to Action -->
-                <div class="mt-12">
-                    <div class="card-bento card-bento--blue">
-                        <div class="card-bento__header">
-                            <div class="card-bento__icon card-bento__icon--large bg-blue-600 text-white">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4 class="card-bento__title card-bento__title--large text-white">Benötigen Sie eine Beratung?</h4>
-                                <p class="card-bento__subtitle text-blue-100">Gerne berate ich Sie ausführlich über die passende Therapie für Sie oder Ihr Kind.</p>
-                            </div>
-                        </div>
-                        <div class="card-bento__footer">
-                            <a href="#contact" class="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors">
-                                <i class="fas fa-phone"></i>
-                                <span>Jetzt Termin vereinbaren</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Inspirational Quote 3 -->
-        <section class="py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-8">
-                <div class="quote-card card-bento">
-                    <div class="card-bento__body card-bento__body--full-padding text-center">
-                        <p class="card-bento__content">
-                            „Jeder Fortschritt beginnt mit dem ersten Wort."
-                        </p>
-                        <p class="text-sm text-gray-600 mt-4 font-normal not-italic">— Meine Überzeugung</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Information Section -->
-        <section id="info" class="py-16 bg-gray-50" aria-labelledby="info-title">
-            <div class="max-w-7xl mx-auto px-8">
-                <!-- Section Header -->
-                <div class="text-center mb-12">
-                    <h3 id="info-title" class="text-4xl font-bold text-gray-800 mb-4">Wichtige Informationen</h3>
-                    <p class="text-xl text-gray-600">Alles was Sie über die Behandlung wissen müssen</p>
-                </div>
-
-                <div class="bento-grid">
-                    <!-- Practice Image Card -->
-                    <div class="bento-grid__item--medium">
-                        <div class="card-bento">
-                            <div class="card-bento__body card-bento__body--full-padding p-0">
-                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                    alt="Praxis Informationen" class="w-full h-full object-cover rounded-2xl">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Prescription Requirements -->
-                    <div class="bento-grid__item--medium">
-                        <div class="card-bento card-bento--red">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-red-600 text-white">
-                                    <i class="fas fa-prescription-bottle-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Ärztliche Verordnung erforderlich</h4>
-                                    <p class="card-bento__subtitle">Rezept ist Voraussetzung für die Behandlung</p>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">
-                                    Bitte beachten Sie, dass eine logopädische Behandlung nur mit einer gültigen ärztlichen Verordnung (Rezept) möglich ist, sowohl in der Praxis als auch bei Hausbesuchen.
-                                </p>
-                                <div class="bg-white/50 p-3 rounded-lg mb-3">
-                                    <p class="text-sm text-red-800">
-                                        <strong>Ausstellende Ärzte:</strong> Kinderarzt, Hausarzt, HNO-Arzt, Phoniater, Zahnarzt, Kieferorthopäde oder Neurologe
-                                    </p>
-                                </div>
-                                <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
-                                    <p class="text-sm text-yellow-800">
-                                        <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
-                                        <strong>Wichtig:</strong> Das Rezept verliert 28 Tage nach dem Ausstellungsdatum seine Gültigkeit.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Insurance Coverage -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--green">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-green-600 text-white">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Kassenleistung</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">
-                                    In meiner Praxis sowie bei Hausbesuchen werden Patientinnen und Patienten aller gesetzlichen Krankenkassen behandelt.
-                                </p>
-                                <div class="space-y-2">
-                                    <div class="flex items-center space-x-2 text-green-700">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span class="text-sm font-medium">Alle gesetzlichen Krankenkassen</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2 text-green-700">
-                                        <i class="fas fa-check-circle"></i>
-                                        <span class="text-sm font-medium">Private Krankenkassen</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cancellation Policy -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--blue">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-blue-600 text-white">
-                                    <i class="fas fa-calendar-times"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Terminabsagen</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">
-                                    Bei kurzfristigen Absagen (weniger als 24 Stunden vorher) oder nicht wahrgenommenen Terminen muss der Ausfall gemäß § 615 BGB privat berechnet werden.
-                                </p>
-                                <div class="bg-white/50 p-3 rounded-lg">
-                                    <p class="text-sm text-blue-800">
-                                        <strong>Grund:</strong> Die Zeit ist speziell für Sie reserviert und kann kurzfristig nicht neu vergeben werden.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Service Features -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--purple">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-purple-600 text-white">
-                                    <i class="fas fa-home"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Hausbesuche möglich</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Bei medizinischer Notwendigkeit und eingeschränkter Mobilität</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--teal">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-teal-600 text-white">
-                                    <i class="fas fa-stethoscope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Individuelle Diagnostik</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Ausführliche Anamnese und gezielte Tests</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--orange">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-orange-600 text-white">
-                                    <i class="fas fa-heart"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Familienorientiert</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Einbeziehung der Familie in den Therapieprozess</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Thank You Message -->
-                    <div class="bento-grid__item--wide">
-                        <div class="card-bento card-bento--rose">
-                            <div class="card-bento__body card-bento__body--full-padding text-center">
-                                <h4 class="card-bento__title card-bento__title--large mb-4">Vielen Dank für Ihr Verständnis!</h4>
-                                <p class="card-bento__content text-lg">
-                                    Diese Regelungen helfen mir dabei, Ihnen eine professionelle und planbare Behandlung zu bieten.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Inspirational Quote 4 -->
-        <section class="py-16 bg-white">
-            <div class="max-w-4xl mx-auto px-8">
-                <div class="quote-card card-bento">
-                    <div class="card-bento__body card-bento__body--full-padding text-center">
-                        <p class="card-bento__content">
-                            „Ich freue mich darauf, Sie oder Ihr Kind ein Stück des Weges begleiten zu dürfen."
-                        </p>
-                        <p class="text-sm text-gray-600 mt-4 font-normal not-italic">— Eva Sagmeister</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-gray-50" aria-labelledby="contact-title">
-            <div class="max-w-7xl mx-auto px-8">
-                <!-- Section Header -->
-                <div class="text-center mb-12">
-                    <h3 id="contact-title" class="text-4xl font-bold text-gray-800 mb-4">Kontakt</h3>
-                    <p class="text-xl text-gray-600">Vereinbaren Sie einen Termin oder nehmen Sie Kontakt mit mir auf</p>
-                </div>
-
-                <div class="bento-grid">
-                    <!-- Contact Form Card -->
-                    <div class="bento-grid__item--large">
-                        <div class="card-bento card-bento--blue">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-blue-600 text-white">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Kontaktformular</h4>
-                                    <p class="card-bento__subtitle">Schreiben Sie mir eine Nachricht</p>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <form class="space-y-6" id="contact-form" novalidate>
-                                    <div>
-                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                            <i class="fas fa-user text-blue-600" aria-hidden="true"></i>
-                                            <span>Vor- und Nachname</span>
-                                        </label>
-                                        <input type="text" id="name" name="name" required
-                                            class="form-input"
-                                            placeholder="Ihr Name">
-                                    </div>
-                                    <div>
-                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                            <i class="fas fa-phone text-blue-600" aria-hidden="true"></i>
-                                            <span>Telefon</span>
-                                        </label>
-                                        <input type="tel" id="phone" name="phone" required
-                                            class="form-input"
-                                            placeholder="Ihre Telefonnummer">
-                                    </div>
-                                    <div>
-                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                            <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
-                                            <span>E-Mail</span>
-                                        </label>
-                                        <input type="email" id="email" name="email" required
-                                            class="form-input"
-                                            placeholder="Ihre E-Mail-Adresse">
-                                    </div>
-                                    <div>
-                                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                            <i class="fas fa-comment text-blue-600" aria-hidden="true"></i>
-                                            <span>Nachricht</span>
-                                        </label>
-                                        <textarea id="message" name="message" rows="4" required
-                                            class="form-input"
-                                            placeholder="Ihre Nachricht"></textarea>
-                                    </div>
-                                    <button type="submit" class="card-bento__action w-full">
-                                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                                        <span>Nachricht senden</span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Practice Info Card -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--green">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-green-600 text-white">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Praxis-Adresse</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <div class="space-y-3">
-                                    <div class="flex items-start space-x-3">
-                                        <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
-                                            <i class="fas fa-map-marker-alt text-white text-xs"></i>
-                                        </div>
-                                        <div>
-                                            <p class="card-bento__content">Musterstraße 123<br>12345 Musterstadt</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Details Card -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--orange">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-orange-600 text-white">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Kontaktdaten</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <div class="space-y-3">
-                                    <div class="flex items-start space-x-3">
-                                        <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
-                                            <i class="fas fa-phone text-white text-xs"></i>
-                                        </div>
-                                        <div>
-                                            <p class="card-bento__content">+49 123 456789</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex items-start space-x-3">
-                                        <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
-                                            <i class="fas fa-envelope text-white text-xs"></i>
-                                        </div>
-                                        <div>
-                                            <p class="card-bento__content">info@logopaedie-sagmeister.de</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Opening Hours Card -->
-                    <div class="bento-grid__item--medium">
-                        <div class="card-bento card-bento--purple">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-purple-600 text-white">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Sprechzeiten</h4>
-                                    <p class="card-bento__subtitle">Termine nach Vereinbarung</p>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <div class="space-y-3">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-gray-700 font-medium">Montag - Donnerstag:</span>
-                                        <span class="text-gray-600">8:00 - 18:00 Uhr</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-gray-700 font-medium">Freitag:</span>
-                                        <span class="text-gray-600">8:00 - 16:00 Uhr</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-gray-700 font-medium">Samstag:</span>
-                                        <span class="text-gray-600">Nach Vereinbarung</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Call to Action Card -->
-                    <div class="bento-grid__item--wide">
-                        <div class="card-bento card-bento--teal">
-                            <div class="card-bento__body card-bento__body--full-padding text-center">
-                                <div class="card-bento__icon card-bento__icon--large bg-teal-600 text-white mx-auto mb-4">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <h4 class="card-bento__title card-bento__title--large mb-4">Bereit für den ersten Schritt?</h4>
-                                <p class="card-bento__content text-lg mb-6">
-                                    Kontaktieren Sie mich gerne für ein unverbindliches Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre Therapie.
-                                </p>
-                                <div class="flex flex-wrap justify-center gap-4">
-                                    <a href="tel:+49123456789" class="card-bento__action">
-                                        <i class="fas fa-phone"></i>
-                                        <span>Anrufen</span>
-                                    </a>
-                                    <a href="mailto:info@logopaedie-sagmeister.de" class="card-bento__action card-bento__action--secondary">
-                                        <i class="fas fa-envelope"></i>
-                                        <span>E-Mail schreiben</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12" role="contentinfo">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="bento-grid">
-                <!-- Brand Card -->
-                <div class="bento-grid__item--small">
-                    <div class="card-bento" style="background-color: #374151; color: white;">
-                        <div class="card-bento__header">
-                            <div class="card-bento__icon bg-blue-600 text-white">
-                                <span class="font-bold text-lg">ES</span>
-                            </div>
-                            <div>
-                                <h5 class="card-bento__title text-white">Eva Sagmeister</h5>
-                                <p class="card-bento__subtitle text-gray-300">Logopädie Praxis</p>
-                            </div>
-                        </div>
-                        <div class="card-bento__body">
-                            <p class="card-bento__content text-gray-300">
-                                Professionelle Sprachtherapie mit individueller Betreuung für Kinder und Erwachsene.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quick Links Card -->
-                <div class="bento-grid__item--small">
-                    <div class="card-bento" style="background-color: #374151; color: white;">
-                        <div class="card-bento__header">
-                            <div class="card-bento__icon bg-blue-400 text-white">
-                                <i class="fas fa-link"></i>
-                            </div>
-                            <div>
-                                <h5 class="card-bento__title text-white">Schnelllinks</h5>
-                            </div>
-                        </div>
-                        <div class="card-bento__body">
-                            <nav class="space-y-2" role="navigation" aria-label="Footer Navigation">
-                                <a href="#home" class="footer-link">
-                                    <i class="fas fa-home text-sm" aria-hidden="true"></i>
-                                    <span>Home</span>
-                                </a>
-                                <a href="#about" class="footer-link">
-                                    <i class="fas fa-user text-sm" aria-hidden="true"></i>
-                                    <span>Über mich</span>
-                                </a>
-                                <a href="#services" class="footer-link">
-                                    <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
-                                    <span>Leistungen</span>
-                                </a>
-                                <a href="#contact" class="footer-link">
-                                    <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                                    <span>Kontakt</span>
-                                </a>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Info Card -->
-                <div class="bento-grid__item--small">
-                    <div class="card-bento" style="background-color: #374151; color: white;">
-                        <div class="card-bento__header">
-                            <div class="card-bento__icon bg-blue-400 text-white">
-                                <i class="fas fa-address-card"></i>
-                            </div>
-                            <div>
-                                <h5 class="card-bento__title text-white">Kontakt</h5>
-                            </div>
-                        </div>
-                        <div class="card-bento__body">
-                            <address class="space-y-2 text-gray-300 not-italic text-sm">
-                                <p class="flex items-center space-x-2">
-                                    <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
-                                    <span>Musterstraße 123, 12345 Musterstadt</span>
-                                </p>
-                                <p class="flex items-center space-x-2">
-                                    <i class="fas fa-phone text-sm" aria-hidden="true"></i>
-                                    <span>Tel: +49 123 456789</span>
-                                </p>
-                                <p class="flex items-center space-x-2">
-                                    <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                                    <span>info@logopaedie-sagmeister.de</span>
-                                </p>
-                            </address>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Final Quote Card -->
-                <div class="bento-grid__item--wide">
-                    <div class="quote-card card-bento" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border-left: 4px solid #3b82f6;">
-                        <div class="card-bento__body card-bento__body--full-padding text-center">
-                            <p class="card-bento__content text-white">
-                                „Kommunikation ist der Schlüssel zu allem – lassen Sie uns gemeinsam Türen öffnen."
-                            </p>
-                            <p class="text-sm text-gray-400 mt-4 font-normal not-italic">— Meine Mission</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400">
-                    &copy; 2025 Logopädie Praxis Eva Sagmeister. Alle Rechte vorbehalten.
-                    <a href="#" class="hover:text-white transition-colors">Datenschutz</a> |
-                    <a href="#" class="hover:text-white transition-colors">Impressum</a>
+                <h4 class="card-bento__title card-bento__title--large mb-4">
+                  Bereit für den ersten Schritt?
+                </h4>
+                <p class="card-bento__content text-lg mb-6">
+                  Kontaktieren Sie mich gerne für ein unverbindliches
+                  Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre
+                  Therapie.
                 </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                  <a href="tel:+49123456789" class="card-bento__action">
+                    <i class="fas fa-phone"></i>
+                    <span>Anrufen</span>
+                  </a>
+                  <a href="mailto:info@logopaedie-sagmeister.de"
+                    class="card-bento__action card-bento__action--secondary">
+                    <i class="fas fa-envelope"></i>
+                    <span>E-Mail schreiben</span>
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand Card -->
+          <div>
+          <div class="card-bento" style="background-color: #374151; color: white">
+            <div class="card-bento__header">
+              <div class="card-bento__icon bg-blue-600 text-white">
+                <span class="font-bold text-lg">ES</span>
+              </div>
+              <div>
+                <h5 class="card-bento__title text-white">Eva Sagmeister</h5>
+                <p class="card-bento__subtitle text-gray-300">
+                  Logopädie Praxis
+                </p>
+              </div>
+            </div>
+            <div class="card-bento__body">
+              <p class="card-bento__content text-gray-300">
+                Professionelle Sprachtherapie mit individueller Betreuung für
+                Kinder und Erwachsene.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Card -->
+          <div>
+          <div class="card-bento" style="background-color: #374151; color: white">
+            <div class="card-bento__header">
+              <div class="card-bento__icon bg-blue-400 text-white">
+                <i class="fas fa-link"></i>
+              </div>
+              <div>
+                <h5 class="card-bento__title text-white">Schnelllinks</h5>
+              </div>
+            </div>
+            <div class="card-bento__body">
+              <nav class="space-y-2" role="navigation" aria-label="Footer Navigation">
+                <a href="#home" class="footer-link">
+                  <i class="fas fa-home text-sm" aria-hidden="true"></i>
+                  <span>Home</span>
+                </a>
+                <a href="#about" class="footer-link">
+                  <i class="fas fa-user text-sm" aria-hidden="true"></i>
+                  <span>Über mich</span>
+                </a>
+                <a href="#services" class="footer-link">
+                  <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
+                  <span>Leistungen</span>
+                </a>
+                <a href="#contact" class="footer-link">
+                  <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                  <span>Kontakt</span>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info Card -->
+          <div>
+          <div class="card-bento" style="background-color: #374151; color: white">
+            <div class="card-bento__header">
+              <div class="card-bento__icon bg-blue-400 text-white">
+                <i class="fas fa-address-card"></i>
+              </div>
+              <div>
+                <h5 class="card-bento__title text-white">Kontakt</h5>
+              </div>
+            </div>
+            <div class="card-bento__body">
+              <address class="space-y-2 text-gray-300 not-italic text-sm">
+                <p class="flex items-center space-x-2">
+                  <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
+                  <span>Musterstraße 123, 12345 Musterstadt</span>
+                </p>
+                <p class="flex items-center space-x-2">
+                  <i class="fas fa-phone text-sm" aria-hidden="true"></i>
+                  <span>Tel: +49 123 456789</span>
+                </p>
+                <p class="flex items-center space-x-2">
+                  <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                  <span>info@logopaedie-sagmeister.de</span>
+                </p>
+              </address>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Quote Card -->
+          <div class="lg:col-span-2">
+          <div class="quote-card card-bento" style="
+                background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+                border-left: 4px solid #3b82f6;
+              ">
+            <div class="card-bento__body card-bento__body--full-padding text-center">
+              <p class="card-bento__content text-white">
+                „Kommunikation ist der Schlüssel zu allem – lassen Sie uns
+                gemeinsam Türen öffnen."
+              </p>
+              <p class="text-sm text-gray-400 mt-4 font-normal not-italic">
+                — Meine Mission
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-400">
+          &copy; 2025 Logopädie Praxis Eva Sagmeister. Alle Rechte
+          vorbehalten.
+          <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
+          |
+          <a href="#" class="hover:text-white transition-colors">Impressum</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 
 </html>

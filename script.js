@@ -103,7 +103,8 @@ class Navigation {
 
   bindEvents() {
     // Mobile menu toggle
-    this.mobileMenuBtn.addEventListener("click", () => {
+    this.mobileMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       this.toggleMobileMenu();
     });
 
@@ -153,6 +154,8 @@ class Navigation {
     this.mobileMenu.classList.remove("hidden");
     this.mobileMenuBtn.setAttribute("aria-expanded", "true");
     this.isMenuOpen = true;
+    // Ensure visibility regardless of other CSS
+    this.mobileMenu.style.display = "block";
 
     // Focus management
     const firstMenuItem = this.mobileMenu.querySelector(".mobile-menu-item");
@@ -165,6 +168,7 @@ class Navigation {
     this.mobileMenu.classList.add("hidden");
     this.mobileMenuBtn.setAttribute("aria-expanded", "false");
     this.isMenuOpen = false;
+    this.mobileMenu.style.display = "none";
 
     // Return focus to menu button
     this.mobileMenuBtn.focus();
@@ -598,6 +602,11 @@ class ScrollSpy {
     this.navLinks = [];
     this.activeSection = "";
     this.scrollOffset = 100;
+    this.desktopMenu = null;
+    this.desktopLinks = [];
+    this.underlineEl = null;
+    this.isUserNavigating = false;
+    this.scrollEndTimer = null;
 
     this.init();
   }
@@ -606,6 +615,7 @@ class ScrollSpy {
     this.findElements();
     this.bindEvents();
     this.updateActiveSection();
+    this.positionUnderlineToCurrent();
   }
 
   findElements() {
@@ -616,6 +626,19 @@ class ScrollSpy {
     this.navLinks = Array.from(
       document.querySelectorAll(".nav-link, .mobile-menu-item")
     );
+
+    // Desktop menu and links for underline
+    this.desktopMenu = document.getElementById("desktop-menu");
+    this.desktopLinks = this.desktopMenu
+      ? Array.from(this.desktopMenu.querySelectorAll(".nav-link"))
+      : [];
+
+    // Create underline element if on desktop
+    if (this.desktopMenu && !this.underlineEl) {
+      this.underlineEl = document.createElement("div");
+      this.underlineEl.className = "nav-underline";
+      this.desktopMenu.appendChild(this.underlineEl);
+    }
   }
 
   bindEvents() {
@@ -625,7 +648,11 @@ class ScrollSpy {
     window.addEventListener("scroll", () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          this.updateActiveSection();
+          if (this.isUserNavigating) {
+            this.scheduleScrollEndDetection();
+          } else {
+            this.updateActiveSection();
+          }
           ticking = false;
         });
         ticking = true;
@@ -635,13 +662,27 @@ class ScrollSpy {
     // Update on resize
     window.addEventListener("resize", () => {
       this.updateActiveSection();
+      this.positionUnderlineToCurrent();
     });
 
     // Update on orientation change
     window.addEventListener("orientationchange", () => {
       setTimeout(() => {
         this.updateActiveSection();
+        this.positionUnderlineToCurrent();
       }, 100);
+    });
+
+    // Immediate underline move on click of desktop links
+    this.desktopLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        this.isUserNavigating = true;
+        // Optimistically mark as active to avoid flicker
+        this.navLinks.forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+        this.moveUnderlineToLink(link);
+        this.scheduleScrollEndDetection();
+      });
     });
   }
 
@@ -671,7 +712,6 @@ class ScrollSpy {
   setActiveSection(sectionId) {
     // Remove active class from all links
     this.navLinks.forEach((link) => {
-      link.classList.remove("text-blue-600");
       link.classList.remove("active");
     });
 
@@ -683,12 +723,49 @@ class ScrollSpy {
       });
 
       if (activeLink) {
-        activeLink.classList.add("text-blue-600");
         activeLink.classList.add("active");
+        // Move underline for desktop menu
+        this.moveUnderlineToLink(
+          this.desktopLinks.find((l) => l.getAttribute("href") === `#${sectionId}`)
+        );
       }
     }
 
     this.activeSection = sectionId;
+  }
+
+  moveUnderlineToLink(link) {
+    if (!this.desktopMenu || !this.underlineEl || !link) return;
+    const containerRect = this.desktopMenu.getBoundingClientRect();
+    const textSpan = link.querySelector("span");
+    const targetRect = (textSpan || link).getBoundingClientRect();
+    const inset = 12; // px inset on both sides
+    const width = Math.max(0, targetRect.width - inset * 2);
+    const left = targetRect.left - containerRect.left + inset;
+    this.underlineEl.style.width = `${width}px`;
+    this.underlineEl.style.transform = `translateX(${left}px)`;
+  }
+
+  positionUnderlineToCurrent() {
+    if (!this.desktopMenu || !this.underlineEl) return;
+    const activeDesktopLink = this.desktopLinks.find((l) =>
+      l.classList.contains("active")
+    );
+    if (activeDesktopLink) {
+      this.moveUnderlineToLink(activeDesktopLink);
+    }
+  }
+
+  scheduleScrollEndDetection() {
+    if (this.scrollEndTimer) {
+      clearTimeout(this.scrollEndTimer);
+    }
+    // Consider scrolling finished after 250ms without scroll events
+    this.scrollEndTimer = setTimeout(() => {
+      this.isUserNavigating = false;
+      this.updateActiveSection();
+      this.positionUnderlineToCurrent();
+    }, 250);
   }
 }
 
@@ -751,7 +828,7 @@ class HeaderTransparency {
       window.pageYOffset || document.documentElement.scrollTop;
     const shouldBeTransparent = scrollPosition <= this.scrollThreshold;
     const isMobileMenuExpanded =
-      this.mobileMenuBtn.getAttribute("aria-expanded");
+      this.mobileMenuBtn.getAttribute("aria-expanded") === "true";
 
     if (shouldBeTransparent && !this.isTransparent) {
       this.makeTransparent();
