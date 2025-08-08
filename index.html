@@ -146,9 +146,6 @@
                     <div class="bento-grid__item--small">
                         <div class="card-bento card-bento--purple">
                             <div class="card-bento__header">
-                                <div class="card-bento__icon bg-purple-600 text-white">
-                                    <i class="fas fa-user-md"></i>
-                                </div>
                                 <div>
                                     <h3 class="card-bento__title">Erwachsenentherapie</h3>
                                 </div>
@@ -162,9 +159,6 @@
                     <div class="bento-grid__item--small">
                         <div class="card-bento card-bento--orange">
                             <div class="card-bento__header">
-                                <div class="card-bento__icon bg-orange-600 text-white">
-                                    <i class="fas fa-home"></i>
-                                </div>
                                 <div>
                                     <h3 class="card-bento__title">Hausbesuche</h3>
                                 </div>
@@ -178,9 +172,6 @@
                     <div class="bento-grid__item--small">
                         <div class="card-bento card-bento--teal">
                             <div class="card-bento__header">
-                                <div class="card-bento__icon bg-teal-600 text-white">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
                                 <div>
                                     <h3 class="card-bento__title">Kassenleistung</h3>
                                 </div>
@@ -212,69 +203,64 @@
         <section id="about" class="py-16 bg-gray-50" aria-labelledby="about-title">
             <div class="max-w-7xl mx-auto px-8">
                 <div class="bento-grid">
+                    <!-- Mixed Layout Group: Image + Content on left, two stacked cards on right -->
+                    <div class="bento-grid__group">
+                        <div class="bento-grid__group-main">
+                            <!-- About Content Card -->
+                            <div class="card-bento card-bento--blue h-full">
+                                <div class="card-bento__header">
+                                    <div class="card-bento__icon bg-blue-600 text-white">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h3 id="about-title" class="card-bento__title card-bento__title--large">Über mich</h3>
+                                        <p class="card-bento__subtitle">29 Jahre, Logopädin & Mutter von drei Kindern</p>
+                                    </div>
+                                </div>
+                                <div class="card-bento__body">
+                                    <p class="card-bento__content">
+                                        Mein Name ist Eva Sagmeister, ich bin 29 Jahre alt, staatlich anerkannte Logopädin und Mutter von drei wunderbaren Kindern im Alter von 6, 4 und 2 Jahren.
+                                    </p>
+                                    <p class="card-bento__content">
+                                        Die Sprache begleitet mich nicht nur beruflich, sondern auch ganz persönlich im Alltag mit meinen eigenen Kindern. Ich weiß, wie vielfältig, herausfordernd und gleichzeitig faszinierend die sprachliche Entwicklung sein kann.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bento-grid__group-side">
+                            <!-- Experience Card -->
+                            <div class="card-bento card-bento--emerald">
+                                <div class="card-bento__header">
+                                    <div>
+                                        <h4 class="card-bento__title">Ausbildung</h4>
+                                    </div>
+                                </div>
+                                <div class="card-bento__body">
+                                    <p class="card-bento__content">Medau-Schule bis 2017</p>
+                                </div>
+                            </div>
+
+                            <!-- Work Experience Card -->
+                            <div class="card-bento card-bento--amber">
+                                <div class="card-bento__header">
+                                    <div>
+                                        <h4 class="card-bento__title">Erfahrung</h4>
+                                    </div>
+                                </div>
+                                <div class="card-bento__body">
+                                    <p class="card-bento__content">3 Jahre Praxiserfahrung in verschiedenen Fachbereichen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Profile Image Card -->
                     <div class="bento-grid__item--medium">
                         <div class="card-bento">
                             <div class="card-bento__body card-bento__body--full-padding p-0">
                                 <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
                                     alt="Eva Sagmeister - Logopädin" class="w-full h-full object-cover rounded-2xl">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- About Content Card -->
-                    <div class="bento-grid__item--medium">
-                        <div class="card-bento card-bento--blue">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-blue-600 text-white">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                                <div>
-                                    <h3 id="about-title" class="card-bento__title card-bento__title--large">Über mich</h3>
-                                    <p class="card-bento__subtitle">29 Jahre, Logopädin & Mutter von drei Kindern</p>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">
-                                    Mein Name ist Eva Sagmeister, ich bin 29 Jahre alt, staatlich anerkannte Logopädin und Mutter von drei wunderbaren Kindern im Alter von 6, 4 und 2 Jahren.
-                                </p>
-                                <p class="card-bento__content">
-                                    Die Sprache begleitet mich nicht nur beruflich, sondern auch ganz persönlich im Alltag mit meinen eigenen Kindern. Ich weiß, wie vielfältig, herausfordernd und gleichzeitig faszinierend die sprachliche Entwicklung sein kann.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Experience Card -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--emerald">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-emerald-600 text-white">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Ausbildung</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">Medau-Schule bis 2017</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Work Experience Card -->
-                    <div class="bento-grid__item--small">
-                        <div class="card-bento card-bento--amber">
-                            <div class="card-bento__header">
-                                <div class="card-bento__icon bg-amber-600 text-white">
-                                    <i class="fas fa-briefcase"></i>
-                                </div>
-                                <div>
-                                    <h4 class="card-bento__title">Erfahrung</h4>
-                                </div>
-                            </div>
-                            <div class="card-bento__body">
-                                <p class="card-bento__content">3 Jahre Praxiserfahrung in verschiedenen Fachbereichen</p>
                             </div>
                         </div>
                     </div>
@@ -316,9 +302,6 @@
                     <div class="bento-grid__item--small">
                         <div class="card-bento card-bento--indigo">
                             <div class="card-bento__header">
-                                <div class="card-bento__icon bg-indigo-600 text-white">
-                                    <i class="fas fa-users"></i>
-                                </div>
                                 <div>
                                     <h4 class="card-bento__title">Zielgruppe</h4>
                                 </div>
@@ -421,9 +404,6 @@
                     <div class="bento-grid__item--small">
                         <div class="card-bento card-bento--green">
                             <div class="card-bento__header">
-                                <div class="card-bento__icon bg-green-600 text-white">
-                                    <i class="fas fa-clock"></i>
-                                </div>
                                 <div>
                                     <h4 class="card-bento__title">Kinder-Behandlung</h4>
                                 </div>
@@ -439,9 +419,6 @@
                     <div class="bento-grid__item--small">
                         <div class="card-bento card-bento--violet">
                             <div class="card-bento__header">
-                                <div class="card-bento__icon bg-violet-600 text-white">
-                                    <i class="fas fa-clock"></i>
-                                </div>
                                 <div>
                                     <h4 class="card-bento__title">Erwachsenen-Behandlung</h4>
                                 </div>

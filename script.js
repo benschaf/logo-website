@@ -9,130 +9,72 @@
  */
 class ServiceExpansion {
   constructor() {
-    this.childrenToggle = document.getElementById("children-toggle");
-    this.childrenServices = document.getElementById("children-services");
-    this.childrenChevron = document.getElementById("children-chevron");
-    
-    this.adultsToggle = document.getElementById("adults-toggle");
-    this.adultsServices = document.getElementById("adults-services");
-    this.adultsChevron = document.getElementById("adults-chevron");
-
     this.init();
   }
 
   init() {
-    if (!this.childrenToggle || !this.adultsToggle) {
-      console.warn("Service expansion elements not found");
-      return;
-    }
-
-    this.bindEvents();
-    this.setupAccessibility();
-  }
-
-  bindEvents() {
-    // Children services toggle
-    this.childrenToggle.addEventListener("click", () => {
-      this.toggleSection("children");
-    });
-
-    // Adults services toggle
-    this.adultsToggle.addEventListener("click", () => {
-      this.toggleSection("adults");
-    });
-
-    // Keyboard support
-    this.childrenToggle.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        this.toggleSection("children");
-      }
-    });
-
-    this.adultsToggle.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        this.toggleSection("adults");
-      }
-    });
-  }
-
-  setupAccessibility() {
-    // Set initial ARIA states
-    this.childrenToggle.setAttribute("aria-expanded", "false");
-    this.adultsToggle.setAttribute("aria-expanded", "false");
-  }
-
-  toggleSection(section) {
-    if (section === "children") {
-      this.toggleChildrenSection();
-    } else if (section === "adults") {
-      this.toggleAdultsSection();
-    }
-  }
-
-  toggleChildrenSection() {
-    const isExpanded = this.childrenServices.classList.contains("hidden");
-    
-    if (isExpanded) {
-      this.expandChildrenSection();
-    } else {
-      this.collapseChildrenSection();
-    }
-  }
-
-  toggleAdultsSection() {
-    const isExpanded = this.adultsServices.classList.contains("hidden");
-    
-    if (isExpanded) {
-      this.expandAdultsSection();
-    } else {
-      this.collapseAdultsSection();
-    }
-  }
-
-  expandChildrenSection() {
-    this.childrenServices.classList.remove("hidden");
-    this.childrenChevron.style.transform = "rotate(180deg)";
-    this.childrenToggle.setAttribute("aria-expanded", "true");
-    this.childrenToggle.querySelector("span").textContent = "Behandlungsbereiche ausblenden";
-    
-    // Smooth scroll into view
+    // Wait a bit to ensure DOM is fully loaded
     setTimeout(() => {
-      this.childrenServices.scrollIntoView({ 
-        behavior: "smooth", 
-        block: "nearest" 
-      });
+      this.setupElements();
     }, 100);
   }
 
-  collapseChildrenSection() {
-    this.childrenServices.classList.add("hidden");
-    this.childrenChevron.style.transform = "rotate(0deg)";
-    this.childrenToggle.setAttribute("aria-expanded", "false");
-    this.childrenToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
-  }
-
-  expandAdultsSection() {
-    this.adultsServices.classList.remove("hidden");
-    this.adultsChevron.style.transform = "rotate(180deg)";
-    this.adultsToggle.setAttribute("aria-expanded", "true");
-    this.adultsToggle.querySelector("span").textContent = "Behandlungsbereiche ausblenden";
+  setupElements() {
+    const childrenToggle = document.getElementById("children-toggle");
+    const childrenServices = document.getElementById("children-services");
+    const childrenChevron = document.getElementById("children-chevron");
     
-    // Smooth scroll into view
-    setTimeout(() => {
-      this.adultsServices.scrollIntoView({ 
-        behavior: "smooth", 
-        block: "nearest" 
+    const adultsToggle = document.getElementById("adults-toggle");
+    const adultsServices = document.getElementById("adults-services");
+    const adultsChevron = document.getElementById("adults-chevron");
+
+    console.log('Service elements found:', {
+      childrenToggle: !!childrenToggle,
+      childrenServices: !!childrenServices,
+      adultsToggle: !!adultsToggle,
+      adultsServices: !!adultsServices
+    });
+
+    if (childrenToggle && childrenServices && childrenChevron) {
+      childrenToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.toggleSection(childrenServices, childrenToggle, childrenChevron, "children");
       });
-    }, 100);
+    }
+
+    if (adultsToggle && adultsServices && adultsChevron) {
+      adultsToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.toggleSection(adultsServices, adultsToggle, adultsChevron, "adults");
+      });
+    }
   }
 
-  collapseAdultsSection() {
-    this.adultsServices.classList.add("hidden");
-    this.adultsChevron.style.transform = "rotate(0deg)";
-    this.adultsToggle.setAttribute("aria-expanded", "false");
-    this.adultsToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
+  toggleSection(serviceElement, toggleButton, chevronElement, sectionType) {
+    const isHidden = serviceElement.classList.contains("hidden");
+    console.log(`Toggling ${sectionType} section. Currently hidden:`, isHidden);
+    
+    if (isHidden) {
+      // Show the section
+      serviceElement.classList.remove("hidden");
+      chevronElement.style.transform = "rotate(180deg)";
+      toggleButton.setAttribute("aria-expanded", "true");
+      toggleButton.querySelector("span").textContent = "Behandlungsbereiche ausblenden";
+      
+      // Smooth scroll into view
+      setTimeout(() => {
+        serviceElement.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "nearest" 
+        });
+      }, 100);
+    } else {
+      // Hide the section
+      serviceElement.classList.add("hidden");
+      chevronElement.style.transform = "rotate(0deg)";
+      toggleButton.setAttribute("aria-expanded", "false");
+      toggleButton.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
+    }
   }
 }
 

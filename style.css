@@ -2,6 +2,24 @@
    Eva Sagmeister Logopädie Website Styles
    ========================================================================== */
 
+/* Essential Utility Classes (in case Tailwind doesn't load) */
+.hidden {
+    display: none !important;
+}
+
+.md\:hidden {
+    display: none !important;
+}
+
+@media (min-width: 768px) {
+    .md\:hidden {
+        display: none !important;
+    }
+    .md\:flex {
+        display: flex !important;
+    }
+}
+
 /* CSS Custom Properties (Variables) */
 :root {
     /* Color Palette - Soft Pastels */
@@ -268,6 +286,84 @@ body {
 
 .bento-grid__item--tall {
     grid-row: span 2;
+}
+
+/* Enhanced Bento Layout Variants for Mixed Layouts */
+.bento-grid__item--long {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+    .bento-grid__item--long {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bento-grid__item--long {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+.bento-grid__item--stack {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+    .bento-grid__item--stack {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* Specialized layouts for asymmetric arrangements */
+.bento-grid__item--half-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+    .bento-grid__item--half-tall {
+        grid-column: span 1;
+        grid-row: span 1;
+        min-height: 200px;
+    }
+}
+
+/* Container for mixed layout groupings */
+.bento-grid__group {
+    display: contents;
+}
+
+@media (min-width: 768px) {
+    .bento-grid__group {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-column: span 3;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bento-grid__group {
+        grid-column: span 3;
+    }
+}
+
+.bento-grid__group-main {
+    grid-column: 1;
+    grid-row: span 2;
+}
+
+.bento-grid__group-side {
+    grid-column: 2;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-rows: 1fr 1fr;
 }
 
 /* Quote Cards */
