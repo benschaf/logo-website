@@ -1,6 +1,6 @@
 /**
  * Eva Sagmeister Logopädie Website
- * Consolidated JavaScript - All functionality in a single file
+ * Simplified JavaScript - Minimal dependencies and complexity
  */
 
 /**
@@ -91,112 +91,16 @@ class Navigation {
         // Return focus to menu button
         this.mobileMenuBtn.focus();
     }
-
-    // Public method to check if menu is open
-    isMobileMenuOpen() {
-        return this.isMenuOpen;
-    }
-
-    // Public method to programmatically close menu
-    closeMenu() {
-        if (this.isMenuOpen) {
-            this.closeMobileMenu();
-        }
-    }
-}
-
-/**
- * Smooth Scrolling Module
- * Handles smooth scrolling for navigation links and anchor links
- */
-class SmoothScrolling {
-    constructor() {
-        this.scrollOffset = 80; // Account for fixed header
-        this.scrollDuration = 400; // Reduced from 800ms to 400ms for faster animation
-        this.easing = 'easeInOutCubic';
-        
-        this.init();
-    }
-
-    init() {
-        this.bindEvents();
-    }
-
-    bindEvents() {
-        // Handle all anchor links
-        document.addEventListener('click', (e) => {
-            const link = e.target.closest('a[href^="#"]');
-            if (link) {
-                e.preventDefault();
-                this.scrollToSection(link.getAttribute('href'));
-            }
-        });
-
-        // Handle programmatic navigation
-        window.addEventListener('app:navigate', (e) => {
-            if (e.detail && e.detail.target) {
-                this.scrollToSection(e.detail.target);
-            }
-        });
-    }
-
-    scrollToSection(targetId) {
-        const target = document.querySelector(targetId);
-        if (!target) {
-            console.warn(`Target element ${targetId} not found`);
-            return;
-        }
-
-        const targetPosition = target.offsetTop - this.scrollOffset;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        let startTime = null;
-
-        const animation = (currentTime) => {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const progress = Math.min(timeElapsed / this.scrollDuration, 1);
-            const easeProgress = this.easeInOutCubic(progress);
-            
-            window.scrollTo(0, startPosition + distance * easeProgress);
-            
-            if (timeElapsed < this.scrollDuration) {
-                requestAnimationFrame(animation);
-            }
-        };
-
-        requestAnimationFrame(animation);
-    }
-
-    // Easing function for smooth animation
-    easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    }
-
-    // Public method to scroll to a specific section
-    scrollTo(targetId) {
-        this.scrollToSection(targetId);
-    }
-
-    // Public method to update scroll offset (useful if header height changes)
-    updateScrollOffset(offset) {
-        this.scrollOffset = offset;
-    }
-
-    // Public method to update scroll duration
-    updateScrollDuration(duration) {
-        this.scrollDuration = duration;
-    }
 }
 
 /**
  * Flip Cards Module
  * Handles interactive service cards with flip animations
+ * Simplified: Multiple cards can be flipped at the same time
  */
 class FlipCards {
     constructor() {
         this.cards = [];
-        this.activeCard = null;
         
         this.init();
     }
@@ -216,30 +120,40 @@ class FlipCards {
         this.cards.forEach(card => {
             // Click to flip
             card.addEventListener('click', (e) => {
-                this.flipCard(card);
+                this.toggleCard(card);
             });
 
             // Keyboard support
             card.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    this.flipCard(card);
+                    this.toggleCard(card);
                 }
             });
+        });
 
-            // Close card when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!card.contains(e.target) && card.classList.contains('flipped')) {
-                    this.unflipCard(card);
-                }
-            });
+        // Close all cards when clicking outside any card
+        document.addEventListener('click', (e) => {
+            const clickedCard = e.target.closest('.flip-card');
+            if (!clickedCard) {
+                // Clicked outside all cards, close any that are open
+                this.cards.forEach(card => {
+                    if (card.classList.contains('flipped')) {
+                        this.unflipCard(card);
+                    }
+                });
+            }
+        });
 
-            // Close card on escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && card.classList.contains('flipped')) {
-                    this.unflipCard(card);
-                }
-            });
+        // Close all cards on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.cards.forEach(card => {
+                    if (card.classList.contains('flipped')) {
+                        this.unflipCard(card);
+                    }
+                });
+            }
         });
     }
 
@@ -258,18 +172,18 @@ class FlipCards {
         });
     }
 
-    flipCard(card) {
-        // Close other cards first
-        this.cards.forEach(otherCard => {
-            if (otherCard !== card && otherCard.classList.contains('flipped')) {
-                this.unflipCard(otherCard);
-            }
-        });
+    toggleCard(card) {
+        if (card.classList.contains('flipped')) {
+            this.unflipCard(card);
+        } else {
+            this.flipCard(card);
+        }
+    }
 
-        // Flip the clicked card
+    flipCard(card) {
+        // Simply flip the clicked card (no closing others)
         card.classList.add('flipped');
         card.setAttribute('aria-pressed', 'true');
-        this.activeCard = card;
 
         // Announce to screen readers
         this.announceFlip(card, true);
@@ -278,10 +192,6 @@ class FlipCards {
     unflipCard(card) {
         card.classList.remove('flipped');
         card.setAttribute('aria-pressed', 'false');
-        
-        if (this.activeCard === card) {
-            this.activeCard = null;
-        }
 
         // Announce to screen readers
         this.announceFlip(card, false);
@@ -310,28 +220,6 @@ class FlipCards {
         setTimeout(() => {
             document.body.removeChild(announcement);
         }, 1000);
-    }
-
-    // Public method to flip a specific card
-    flipCardByService(serviceType) {
-        const card = this.cards.find(card => card.dataset.service === serviceType);
-        if (card) {
-            this.flipCard(card);
-        }
-    }
-
-    // Public method to unflip all cards
-    unflipAllCards() {
-        this.cards.forEach(card => {
-            if (card.classList.contains('flipped')) {
-                this.unflipCard(card);
-            }
-        });
-    }
-
-    // Public method to get active card
-    getActiveCard() {
-        return this.activeCard;
     }
 }
 
@@ -605,16 +493,6 @@ class ContactForm {
             }
         });
     }
-
-    // Public method to programmatically submit form
-    submit() {
-        this.handleSubmit();
-    }
-
-    // Public method to reset form
-    reset() {
-        this.resetForm();
-    }
 }
 
 /**
@@ -627,7 +505,6 @@ class ScrollSpy {
         this.navLinks = [];
         this.activeSection = '';
         this.scrollOffset = 100;
-        this.isScrolling = false;
         
         this.init();
     }
@@ -715,189 +592,17 @@ class ScrollSpy {
         }
 
         this.activeSection = sectionId;
-
-        // Dispatch custom event for other modules
-        window.dispatchEvent(new CustomEvent('scrollspy:changed', {
-            detail: { activeSection: sectionId }
-        }));
-    }
-
-    // Public method to get current active section
-    getActiveSection() {
-        return this.activeSection;
-    }
-
-    // Public method to manually set active section
-    setActive(sectionId) {
-        this.setActiveSection(sectionId);
-    }
-
-    // Public method to update scroll offset
-    updateScrollOffset(offset) {
-        this.scrollOffset = offset;
-        this.updateActiveSection();
-    }
-
-    // Public method to refresh sections (useful if DOM changes)
-    refresh() {
-        this.findElements();
-        this.updateActiveSection();
-    }
-}
-
-/**
- * Theme Manager Module
- * Handles theme switching and user preferences
- */
-class ThemeManager {
-    constructor() {
-        this.currentTheme = 'default';
-        this.availableThemes = ['default'];
-        this.themeToggle = null;
-        
-        this.init();
-    }
-
-    init() {
-        this.loadUserPreference();
-        this.bindEvents();
-        this.applyTheme();
-    }
-
-    loadUserPreference() {
-        // Load theme from localStorage
-        const savedTheme = localStorage.getItem('eva-theme');
-        if (savedTheme && this.availableThemes.includes(savedTheme)) {
-            this.currentTheme = savedTheme;
-        } else {
-            this.currentTheme = 'default';
-        }
-    }
-
-    bindEvents() {
-        // Listen for custom theme change events
-        window.addEventListener('theme:change', (e) => {
-            if (e.detail && e.detail.theme) {
-                this.setTheme(e.detail.theme);
-            }
-        });
-    }
-
-    setTheme(theme) {
-        if (!this.availableThemes.includes(theme)) {
-            console.warn(`Theme "${theme}" is not available`);
-            return;
-        }
-
-        this.currentTheme = theme;
-        localStorage.setItem('eva-theme', theme);
-        this.applyTheme();
-        
-        // Dispatch custom event
-        window.dispatchEvent(new CustomEvent('theme:changed', {
-            detail: { theme: theme }
-        }));
-    }
-
-    applyTheme() {
-        const body = document.body;
-        
-        // Remove all theme classes
-        this.availableThemes.forEach(theme => {
-            body.classList.remove(`theme-${theme}`);
-        });
-        
-        // Add current theme class
-        body.classList.add(`theme-${this.currentTheme}`);
-        body.setAttribute('data-theme', this.currentTheme);
-        
-        // Apply theme-specific styles
-        this.applyThemeStyles();
-    }
-
-    applyThemeStyles() {
-        // Apply theme-specific CSS variables
-        const root = document.documentElement;
-        
-        switch (this.currentTheme) {
-            default:
-                // Reset to default values
-                root.style.removeProperty('--bg-primary');
-                root.style.removeProperty('--text-primary');
-                root.style.removeProperty('--text-secondary');
-                break;
-        }
-    }
-
-    // Public method to get current theme
-    getCurrentTheme() {
-        return this.currentTheme;
-    }
-
-    // Public method to check if theme is available
-    isThemeAvailable(theme) {
-        return this.availableThemes.includes(theme);
-    }
-
-    // Public method to get available themes
-    getAvailableThemes() {
-        return [...this.availableThemes];
-    }
-
-    // Public method to add custom theme
-    addTheme(themeName) {
-        if (!this.availableThemes.includes(themeName)) {
-            this.availableThemes.push(themeName);
-        }
-    }
-
-    // Public method to remove theme
-    removeTheme(themeName) {
-        const index = this.availableThemes.indexOf(themeName);
-        if (index > -1 && themeName !== 'default') {
-            this.availableThemes.splice(index, 1);
-            
-            // If current theme was removed, switch to default
-            if (this.currentTheme === themeName) {
-                this.setTheme('default');
-            }
-        }
-    }
-}
-
-/**
- * Main Application
- * Initializes all components and manages the overall application state
- */
-class App {
-    constructor() {
-        this.modules = {};
-        this.init();
-    }
-
-    init() {
-        // Initialize all modules
-        this.modules.navigation = new Navigation();
-        this.modules.smoothScrolling = new SmoothScrolling();
-        this.modules.flipCards = new FlipCards();
-        this.modules.contactForm = new ContactForm();
-        this.modules.scrollSpy = new ScrollSpy();
-        this.modules.themeManager = new ThemeManager();
-
-        // Log successful initialization
-        console.log('🚀 Eva Sagmeister Logopädie Website initialized successfully');
-        
-        // Dispatch custom event for other modules that might need to know when app is ready
-        window.dispatchEvent(new CustomEvent('app:ready'));
-    }
-
-    // Public method to access modules if needed
-    getModule(name) {
-        return this.modules[name];
     }
 }
 
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.app = new App();
+    // Initialize all modules directly (no App class wrapper)
+    const navigation = new Navigation();
+    const flipCards = new FlipCards();
+    const contactForm = new ContactForm();
+    const scrollSpy = new ScrollSpy();
+
+    // Log successful initialization
+    console.log('🚀 Eva Sagmeister Logopädie Website (simplified) initialized successfully');
 });
