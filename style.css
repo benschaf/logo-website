@@ -7,12 +7,24 @@
     display: none !important;
 }
 
-.md\:hidden {
+/* Mobile navigation button: show on mobile, hide on md+ screens */
+#mobile-menu-btn.md\:hidden {
+    display: block !important;
+}
+
+/* Desktop navigation: hide on mobile, show on md+ screens */
+.md\:flex {
     display: none !important;
 }
 
+/* Mobile menu: hidden by default, only show when not having .hidden class AND on mobile */
+#mobile-menu.md\:hidden:not(.hidden) {
+    display: block !important;
+}
+
 @media (min-width: 768px) {
-    .md\:hidden {
+    #mobile-menu-btn.md\:hidden,
+    #mobile-menu.md\:hidden {
         display: none !important;
     }
     .md\:flex {
