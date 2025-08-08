@@ -729,233 +729,383 @@
             </div>
         </section>
 
+        <!-- Inspirational Quote 3 -->
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-8">
+                <div class="quote-card card-bento">
+                    <div class="card-bento__body card-bento__body--full-padding text-center">
+                        <p class="card-bento__content">
+                            „Jeder Fortschritt beginnt mit dem ersten Wort."
+                        </p>
+                        <p class="text-sm text-gray-600 mt-4 font-normal not-italic">— Meine Überzeugung</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Information Section -->
-        <section id="info" class="py-16 bg-white" aria-labelledby="info-title">
-            <div class="max-w-6xl mx-auto px-8">
+        <section id="info" class="py-16 bg-gray-50" aria-labelledby="info-title">
+            <div class="max-w-7xl mx-auto px-8">
+                <!-- Section Header -->
                 <div class="text-center mb-12">
                     <h3 id="info-title" class="text-4xl font-bold text-gray-800 mb-4">Wichtige Informationen</h3>
                     <p class="text-xl text-gray-600">Alles was Sie über die Behandlung wissen müssen</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                            alt="Praxis Informationen" class="rounded-2xl shadow-lg w-full mb-6">
+                <div class="bento-grid">
+                    <!-- Practice Image Card -->
+                    <div class="bento-grid__item--medium">
+                        <div class="card-bento">
+                            <div class="card-bento__body card-bento__body--full-padding p-0">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Praxis Informationen" class="w-full h-full object-cover rounded-2xl">
+                            </div>
+                        </div>
                     </div>
-                    <div class="space-y-8">
-                        <!-- Prescription Requirements -->
-                        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center space-x-2">
-                                <i class="fas fa-prescription-bottle-alt text-red-600" aria-hidden="true"></i>
-                                <span>Ärztliche Verordnung erforderlich</span>
-                            </h4>
-                            <div class="space-y-3 text-gray-700">
-                                <p class="font-medium">
+
+                    <!-- Prescription Requirements -->
+                    <div class="bento-grid__item--medium">
+                        <div class="card-bento card-bento--red">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-red-600 text-white">
+                                    <i class="fas fa-prescription-bottle-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="card-bento__title">Ärztliche Verordnung erforderlich</h4>
+                                    <p class="card-bento__subtitle">Rezept ist Voraussetzung für die Behandlung</p>
+                                </div>
+                            </div>
+                            <div class="card-bento__body">
+                                <p class="card-bento__content">
                                     Bitte beachten Sie, dass eine logopädische Behandlung nur mit einer gültigen ärztlichen Verordnung (Rezept) möglich ist, sowohl in der Praxis als auch bei Hausbesuchen.
                                 </p>
-                                <div class="bg-white p-4 rounded-lg border border-red-200">
-                                    <p class="text-sm">
+                                <div class="bg-white/50 p-3 rounded-lg mb-3">
+                                    <p class="text-sm text-red-800">
                                         <strong>Ausstellende Ärzte:</strong> Kinderarzt, Hausarzt, HNO-Arzt, Phoniater, Zahnarzt, Kieferorthopäde oder Neurologe
                                     </p>
                                 </div>
                                 <div class="bg-yellow-50 border border-yellow-200 p-3 rounded-lg">
                                     <p class="text-sm text-yellow-800">
                                         <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>
-                                        <strong>Wichtig:</strong> Das Rezept verliert 28 Tage nach dem Ausstellungsdatum seine Gültigkeit. Daher ist es wichtig, innerhalb dieses Zeitraums mit der Therapie zu beginnen.
+                                        <strong>Wichtig:</strong> Das Rezept verliert 28 Tage nach dem Ausstellungsdatum seine Gültigkeit.
                                     </p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Insurance Coverage -->
-                        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center space-x-2">
-                                <i class="fas fa-shield-alt text-green-600" aria-hidden="true"></i>
-                                <span>Kassenleistung</span>
-                            </h4>
-                            <p class="text-gray-700 mb-4">
-                                In meiner Praxis sowie bei Hausbesuchen werden Patientinnen und Patienten aller gesetzlichen Krankenkassen behandelt.
-                            </p>
-                            <div class="bg-white p-4 rounded-lg border border-green-200">
-                                <div class="flex items-center space-x-2 text-green-700">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span class="font-medium">Alle gesetzlichen Krankenkassen</span>
+                    <!-- Insurance Coverage -->
+                    <div class="bento-grid__item--small">
+                        <div class="card-bento card-bento--green">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-green-600 text-white">
+                                    <i class="fas fa-shield-alt"></i>
                                 </div>
-                                <div class="flex items-center space-x-2 text-green-700 mt-1">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span class="font-medium">Private Krankenkassen</span>
+                                <div>
+                                    <h4 class="card-bento__title">Kassenleistung</h4>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Cancellation Policy -->
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-4 flex items-center space-x-2">
-                                <i class="fas fa-calendar-times text-blue-600" aria-hidden="true"></i>
-                                <span>Terminabsagen</span>
-                            </h4>
-                            <div class="space-y-3 text-gray-700">
-                                <p>
-                                    Bitte haben Sie Verständnis, dass ich Ihnen bei kurzfristigen Absagen (weniger als 24 Stunden vorher) oder nicht wahrgenommenen Terminen ohne Absage den Ausfall gemäß § 615 BGB in Höhe des üblichen Kassensatzes privat in Rechnung stellen muss.
+                            <div class="card-bento__body">
+                                <p class="card-bento__content">
+                                    In meiner Praxis sowie bei Hausbesuchen werden Patientinnen und Patienten aller gesetzlichen Krankenkassen behandelt.
                                 </p>
-                                <div class="bg-white p-4 rounded-lg border border-blue-200">
-                                    <p class="text-sm">
-                                        <strong>Grund:</strong> Da diese Zeit speziell für Sie reserviert ist, kann der Termin so kurzfristig nicht neu vergeben werden.
+                                <div class="space-y-2">
+                                    <div class="flex items-center space-x-2 text-green-700">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="text-sm font-medium">Alle gesetzlichen Krankenkassen</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2 text-green-700">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="text-sm font-medium">Private Krankenkassen</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cancellation Policy -->
+                    <div class="bento-grid__item--small">
+                        <div class="card-bento card-bento--blue">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-blue-600 text-white">
+                                    <i class="fas fa-calendar-times"></i>
+                                </div>
+                                <div>
+                                    <h4 class="card-bento__title">Terminabsagen</h4>
+                                </div>
+                            </div>
+                            <div class="card-bento__body">
+                                <p class="card-bento__content">
+                                    Bei kurzfristigen Absagen (weniger als 24 Stunden vorher) oder nicht wahrgenommenen Terminen muss der Ausfall gemäß § 615 BGB privat berechnet werden.
+                                </p>
+                                <div class="bg-white/50 p-3 rounded-lg">
+                                    <p class="text-sm text-blue-800">
+                                        <strong>Grund:</strong> Die Zeit ist speziell für Sie reserviert und kann kurzfristig nicht neu vergeben werden.
                                     </p>
                                 </div>
-                                <p class="text-blue-700 font-medium text-center">
-                                    Vielen Dank für Ihr Verständnis!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Features -->
+                    <div class="bento-grid__item--small">
+                        <div class="card-bento card-bento--purple">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-purple-600 text-white">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div>
+                                    <h4 class="card-bento__title">Hausbesuche möglich</h4>
+                                </div>
+                            </div>
+                            <div class="card-bento__body">
+                                <p class="card-bento__content">Bei medizinischer Notwendigkeit und eingeschränkter Mobilität</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bento-grid__item--small">
+                        <div class="card-bento card-bento--teal">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-teal-600 text-white">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="card-bento__title">Individuelle Diagnostik</h4>
+                                </div>
+                            </div>
+                            <div class="card-bento__body">
+                                <p class="card-bento__content">Ausführliche Anamnese und gezielte Tests</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bento-grid__item--small">
+                        <div class="card-bento card-bento--orange">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-orange-600 text-white">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div>
+                                    <h4 class="card-bento__title">Familienorientiert</h4>
+                                </div>
+                            </div>
+                            <div class="card-bento__body">
+                                <p class="card-bento__content">Einbeziehung der Familie in den Therapieprozess</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thank You Message -->
+                    <div class="bento-grid__item--wide">
+                        <div class="card-bento card-bento--rose">
+                            <div class="card-bento__body card-bento__body--full-padding text-center">
+                                <h4 class="card-bento__title card-bento__title--large mb-4">Vielen Dank für Ihr Verständnis!</h4>
+                                <p class="card-bento__content text-lg">
+                                    Diese Regelungen helfen mir dabei, Ihnen eine professionelle und planbare Behandlung zu bieten.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Additional Info Cards -->
-                <div class="grid md:grid-cols-3 gap-6 mt-12">
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl text-center">
-                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-home text-white text-xl"></i>
-                        </div>
-                        <h5 class="font-bold text-gray-800 mb-2">Hausbesuche möglich</h5>
-                        <p class="text-sm text-gray-600">Bei medizinischer Notwendigkeit und eingeschränkter Mobilität</p>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl text-center">
-                        <div class="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-stethoscope text-white text-xl"></i>
-                        </div>
-                        <h5 class="font-bold text-gray-800 mb-2">Individuelle Diagnostik</h5>
-                        <p class="text-sm text-gray-600">Ausführliche Anamnese und gezielte Tests</p>
-                    </div>
-                    
-                    <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl text-center">
-                        <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-heart text-white text-xl"></i>
-                        </div>
-                        <h5 class="font-bold text-gray-800 mb-2">Familienorientiert</h5>
-                        <p class="text-sm text-gray-600">Einbeziehung der Familie in den Therapieprozess</p>
+        <!-- Inspirational Quote 4 -->
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-8">
+                <div class="quote-card card-bento">
+                    <div class="card-bento__body card-bento__body--full-padding text-center">
+                        <p class="card-bento__content">
+                            „Ich freue mich darauf, Sie oder Ihr Kind ein Stück des Weges begleiten zu dürfen."
+                        </p>
+                        <p class="text-sm text-gray-600 mt-4 font-normal not-italic">— Eva Sagmeister</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-blue-50" aria-labelledby="contact-title">
-            <div class="max-w-6xl mx-auto px-8">
+        <section id="contact" class="py-16 bg-gray-50" aria-labelledby="contact-title">
+            <div class="max-w-7xl mx-auto px-8">
+                <!-- Section Header -->
                 <div class="text-center mb-12">
                     <h3 id="contact-title" class="text-4xl font-bold text-gray-800 mb-4">Kontakt</h3>
                     <p class="text-xl text-gray-600">Vereinbaren Sie einen Termin oder nehmen Sie Kontakt mit mir auf</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Contact Form -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
-                            <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
-                            <span>Kontaktformular</span>
-                        </h4>
-                        <form class="space-y-6" id="contact-form" novalidate>
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                    <i class="fas fa-user text-blue-600" aria-hidden="true"></i>
-                                    <span>Vor- und Nachname</span>
-                                </label>
-                                <input type="text" id="name" name="name" required
-                                    class="form-input"
-                                    placeholder="Ihr Name">
+                <div class="bento-grid">
+                    <!-- Contact Form Card -->
+                    <div class="bento-grid__item--large">
+                        <div class="card-bento card-bento--blue">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-blue-600 text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="card-bento__title">Kontaktformular</h4>
+                                    <p class="card-bento__subtitle">Schreiben Sie mir eine Nachricht</p>
+                                </div>
                             </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                    <i class="fas fa-phone text-blue-600" aria-hidden="true"></i>
-                                    <span>Telefon</span>
-                                </label>
-                                <input type="tel" id="phone" name="phone" required
-                                    class="form-input"
-                                    placeholder="Ihre Telefonnummer">
+                            <div class="card-bento__body">
+                                <form class="space-y-6" id="contact-form" novalidate>
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                            <i class="fas fa-user text-blue-600" aria-hidden="true"></i>
+                                            <span>Vor- und Nachname</span>
+                                        </label>
+                                        <input type="text" id="name" name="name" required
+                                            class="form-input"
+                                            placeholder="Ihr Name">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                            <i class="fas fa-phone text-blue-600" aria-hidden="true"></i>
+                                            <span>Telefon</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone" required
+                                            class="form-input"
+                                            placeholder="Ihre Telefonnummer">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                            <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
+                                            <span>E-Mail</span>
+                                        </label>
+                                        <input type="email" id="email" name="email" required
+                                            class="form-input"
+                                            placeholder="Ihre E-Mail-Adresse">
+                                    </div>
+                                    <div>
+                                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
+                                            <i class="fas fa-comment text-blue-600" aria-hidden="true"></i>
+                                            <span>Nachricht</span>
+                                        </label>
+                                        <textarea id="message" name="message" rows="4" required
+                                            class="form-input"
+                                            placeholder="Ihre Nachricht"></textarea>
+                                    </div>
+                                    <button type="submit" class="card-bento__action w-full">
+                                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                                        <span>Nachricht senden</span>
+                                    </button>
+                                </form>
                             </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                    <i class="fas fa-envelope text-blue-600" aria-hidden="true"></i>
-                                    <span>E-Mail</span>
-                                </label>
-                                <input type="email" id="email" name="email" required
-                                    class="form-input"
-                                    placeholder="Ihre E-Mail-Adresse">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2 flex items-center space-x-2">
-                                    <i class="fas fa-comment text-blue-600" aria-hidden="true"></i>
-                                    <span>Nachricht</span>
-                                </label>
-                                <textarea id="message" name="message" rows="4" required
-                                    class="form-input"
-                                    placeholder="Ihre Nachricht"></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary w-full">
-                                <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                                <span>Nachricht senden</span>
-                            </button>
-                        </form>
+                        </div>
                     </div>
 
-                    <!-- Contact Information -->
-                    <div class="space-y-8">
-                        <div class="bg-white rounded-2xl p-8 shadow-lg">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
-                                <i class="fas fa-map-marker-alt text-blue-600" aria-hidden="true"></i>
-                                <span>Praxis-Informationen</span>
-                            </h4>
-                            <div class="space-y-4">
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
-                                        <i class="fas fa-map-marker-alt text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-gray-800">Adresse</p>
-                                        <p class="text-gray-600">Musterstraße 123<br>12345 Musterstadt</p>
-                                    </div>
+                    <!-- Practice Info Card -->
+                    <div class="bento-grid__item--small">
+                        <div class="card-bento card-bento--green">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-green-600 text-white">
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
-
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
-                                        <i class="fas fa-phone text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-gray-800">Telefon</p>
-                                        <p class="text-gray-600">+49 123 456789</p>
-                                    </div>
+                                <div>
+                                    <h4 class="card-bento__title">Praxis-Adresse</h4>
                                 </div>
-
-                                <div class="flex items-start space-x-4">
-                                    <div class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
-                                        <i class="fas fa-envelope text-white text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-gray-800">E-Mail</p>
-                                        <p class="text-gray-600">info@logopaedie-sagmeister.de</p>
+                            </div>
+                            <div class="card-bento__body">
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
+                                            <i class="fas fa-map-marker-alt text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <p class="card-bento__content">Musterstraße 123<br>12345 Musterstadt</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="bg-white rounded-2xl p-8 shadow-lg">
-                            <h4 class="text-2xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
-                                <i class="fas fa-clock text-blue-600" aria-hidden="true"></i>
-                                <span>Sprechzeiten</span>
-                            </h4>
-                            <div class="space-y-3">
-                                <div class="flex justify-between">
-                                    <span class="text-gray-700">Montag - Donnerstag:</span>
-                                    <span class="text-gray-600">8:00 - 18:00 Uhr</span>
+                    <!-- Contact Details Card -->
+                    <div class="bento-grid__item--small">
+                        <div class="card-bento card-bento--orange">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-orange-600 text-white">
+                                    <i class="fas fa-phone"></i>
                                 </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-700">Freitag:</span>
-                                    <span class="text-gray-600">8:00 - 16:00 Uhr</span>
+                                <div>
+                                    <h4 class="card-bento__title">Kontaktdaten</h4>
                                 </div>
-                                <div class="flex justify-between">
-                                    <span class="text-gray-700">Samstag:</span>
-                                    <span class="text-gray-600">Nach Vereinbarung</span>
+                            </div>
+                            <div class="card-bento__body">
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
+                                            <i class="fas fa-phone text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <p class="card-bento__content">+49 123 456789</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1" aria-hidden="true">
+                                            <i class="fas fa-envelope text-white text-xs"></i>
+                                        </div>
+                                        <div>
+                                            <p class="card-bento__content">info@logopaedie-sagmeister.de</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Opening Hours Card -->
+                    <div class="bento-grid__item--medium">
+                        <div class="card-bento card-bento--purple">
+                            <div class="card-bento__header">
+                                <div class="card-bento__icon bg-purple-600 text-white">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="card-bento__title">Sprechzeiten</h4>
+                                    <p class="card-bento__subtitle">Termine nach Vereinbarung</p>
+                                </div>
+                            </div>
+                            <div class="card-bento__body">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700 font-medium">Montag - Donnerstag:</span>
+                                        <span class="text-gray-600">8:00 - 18:00 Uhr</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700 font-medium">Freitag:</span>
+                                        <span class="text-gray-600">8:00 - 16:00 Uhr</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-700 font-medium">Samstag:</span>
+                                        <span class="text-gray-600">Nach Vereinbarung</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action Card -->
+                    <div class="bento-grid__item--wide">
+                        <div class="card-bento card-bento--teal">
+                            <div class="card-bento__body card-bento__body--full-padding text-center">
+                                <div class="card-bento__icon card-bento__icon--large bg-teal-600 text-white mx-auto mb-4">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <h4 class="card-bento__title card-bento__title--large mb-4">Bereit für den ersten Schritt?</h4>
+                                <p class="card-bento__content text-lg mb-6">
+                                    Kontaktieren Sie mich gerne für ein unverbindliches Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre Therapie.
+                                </p>
+                                <div class="flex flex-wrap justify-center gap-4">
+                                    <a href="tel:+49123456789" class="card-bento__action">
+                                        <i class="fas fa-phone"></i>
+                                        <span>Anrufen</span>
+                                    </a>
+                                    <a href="mailto:info@logopaedie-sagmeister.de" class="card-bento__action card-bento__action--secondary">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>E-Mail schreiben</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -967,74 +1117,106 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12" role="contentinfo">
-        <div class="max-w-6xl mx-auto px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
-                            <span class="text-white font-bold text-lg">ES</span>
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="bento-grid">
+                <!-- Brand Card -->
+                <div class="bento-grid__item--small">
+                    <div class="card-bento" style="background-color: #374151; color: white;">
+                        <div class="card-bento__header">
+                            <div class="card-bento__icon bg-blue-600 text-white">
+                                <span class="font-bold text-lg">ES</span>
+                            </div>
+                            <div>
+                                <h5 class="card-bento__title text-white">Eva Sagmeister</h5>
+                                <p class="card-bento__subtitle text-gray-300">Logopädie Praxis</p>
+                            </div>
                         </div>
-                        <div>
-                            <h5 class="text-lg font-bold">Eva Sagmeister</h5>
-                            <p class="text-sm text-gray-400">Logopädie Praxis</p>
+                        <div class="card-bento__body">
+                            <p class="card-bento__content text-gray-300">
+                                Professionelle Sprachtherapie mit individueller Betreuung für Kinder und Erwachsene.
+                            </p>
                         </div>
                     </div>
-                    <p class="text-gray-400">
-                        Professionelle Sprachtherapie mit individueller Betreuung für Kinder und Erwachsene.
-                    </p>
                 </div>
 
-                <div>
-                    <h5 class="text-lg font-bold mb-4 flex items-center space-x-2">
-                        <i class="fas fa-link text-blue-400" aria-hidden="true"></i>
-                        <span>Schnelllinks</span>
-                    </h5>
-                    <nav class="space-y-2" role="navigation" aria-label="Footer Navigation">
-                        <a href="#home" class="footer-link">
-                            <i class="fas fa-home text-sm" aria-hidden="true"></i>
-                            <span>Home</span>
-                        </a>
-                        <a href="#about" class="footer-link">
-                            <i class="fas fa-user text-sm" aria-hidden="true"></i>
-                            <span>Über mich</span>
-                        </a>
-                        <a href="#services" class="footer-link">
-                            <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
-                            <span>Leistungen</span>
-                        </a>
-                        <a href="#contact" class="footer-link">
-                            <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                            <span>Kontakt</span>
-                        </a>
-                    </nav>
+                <!-- Quick Links Card -->
+                <div class="bento-grid__item--small">
+                    <div class="card-bento" style="background-color: #374151; color: white;">
+                        <div class="card-bento__header">
+                            <div class="card-bento__icon bg-blue-400 text-white">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-bento__title text-white">Schnelllinks</h5>
+                            </div>
+                        </div>
+                        <div class="card-bento__body">
+                            <nav class="space-y-2" role="navigation" aria-label="Footer Navigation">
+                                <a href="#home" class="footer-link">
+                                    <i class="fas fa-home text-sm" aria-hidden="true"></i>
+                                    <span>Home</span>
+                                </a>
+                                <a href="#about" class="footer-link">
+                                    <i class="fas fa-user text-sm" aria-hidden="true"></i>
+                                    <span>Über mich</span>
+                                </a>
+                                <a href="#services" class="footer-link">
+                                    <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
+                                    <span>Leistungen</span>
+                                </a>
+                                <a href="#contact" class="footer-link">
+                                    <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                                    <span>Kontakt</span>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
 
-                <div>
-                    <h5 class="text-lg font-bold mb-4 flex items-center space-x-2">
-                        <i class="fas fa-address-card text-blue-400" aria-hidden="true"></i>
-                        <span>Kontakt</span>
-                    </h5>
-                    <address class="space-y-2 text-gray-400 not-italic">
-                        <p class="flex items-center space-x-2">
-                            <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
-                            <span>Musterstraße 123</span>
-                        </p>
-                        <p class="flex items-center space-x-2">
-                            <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
-                            <span>12345 Musterstadt</span>
-                        </p>
-                        <p class="flex items-center space-x-2">
-                            <i class="fas fa-phone text-sm" aria-hidden="true"></i>
-                            <span>Tel: +49 123 456789</span>
-                        </p>
-                        <p class="flex items-center space-x-2">
-                            <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                            <span>info@logopaedie-sagmeister.de</span>
-                        </p>
-                    </address>
+                <!-- Contact Info Card -->
+                <div class="bento-grid__item--small">
+                    <div class="card-bento" style="background-color: #374151; color: white;">
+                        <div class="card-bento__header">
+                            <div class="card-bento__icon bg-blue-400 text-white">
+                                <i class="fas fa-address-card"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-bento__title text-white">Kontakt</h5>
+                            </div>
+                        </div>
+                        <div class="card-bento__body">
+                            <address class="space-y-2 text-gray-300 not-italic text-sm">
+                                <p class="flex items-center space-x-2">
+                                    <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
+                                    <span>Musterstraße 123, 12345 Musterstadt</span>
+                                </p>
+                                <p class="flex items-center space-x-2">
+                                    <i class="fas fa-phone text-sm" aria-hidden="true"></i>
+                                    <span>Tel: +49 123 456789</span>
+                                </p>
+                                <p class="flex items-center space-x-2">
+                                    <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                                    <span>info@logopaedie-sagmeister.de</span>
+                                </p>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Quote Card -->
+                <div class="bento-grid__item--wide">
+                    <div class="quote-card card-bento" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border-left: 4px solid #3b82f6;">
+                        <div class="card-bento__body card-bento__body--full-padding text-center">
+                            <p class="card-bento__content text-white">
+                                „Kommunikation ist der Schlüssel zu allem – lassen Sie uns gemeinsam Türen öffnen."
+                            </p>
+                            <p class="text-sm text-gray-400 mt-4 font-normal not-italic">— Meine Mission</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- Copyright -->
             <div class="border-t border-gray-700 mt-8 pt-8 text-center">
                 <p class="text-gray-400">
                     &copy; 2025 Logopädie Praxis Eva Sagmeister. Alle Rechte vorbehalten.
