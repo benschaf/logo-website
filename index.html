@@ -17,60 +17,61 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="bg-gray-50">
+  <body class="bg-gray-50">
   <!-- Navigation -->
-  <nav class="nav-dark fixed w-full top-0 z-50" role="navigation" aria-label="Hauptnavigation">
+    <nav class="nav-dark fixed w-full top-0 z-50" role="navigation" aria-label="Hauptnavigation">
     <div class="max-w-6xl mx-auto px-8">
       <div class="flex justify-between items-center py-4">
         <!-- Logo/Brand -->
         <div class="flex items-center space-x-2">
           <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center" aria-hidden="true">
-            <span class="text-white font-bold text-lg">ES</span>
+            <span class="font-bold text-lg">ES</span>
           </div>
           <div>
-            <h1 class="text-xl font-bold text-white">Eva Sagmeister</h1>
-            <p class="text-sm text-gray-300">Logopädie Praxis</p>
+            <h1 class="text-xl font-bold ">Eva Sagmeister</h1>
+              <p class="text-sm text-gray-900">Logopädie Praxis</p>
           </div>
         </div>
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8" role="menubar">
-          <a href="#home"
-            class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1"
+          <div id="desktop-menu" class="hidden md:flex space-x-8 relative" role="menubar">
+            <a href="#home"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
             role="menuitem" data-section="home">
-            <i class="fas fa-home text-sm" aria-hidden="true"></i>
+              <i class="fas fa-home text-sm" aria-hidden="true"></i>
             <span>Home</span>
           </a>
           <a href="#about"
-            class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
             role="menuitem" data-section="about">
             <i class="fas fa-user text-sm" aria-hidden="true"></i>
             <span>Über mich</span>
           </a>
           <a href="#services"
-            class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
             role="menuitem" data-section="services">
             <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
             <span>Leistungen</span>
           </a>
           <a href="#info"
-            class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
             role="menuitem" data-section="info">
             <i class="fas fa-info-circle text-sm" aria-hidden="true"></i>
             <span>Informationen</span>
           </a>
           <a href="#contact"
-            class="nav-link text-gray-300 hover:text-blue-400 font-medium transition-colors flex items-center space-x-1"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
             role="menuitem" data-section="contact">
             <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
             <span>Kontakt</span>
           </a>
+            <!-- underline indicator injected by JS -->
         </div>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden p-2 hover:bg-gray-700 rounded-lg transition-colors" id="mobile-menu-btn"
+          <button class="md:hidden p-2 hover:bg-gray-200 rounded-lg transition-colors" id="mobile-menu-btn"
           aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
-          <i class="fas fa-bars text-gray-300" aria-hidden="true"></i>
+            <i class="fas fa-bars text-black" aria-hidden="true"></i>
         </button>
       </div>
 
@@ -107,49 +108,36 @@
     <!-- Hero Section -->
     <section id="home" class="py-16 pt-24 bg-gray-50" aria-labelledby="hero-title">
       <div class="max-w-7xl mx-auto px-8">
-        <div class="bento-grid">
-          <!-- Main Hero Card -->
-          <div class="bento-grid__item--wide">
-            <div class="card-bento card-bento--blue">
-              <div class="card-bento__header card-bento__header--with-bg">
-                <div class="card-bento__icon card-bento__icon--large bg-blue-600 text-white">
-                  <i class="fas fa-comments"></i>
-                </div>
-                <div>
-                  <h2 id="hero-title" class="card-bento__title card-bento__title--large">
-                    Willkommen in meiner Logopädie-Praxis
-                  </h2>
-                  <p class="card-bento__subtitle">
-                    Professionelle Sprachtherapie für alle Altersgruppen
-                  </p>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content text-lg">
-                  Professionelle Sprachtherapie für Kinder und Erwachsene. Mit
-                  individueller Betreuung und modernen Therapiemethoden
-                  unterstütze ich Sie auf Ihrem Weg zu besserer Kommunikation.
-                </p>
-                <div class="flex flex-wrap gap-3 mt-6">
-                  <a href="#contact" class="card-bento__action" aria-label="Termin vereinbaren">
-                    <i class="fas fa-calendar-check" aria-hidden="true"></i>
-                    <span>Termin vereinbaren</span>
-                  </a>
-                  <a href="#about" class="card-bento__action card-bento__action--secondary"
-                    aria-label="Mehr über die Praxis erfahren">
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                    <span>Mehr erfahren</span>
-                  </a>
-                </div>
+        <!-- Hero Content (no card) -->
+        <div class="grid gap-6">
+          <div class="lg:col-span-3">
+            <div class="max-w-5xl">
+              <h1 id="hero-title" class="leading-tight">
+                <span class="block text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 tracking-tight">Willkommen</span>
+                <span class="block text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mt-2">in meiner Logopädie-Praxis</span>
+              </h1>
+              <p class="mt-6 text-xl text-gray-700 max-w-3xl">
+                Professionelle Sprachtherapie für Kinder und Erwachsene.
+              </p>
+              <p class="mt-3 text-lg text-gray-600 max-w-3xl">
+                Mit individueller Betreuung und modernen Therapiemethoden unterstütze ich Sie auf Ihrem Weg zu besserer Kommunikation.
+              </p>
+              <div class="mt-8">
+                <a href="#contact" class="btn-primary text-base md:text-lg px-8 py-4" aria-label="Termin vereinbaren">
+                  <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                  <span>Termin vereinbaren</span>
+                </a>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Quick Info Cards -->
-          <div class="bento-grid__item--small">
+        <!-- Quick Info Cards -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6">
+          <div>
             <div class="card-bento card-bento--green">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-green-600 text-white">
+                <div class="card-bento__icon bg-green-600">
                   <i class="fas fa-child"></i>
                 </div>
                 <div>
@@ -164,9 +152,12 @@
             </div>
           </div>
 
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--purple">
               <div class="card-bento__header">
+                <div class="card-bento__icon bg-purple-600">
+                  <i class="fas fa-user-md"></i>
+                </div>
                 <div>
                   <h3 class="card-bento__title">Erwachsenentherapie</h3>
                 </div>
@@ -179,9 +170,12 @@
             </div>
           </div>
 
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--orange">
               <div class="card-bento__header">
+                <div class="card-bento__icon bg-orange-600">
+                  <i class="fas fa-home"></i>
+                </div>
                 <div>
                   <h3 class="card-bento__title">Hausbesuche</h3>
                 </div>
@@ -194,9 +188,12 @@
             </div>
           </div>
 
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--teal">
               <div class="card-bento__header">
+                <div class="card-bento__icon bg-teal-600">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
                 <div>
                   <h3 class="card-bento__title">Kassenleistung</h3>
                 </div>
@@ -232,41 +229,57 @@
     <!-- About Section -->
     <section id="about" class="py-16 bg-gray-50" aria-labelledby="about-title">
       <div class="max-w-7xl mx-auto px-8">
-        <div class="bento-grid">
-          <!-- Mixed Layout Group: Image + Content on left, two stacked cards on right -->
-          <!-- About Content Card -->
-          <div class="card-bento card-bento--blue h-full">
-            <div class="card-bento__header">
-              <div class="card-bento__icon bg-blue-600 text-white">
-                <i class="fas fa-user"></i>
-              </div>
+        <!-- Simplified two-column layout -->
+        <div class="grid gap-8 lg:grid-cols-2 items-start">
+          <!-- Text content (no card) -->
+          <div>
+            <div class="flex items-center gap-3 mb-4">
               <div>
-                <h3 id="about-title" class="card-bento__title card-bento__title--large">
-                  Über mich
-                </h3>
-                <p class="card-bento__subtitle">
-                  29 Jahre, Logopädin & Mutter von drei Kindern
-                </p>
+                <h3 id="about-title" class="text-3xl font-bold text-gray-800">Über mich</h3>
+                <p class="text-gray-600">29 Jahre, Logopädin & Mutter von drei Kindern</p>
               </div>
             </div>
-            <div class="card-bento__body">
-              <p class="card-bento__content">
-                Mein Name ist Eva Sagmeister, ich bin 29 Jahre alt,
-                staatlich anerkannte Logopädin und Mutter von drei
+            <div class="prose prose-blue max-w-none text-gray-700">
+              <p>
+                Mein Name ist Eva Sagmeister, ich bin 29 Jahre alt, staatlich anerkannte Logopädin und Mutter von drei
                 wunderbaren Kindern im Alter von 6, 4 und 2 Jahren.
               </p>
-              <p class="card-bento__content">
-                Die Sprache begleitet mich nicht nur beruflich, sondern
-                auch ganz persönlich im Alltag mit meinen eigenen Kindern.
-                Ich weiß, wie vielfältig, herausfordernd und gleichzeitig
-                faszinierend die sprachliche Entwicklung sein kann.
+              <p>
+                Die Sprache begleitet mich nicht nur beruflich, sondern auch ganz persönlich im Alltag mit meinen eigenen
+                Kindern. Ich weiß, wie vielfältig, herausfordernd und gleichzeitig faszinierend die sprachliche
+                Entwicklung sein kann.
+              </p>
+              <p class="mt-6 text-lg">
+                Die Erfahrungen aus meinem Familienalltag bereichern meine Arbeit und schenken mir ein feines Gespür für
+                die Bedürfnisse meiner Patientinnen und Patienten – unabhängig von Alter oder Lebenssituation.
+              </p>
+              <p>
+                Meine Ausbildung zur Logopädin absolvierte ich bis 2017 an der Medau-Schule. Im Anschluss war ich drei Jahre
+                in einer logopädischen Praxis angestellt und konnte dort in verschiedenen Fachbereichen wertvolle Erfahrung
+                sammeln – unter anderem in der Therapie von Kindern, Jugendlichen und Erwachsenen.
+              </p>
+              <p>
+                Nach meiner Elternzeit fühle ich mich nun bereit, meinen eigenen Weg zu gehen – mit Herz, Fachwissen und
+                einem offenen Ohr für Ihre Anliegen.
               </p>
             </div>
           </div>
 
-          <div class="bento-grid__group-side">
+          <!-- Profile Image Card -->
+          <div>
+            <div class="card-bento">
+              <div class="card-bento__body card-bento__body--full-padding p-0">
+                <img
+                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  alt="Eva Sagmeister - Logopädin" class="w-full h-full object-cover rounded-2xl" />
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <!-- Experience Card -->
+        <!-- Small facts grid -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-10">
+          <div>
             <div class="card-bento card-bento--emerald">
               <div class="card-bento__header">
                 <div>
@@ -277,8 +290,8 @@
                 <p class="card-bento__content">Medau-Schule bis 2017</p>
               </div>
             </div>
-
-            <!-- Work Experience Card -->
+          </div>
+          <div>
             <div class="card-bento card-bento--amber">
               <div class="card-bento__header">
                 <div>
@@ -286,18 +299,14 @@
                 </div>
               </div>
               <div class="card-bento__body">
-                <p class="card-bento__content">
-                  3 Jahre Praxiserfahrung in verschiedenen Fachbereichen
-                </p>
+                <p class="card-bento__content">3 Jahre Praxiserfahrung</p>
               </div>
             </div>
           </div>
-
-          <!-- Key Facts Cards -->
-          <div class="bento-grid__group-side">
+          <div>
             <div class="card-bento card-bento--rose">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-rose-600 text-white">
+                <div class="card-bento__icon bg-rose-600  text-white">
                   <i class="fas fa-heart"></i>
                 </div>
                 <div>
@@ -305,14 +314,11 @@
                 </div>
               </div>
               <div class="card-bento__body">
-                <p class="card-bento__content">
-                  Mutter von drei Kindern (6, 4 und 2 Jahre alt)
-                </p>
+                <p class="card-bento__content">Mutter von drei Kindern</p>
               </div>
             </div>
           </div>
-
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--indigo">
               <div class="card-bento__header">
                 <div>
@@ -320,52 +326,10 @@
                 </div>
               </div>
               <div class="card-bento__body">
-                <p class="card-bento__content">
-                  Erfahrung mit Kindern, Jugendlichen und Erwachsenen
-                </p>
+                <p class="card-bento__content">Kinder, Jugendliche, Erwachsene</p>
               </div>
             </div>
           </div>
-
-          <!-- Profile Image Card -->
-          <div class="bento-grid__item--medium">
-            <div class="card-bento">
-              <div class="card-bento__body card-bento__body--full-padding p-0">
-                <img
-                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Eva Sagmeister - Logopädin" class="w-full h-full object-cover rounded-2xl" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Philosophy Card -->
-          <div class="bento-grid__item--wide">
-            <div class="card-bento card-bento--pink">
-              <div class="card-bento__body">
-                <p class="card-bento__content text-lg">
-                  Die Erfahrungen aus meinem Familienalltag bereichern meine
-                  Arbeit und schenken mir ein feines Gespür für die
-                  Bedürfnisse meiner Patientinnen und Patienten – unabhängig
-                  von Alter oder Lebenssituation.
-                </p>
-                <p class="card-bento__content">
-                  Meine Ausbildung zur Logopädin absolvierte ich bis 2017 an
-                  der Medau-Schule. Im Anschluss war ich drei Jahre in einer
-                  logopädischen Praxis angestellt und konnte dort in
-                  verschiedenen Fachbereichen wertvolle Erfahrung sammeln
-                  unter anderem in der Therapie von Kindern, Jugendlichen und
-                  Erwachsenen.
-                </p>
-                <p class="card-bento__content">
-                  Nach meiner Elternzeit fühle ich mich nun bereit, meinen
-                  eigenen Weg zu gehen, mit Herz, Fachwissen und einem offenen
-                  Ohr für Ihre Anliegen. Ich freue mich darauf, Sie oder Ihr
-                  Kind ein Stück des Weges begleiten zu dürfen.
-                </p>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -400,23 +364,18 @@
             Beobachtungen, Fragen und gegebenenfalls diagnostische Tests
             ermittle ich das genaue logopädische Störungsbild.
           </p>
-          <div class="card-bento card-bento--blue max-w-4xl mx-auto">
-            <div class="card-bento__body card-bento__body--full-padding">
-              <p class="card-bento__content text-blue-800 font-medium text-center">
-                Auf dieser Grundlage plane ich eine individuell auf Sie oder
-                Ihr Kind abgestimmte logopädische Therapie, die sich an den
-                jeweiligen Bedürfnissen und Zielen orientiert.
-              </p>
-            </div>
-          </div>
+          <p class="max-w-4xl mx-auto bg-blue-50 border border-blue-100 text-blue-800 rounded-xl px-6 py-4">
+            Auf dieser Grundlage plane ich eine individuell auf Sie oder Ihr Kind abgestimmte logopädische Therapie,
+            die sich an den jeweiligen Bedürfnissen und Zielen orientiert.
+          </p>
         </div>
 
-        <div class="bento-grid">
+        <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
           <!-- Children's Services Main Card -->
-          <div class="bento-grid__item--large">
+          <div>
             <div class="card-bento card-bento--pink">
               <div class="card-bento__header">
-                <div class="card-bento__icon card-bento__icon--large bg-pink-600 text-white">
+                <div class="card-bento__icon card-bento__icon--large bg-pink-600">
                   <i class="fas fa-child"></i>
                 </div>
                 <div>
@@ -445,10 +404,10 @@
           </div>
 
           <!-- Adults Services Main Card -->
-          <div class="bento-grid__item--large">
+          <div>
             <div class="card-bento card-bento--cyan">
               <div class="card-bento__header">
-                <div class="card-bento__icon card-bento__icon--large bg-cyan-600 text-white">
+                <div class="card-bento__icon card-bento__icon--large bg-cyan-600">
                   <i class="fas fa-user-md"></i>
                 </div>
                 <div>
@@ -476,8 +435,11 @@
             </div>
           </div>
 
-          <!-- Treatment Info Cards -->
-          <div class="bento-grid__item--small">
+        </div>
+
+        <!-- Treatment Info Cards -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 mt-6">
+          <div>
             <div class="card-bento card-bento--green">
               <div class="card-bento__header">
                 <div>
@@ -499,7 +461,7 @@
             </div>
           </div>
 
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--violet">
               <div class="card-bento__header">
                 <div>
@@ -527,11 +489,11 @@
           <h5 class="text-2xl font-bold text-gray-800 mb-6">
             Behandlungsbereiche für Kinder
           </h5>
-          <div class="bento-grid">
-            <div class="bento-grid__item--small">
+          <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
               <div class="card-bento card-bento--red">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-red-600 text-white">
+                  <div class="card-bento__icon bg-red-600">
                     <i class="fas fa-volume-up"></i>
                   </div>
                   <div>
@@ -549,10 +511,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--orange">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-orange-600 text-white">
+                  <div class="card-bento__icon bg-orange-600">
                     <i class="fas fa-ear"></i>
                   </div>
                   <div>
@@ -570,10 +532,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--yellow">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-yellow-600 text-white">
+                  <div class="card-bento__icon bg-yellow-600">
                     <i class="fas fa-language"></i>
                   </div>
                   <div>
@@ -590,10 +552,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--lime">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-lime-600 text-white">
+                  <div class="card-bento__icon bg-lime-600">
                     <i class="fas fa-comment-medical"></i>
                   </div>
                   <div>
@@ -610,10 +572,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--emerald">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-emerald-600 text-white">
+                  <div class="card-bento__icon bg-emerald-600">
                     <i class="fas fa-brain"></i>
                   </div>
                   <div>
@@ -631,10 +593,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--teal">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-teal-600 text-white">
+                  <div class="card-bento__icon bg-teal-600">
                     <i class="fas fa-book-open"></i>
                   </div>
                   <div>
@@ -652,10 +614,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--medium">
+            <div>
               <div class="card-bento card-bento--sky">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-sky-600 text-white">
+                  <div class="card-bento__icon bg-sky-600">
                     <i class="fas fa-child"></i>
                   </div>
                   <div>
@@ -674,10 +636,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--medium">
+            <div>
               <div class="card-bento card-bento--indigo">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-indigo-600 text-white">
+                  <div class="card-bento__icon bg-indigo-600">
                     <i class="fas fa-puzzle-piece"></i>
                   </div>
                   <div>
@@ -695,10 +657,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--purple">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-purple-600 text-white">
+                  <div class="card-bento__icon bg-purple-600">
                     <i class="fas fa-smile"></i>
                   </div>
                   <div>
@@ -721,11 +683,11 @@
           <h5 class="text-2xl font-bold text-gray-800 mb-6">
             Behandlungsbereiche für Erwachsene
           </h5>
-          <div class="bento-grid">
-            <div class="bento-grid__item--small">
+          <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
               <div class="card-bento card-bento--red">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-red-600 text-white">
+                  <div class="card-bento__icon bg-red-600">
                     <i class="fas fa-brain"></i>
                   </div>
                   <div>
@@ -741,10 +703,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--orange">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-orange-600 text-white">
+                  <div class="card-bento__icon bg-orange-600">
                     <i class="fas fa-cog"></i>
                   </div>
                   <div>
@@ -761,10 +723,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--yellow">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-yellow-600 text-white">
+                  <div class="card-bento__icon bg-yellow-600">
                     <i class="fas fa-microphone"></i>
                   </div>
                   <div>
@@ -780,10 +742,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--emerald">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-emerald-600 text-white">
+                  <div class="card-bento__icon bg-emerald-600">
                     <i class="fas fa-utensils"></i>
                   </div>
                   <div>
@@ -799,10 +761,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--sky">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-sky-600 text-white">
+                  <div class="card-bento__icon bg-sky-600">
                     <i class="fas fa-volume-up"></i>
                   </div>
                   <div>
@@ -818,10 +780,10 @@
               </div>
             </div>
 
-            <div class="bento-grid__item--small">
+            <div>
               <div class="card-bento card-bento--purple">
                 <div class="card-bento__header">
-                  <div class="card-bento__icon bg-purple-600 text-white">
+                  <div class="card-bento__icon bg-purple-600">
                     <i class="fas fa-user-injured"></i>
                   </div>
                   <div>
@@ -843,11 +805,11 @@
         <div class="mt-12">
           <div class="card-bento card-bento--blue">
             <div class="card-bento__header">
-              <div class="card-bento__icon card-bento__icon--large bg-blue-600 text-white">
+              <div class="card-bento__icon card-bento__icon--large bg-blue-600">
                 <i class="fas fa-phone"></i>
               </div>
               <div>
-                <h4 class="card-bento__title card-bento__title--large text-white">
+                <h4 class="card-bento__title card-bento__title--large">
                   Benötigen Sie eine Beratung?
                 </h4>
                 <p class="card-bento__subtitle text-blue-100">
@@ -897,9 +859,10 @@
           </p>
         </div>
 
-        <div class="bento-grid">
+        <!-- Top row: image + prescription card -->
+        <div class="grid gap-6 lg:grid-cols-2">
           <!-- Practice Image Card -->
-          <div class="bento-grid__item--medium">
+          <div>
             <div class="card-bento">
               <div class="card-bento__body card-bento__body--full-padding p-0">
                 <img
@@ -910,10 +873,10 @@
           </div>
 
           <!-- Prescription Requirements -->
-          <div class="bento-grid__item--medium">
+          <div>
             <div class="card-bento card-bento--red">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-red-600 text-white">
+                <div class="card-bento__icon bg-red-600">
                   <i class="fas fa-prescription-bottle-alt"></i>
                 </div>
                 <div>
@@ -948,12 +911,15 @@
               </div>
             </div>
           </div>
+        </div>
 
+        <!-- Features grid -->
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6">
           <!-- Insurance Coverage -->
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--green">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-green-600 text-white">
+                <div class="card-bento__icon bg-green-600">
                   <i class="fas fa-shield-alt"></i>
                 </div>
                 <div>
@@ -980,10 +946,10 @@
           </div>
 
           <!-- Cancellation Policy -->
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--blue">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-blue-600 text-white">
+                <div class="card-bento__icon bg-blue-600">
                   <i class="fas fa-calendar-times"></i>
                 </div>
                 <div>
@@ -1007,10 +973,10 @@
           </div>
 
           <!-- Service Features -->
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--purple">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-purple-600 text-white">
+                <div class="card-bento__icon bg-purple-600">
                   <i class="fas fa-home"></i>
                 </div>
                 <div>
@@ -1026,10 +992,10 @@
             </div>
           </div>
 
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--teal">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-teal-600 text-white">
+                <div class="card-bento__icon bg-teal-600">
                   <i class="fas fa-stethoscope"></i>
                 </div>
                 <div>
@@ -1044,10 +1010,10 @@
             </div>
           </div>
 
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--orange">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-orange-600 text-white">
+                <div class="card-bento__icon bg-orange-600">
                   <i class="fas fa-heart"></i>
                 </div>
                 <div>
@@ -1061,22 +1027,44 @@
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- Thank You Message -->
-          <div class="bento-grid__item--wide">
-            <div class="card-bento card-bento--rose">
-              <div class="card-bento__body card-bento__body--full-padding text-center">
-                <h4 class="card-bento__title card-bento__title--large mb-4">
-                  Vielen Dank für Ihr Verständnis!
-                </h4>
-                <p class="card-bento__content text-lg">
-                  Diese Regelungen helfen mir dabei, Ihnen eine professionelle
-                  und planbare Behandlung zu bieten.
-                </p>
+        <!-- Opening Hours -->
+        <div class="mt-6">
+          <div class="card-bento card-bento--purple">
+            <div class="card-bento__header">
+              <div class="card-bento__icon bg-purple-600">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h4 class="card-bento__title">Sprechzeiten</h4>
+                <p class="card-bento__subtitle">Termine nach Vereinbarung</p>
+              </div>
+            </div>
+            <div class="card-bento__body">
+              <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700 font-medium">Montag - Donnerstag:</span>
+                  <span class="text-gray-600">8:00 - 18:00 Uhr</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700 font-medium">Freitag:</span>
+                  <span class="text-gray-600">8:00 - 16:00 Uhr</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700 font-medium">Samstag:</span>
+                  <span class="text-gray-600">Nach Vereinbarung</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Thank you message (no card) -->
+        <p class="text-center text-gray-700 mt-6">
+          Vielen Dank für Ihr Verständnis! Diese Regelungen helfen mir dabei, Ihnen eine professionelle und planbare
+          Behandlung zu bieten.
+        </p>
       </div>
     </section>
 
@@ -1110,12 +1098,12 @@
           </p>
         </div>
 
-        <div class="bento-grid">
+        <div class="grid gap-6 grid-cols-1 lg:grid-cols-3">
           <!-- Contact Form Card -->
-          <div class="bento-grid__item--large">
+          <div class="lg:col-span-2">
             <div class="card-bento card-bento--blue">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-blue-600 text-white">
+                <div class="card-bento__icon bg-blue-600">
                   <i class="fas fa-envelope"></i>
                 </div>
                 <div>
@@ -1169,10 +1157,10 @@
           </div>
 
           <!-- Practice Info Card -->
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--green">
               <div class="card-bento__header">
-                <div class="card-bento__icon bg-green-600 text-white">
+                <div class="card-bento__icon bg-green-600">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <div>
@@ -1184,7 +1172,7 @@
                   <div class="flex items-start space-x-3">
                     <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mt-1"
                       aria-hidden="true">
-                      <i class="fas fa-map-marker-alt text-white text-xs"></i>
+                      <i class="fas fa-map-marker-alttext-xs"></i>
                     </div>
                     <div>
                       <p class="card-bento__content">
@@ -1198,7 +1186,7 @@
           </div>
 
           <!-- Contact Details Card -->
-          <div class="bento-grid__item--small">
+          <div>
             <div class="card-bento card-bento--orange">
               <div class="card-bento__header">
                 <div class="card-bento__icon bg-orange-600 text-white">
@@ -1236,41 +1224,8 @@
             </div>
           </div>
 
-          <!-- Opening Hours Card -->
-          <div class="bento-grid__item--medium">
-            <div class="card-bento card-bento--purple">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-purple-600 text-white">
-                  <i class="fas fa-clock"></i>
-                </div>
-                <div>
-                  <h4 class="card-bento__title">Sprechzeiten</h4>
-                  <p class="card-bento__subtitle">
-                    Termine nach Vereinbarung
-                  </p>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <div class="space-y-3">
-                  <div class="flex justify-between items-center">
-                    <span class="text-gray-700 font-medium">Montag - Donnerstag:</span>
-                    <span class="text-gray-600">8:00 - 18:00 Uhr</span>
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <span class="text-gray-700 font-medium">Freitag:</span>
-                    <span class="text-gray-600">8:00 - 16:00 Uhr</span>
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <span class="text-gray-700 font-medium">Samstag:</span>
-                    <span class="text-gray-600">Nach Vereinbarung</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Call to Action Card -->
-          <div class="bento-grid__item--wide">
+          <div class="lg:col-span-3">
             <div class="card-bento card-bento--teal">
               <div class="card-bento__body card-bento__body--full-padding text-center">
                 <div class="card-bento__icon card-bento__icon--large bg-teal-600 text-white mx-auto mb-4">
@@ -1306,9 +1261,9 @@
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-12" role="contentinfo">
     <div class="max-w-7xl mx-auto px-8">
-      <div class="bento-grid">
+        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Brand Card -->
-        <div class="bento-grid__item--small">
+          <div>
           <div class="card-bento" style="background-color: #374151; color: white">
             <div class="card-bento__header">
               <div class="card-bento__icon bg-blue-600 text-white">
@@ -1331,7 +1286,7 @@
         </div>
 
         <!-- Quick Links Card -->
-        <div class="bento-grid__item--small">
+          <div>
           <div class="card-bento" style="background-color: #374151; color: white">
             <div class="card-bento__header">
               <div class="card-bento__icon bg-blue-400 text-white">
@@ -1365,7 +1320,7 @@
         </div>
 
         <!-- Contact Info Card -->
-        <div class="bento-grid__item--small">
+          <div>
           <div class="card-bento" style="background-color: #374151; color: white">
             <div class="card-bento__header">
               <div class="card-bento__icon bg-blue-400 text-white">
@@ -1395,7 +1350,7 @@
         </div>
 
         <!-- Final Quote Card -->
-        <div class="bento-grid__item--wide">
+          <div class="lg:col-span-2">
           <div class="quote-card card-bento" style="
                 background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
                 border-left: 4px solid #3b82f6;

@@ -8,7 +8,8 @@
 }
 
 .md\:hidden {
-    display: none !important;
+    /* Visible by default; hidden from md and up in media query below */
+    display: block !important;
 }
 
 @media (min-width: 768px) {
@@ -103,6 +104,7 @@ body {
 
 /* Card Icon */
 .card-bento__icon {
+    color: #fff;
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 0.5rem;
@@ -200,170 +202,23 @@ body {
     border-color: #d1d5db;
 }
 
-/* Bento Grid Layout System */
-.bento-grid {
+/* Simplified Grid Helpers (fallback if Tailwind doesn't load) */
+.simple-grid {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
-    .bento-grid {
+    .simple-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
-    .bento-grid {
+    .simple-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-}
-
-@media (min-width: 1280px) {
-    .bento-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Bento Grid Item Sizes */
-.bento-grid__item--small {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.bento-grid__item--medium {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-@media (min-width: 768px) {
-    .bento-grid__item--medium {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-}
-
-.bento-grid__item--large {
-    grid-column: span 1;
-    grid-row: span 2;
-}
-
-@media (min-width: 768px) {
-    .bento-grid__item--large {
-        grid-column: span 2;
-        grid-row: span 2;
-    }
-}
-
-@media (min-width: 1024px) {
-    .bento-grid__item--large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-}
-
-.bento-grid__item--wide {
-    grid-column: span 1;
-}
-
-@media (min-width: 768px) {
-    .bento-grid__item--wide {
-        grid-column: span 2;
-    }
-}
-
-@media (min-width: 1024px) {
-    .bento-grid__item--wide {
-        grid-column: span 3;
-    }
-}
-
-@media (min-width: 1280px) {
-    .bento-grid__item--wide {
-        grid-column: span 4;
-    }
-}
-
-.bento-grid__item--tall {
-    grid-row: span 2;
-}
-
-/* Enhanced Bento Layout Variants for Mixed Layouts */
-.bento-grid__item--long {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-@media (min-width: 768px) {
-    .bento-grid__item--long {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-}
-
-@media (min-width: 1024px) {
-    .bento-grid__item--long {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-}
-
-.bento-grid__item--stack {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-@media (min-width: 768px) {
-    .bento-grid__item--stack {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-}
-
-/* Specialized layouts for asymmetric arrangements */
-.bento-grid__item--half-tall {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-@media (min-width: 768px) {
-    .bento-grid__item--half-tall {
-        grid-column: span 1;
-        grid-row: span 1;
-        min-height: 200px;
-    }
-}
-
-/* Container for mixed layout groupings */
-.bento-grid__group {
-    display: contents;
-}
-
-@media (min-width: 768px) {
-    .bento-grid__group {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-column: span 3;
-        gap: 1.5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .bento-grid__group {
-        grid-column: span 3;
-    }
-}
-
-.bento-grid__group-main {
-    grid-column: 1;
-    grid-row: span 2;
-}
-
-.bento-grid__group-side {
-    grid-column: 2;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-rows: 1fr 1fr;
 }
 
 /* Quote Cards */
@@ -423,10 +278,9 @@ html {
    Navigation Styles
    ========================================================================== */
 
-/* Dark Header */
+/* Light Header Base */
 .nav-dark {
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(15px);
+    background: transparent;
     background-clip: padding-box;
     transition: all var(--transition-normal);
 }
@@ -434,39 +288,56 @@ html {
 /* Transparent Header State (when at top of page) */
 .nav-transparent {
     background: transparent !important;
-    backdrop-filter: none !important;
     border-bottom: 2px solid transparent;
+    box-shadow: none !important;
 }
 
 /* Solid Header State (when scrolling) */
 .nav-solid {
-    background: rgba(0, 0, 0, 0.95) !important;
-    backdrop-filter: blur(15px) !important;
-    border-bottom: 2px solid transparent;
-	box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Active underline indicator for desktop nav */
+#desktop-menu {
+    position: relative;
+}
+
+.nav-underline {
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 4px; /* fat underline */
+    width: 0;
+    background: #111827; /* black */
+    border-radius: 9999px;
+    transform: translateX(0);
+    transition: transform 250ms var(--transition-bounce), width 250ms var(--transition-bounce);
+    pointer-events: none;
 }
 
 /* Mobile menu items */
 .mobile-menu-item {
     display: block;
     padding: var(--spacing-md) var(--spacing-lg);
-    color: #d1d5db;
+    color: #111827;
     text-decoration: none;
     border-radius: var(--radius-lg);
     transition: all var(--transition-normal);
 }
 
-/* Mobile Menu Container - Always Solid Background */
+/* Mobile Menu Container - Light, no blur */
 #mobile-menu {
-    background: rgba(0, 0, 0, 0.95) !important;
-    backdrop-filter: blur(15px) !important;
+    background: #ffffff !important;
     border-radius: var(--radius-lg);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(17, 24, 39, 0.08);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
 }
 
 .mobile-menu-item:hover {
-    background-color: #374151;
-    color: white;
+    background-color: #f3f4f6;
+    color: #111827;
 }
 
 .mobile-menu-item:focus {
