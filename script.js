@@ -1,7 +1,140 @@
 /**
  * Eva Sagmeister Logopädie Website
- * Simplified JavaScript - Minimal dependencies and complexity
+ * Enhanced JavaScript with expandable service sections
  */
+
+/**
+ * Service Expansion Module
+ * Handles expandable children and adult service sections
+ */
+class ServiceExpansion {
+  constructor() {
+    this.childrenToggle = document.getElementById("children-toggle");
+    this.childrenServices = document.getElementById("children-services");
+    this.childrenChevron = document.getElementById("children-chevron");
+    
+    this.adultsToggle = document.getElementById("adults-toggle");
+    this.adultsServices = document.getElementById("adults-services");
+    this.adultsChevron = document.getElementById("adults-chevron");
+
+    this.init();
+  }
+
+  init() {
+    if (!this.childrenToggle || !this.adultsToggle) {
+      console.warn("Service expansion elements not found");
+      return;
+    }
+
+    this.bindEvents();
+    this.setupAccessibility();
+  }
+
+  bindEvents() {
+    // Children services toggle
+    this.childrenToggle.addEventListener("click", () => {
+      this.toggleSection("children");
+    });
+
+    // Adults services toggle
+    this.adultsToggle.addEventListener("click", () => {
+      this.toggleSection("adults");
+    });
+
+    // Keyboard support
+    this.childrenToggle.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        this.toggleSection("children");
+      }
+    });
+
+    this.adultsToggle.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        this.toggleSection("adults");
+      }
+    });
+  }
+
+  setupAccessibility() {
+    // Set initial ARIA states
+    this.childrenToggle.setAttribute("aria-expanded", "false");
+    this.adultsToggle.setAttribute("aria-expanded", "false");
+  }
+
+  toggleSection(section) {
+    if (section === "children") {
+      this.toggleChildrenSection();
+    } else if (section === "adults") {
+      this.toggleAdultsSection();
+    }
+  }
+
+  toggleChildrenSection() {
+    const isExpanded = this.childrenServices.classList.contains("hidden");
+    
+    if (isExpanded) {
+      this.expandChildrenSection();
+    } else {
+      this.collapseChildrenSection();
+    }
+  }
+
+  toggleAdultsSection() {
+    const isExpanded = this.adultsServices.classList.contains("hidden");
+    
+    if (isExpanded) {
+      this.expandAdultsSection();
+    } else {
+      this.collapseAdultsSection();
+    }
+  }
+
+  expandChildrenSection() {
+    this.childrenServices.classList.remove("hidden");
+    this.childrenChevron.style.transform = "rotate(180deg)";
+    this.childrenToggle.setAttribute("aria-expanded", "true");
+    this.childrenToggle.querySelector("span").textContent = "Behandlungsbereiche ausblenden";
+    
+    // Smooth scroll into view
+    setTimeout(() => {
+      this.childrenServices.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "nearest" 
+      });
+    }, 100);
+  }
+
+  collapseChildrenSection() {
+    this.childrenServices.classList.add("hidden");
+    this.childrenChevron.style.transform = "rotate(0deg)";
+    this.childrenToggle.setAttribute("aria-expanded", "false");
+    this.childrenToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
+  }
+
+  expandAdultsSection() {
+    this.adultsServices.classList.remove("hidden");
+    this.adultsChevron.style.transform = "rotate(180deg)";
+    this.adultsToggle.setAttribute("aria-expanded", "true");
+    this.adultsToggle.querySelector("span").textContent = "Behandlungsbereiche ausblenden";
+    
+    // Smooth scroll into view
+    setTimeout(() => {
+      this.adultsServices.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "nearest" 
+      });
+    }, 100);
+  }
+
+  collapseAdultsSection() {
+    this.adultsServices.classList.add("hidden");
+    this.adultsChevron.style.transform = "rotate(0deg)";
+    this.adultsToggle.setAttribute("aria-expanded", "false");
+    this.adultsToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
+  }
+}
 
 /**
  * Navigation Module
@@ -703,8 +836,9 @@ class HeaderTransparency {
 
 // Initialize the application when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize all modules directly (no App class wrapper)
+  // Initialize all modules
   const navigation = new Navigation();
+  const serviceExpansion = new ServiceExpansion();
   const flipCards = new FlipCards();
   const contactForm = new ContactForm();
   const scrollSpy = new ScrollSpy();
@@ -712,6 +846,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Log successful initialization
   console.log(
-    "🚀 Eva Sagmeister Logopädie Website (simplified) initialized successfully"
+    "🚀 Eva Sagmeister Logopädie Website (enhanced) initialized successfully"
   );
 });
