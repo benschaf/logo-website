@@ -595,6 +595,79 @@ class ScrollSpy {
     }
 }
 
+/**
+ * Header Transparency Module
+ * Handles transparent header when at top, solid when scrolling
+ */
+class HeaderTransparency {
+    constructor() {
+        this.header = document.querySelector('nav.nav-dark');
+        this.scrollThreshold = 10; // Pixels to scroll before becoming solid
+        this.isTransparent = true;
+        
+        this.init();
+    }
+
+    init() {
+        if (!this.header) {
+            console.warn('Header element not found');
+            return;
+        }
+
+        this.bindEvents();
+        this.updateHeaderState(); // Set initial state
+    }
+
+    bindEvents() {
+        // Throttled scroll event for performance
+        let ticking = false;
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    this.updateHeaderState();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Update on resize and orientation change
+        window.addEventListener('resize', () => {
+            this.updateHeaderState();
+        });
+
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                this.updateHeaderState();
+            }, 100);
+        });
+    }
+
+    updateHeaderState() {
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const shouldBeTransparent = scrollPosition <= this.scrollThreshold;
+
+        if (shouldBeTransparent && !this.isTransparent) {
+            this.makeTransparent();
+        } else if (!shouldBeTransparent && this.isTransparent) {
+            this.makeSolid();
+        }
+    }
+
+    makeTransparent() {
+        this.header.classList.remove('nav-solid');
+        this.header.classList.add('nav-transparent');
+        this.isTransparent = true;
+    }
+
+    makeSolid() {
+        this.header.classList.remove('nav-transparent');
+        this.header.classList.add('nav-solid');
+        this.isTransparent = false;
+    }
+}
+
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all modules directly (no App class wrapper)
@@ -602,6 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const flipCards = new FlipCards();
     const contactForm = new ContactForm();
     const scrollSpy = new ScrollSpy();
+    const headerTransparency = new HeaderTransparency();
 
     // Log successful initialization
     console.log('🚀 Eva Sagmeister Logopädie Website (simplified) initialized successfully');

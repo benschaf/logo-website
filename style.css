@@ -68,6 +68,20 @@ html {
     transition: all var(--transition-normal);
 }
 
+/* Transparent Header State (when at top of page) */
+.nav-transparent {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-bottom: 2px solid transparent;
+}
+
+/* Solid Header State (when scrolling) */
+.nav-solid {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    border-bottom: 2px solid transparent;
+}
+
 .nav-dark::before {
     content: '';
     position: absolute;
@@ -87,6 +101,14 @@ html {
     text-decoration: none;
     border-radius: var(--radius-lg);
     transition: all var(--transition-normal);
+}
+
+/* Mobile Menu Container - Always Solid Background */
+#mobile-menu {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-menu-item:hover {
