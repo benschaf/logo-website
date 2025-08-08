@@ -47,8 +47,276 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--bg-warm);
+    background-color: #fafafa;
 }
+
+/* ==========================================================================
+   Unified Card System - Bento Style
+   ========================================================================== */
+
+/* Base Card Component */
+.card-bento {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-bento:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Card Header */
+.card-bento__header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.card-bento__header--with-bg {
+    padding: 1.5rem;
+}
+
+/* Card Icon */
+.card-bento__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.card-bento__icon--large {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.75rem;
+}
+
+/* Card Title */
+.card-bento__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.card-bento__title--large {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card-bento__subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+    margin-top: 0.25rem;
+}
+
+/* Card Body */
+.card-bento__body {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-bento__body--full-padding {
+    padding: 1.5rem;
+}
+
+.card-bento__content {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card-bento__content:last-child {
+    margin-bottom: 0;
+}
+
+/* Card Footer */
+.card-bento__footer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    margin-top: auto;
+}
+
+/* Card Action Button */
+.card-bento__action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.card-bento__action:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+.card-bento__action--secondary {
+    background-color: transparent;
+    color: #3b82f6;
+    border: 1px solid #e5e7eb;
+}
+
+.card-bento__action--secondary:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+}
+
+/* Bento Grid Layout System */
+.bento-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Bento Grid Item Sizes */
+.bento-grid__item--small {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.bento-grid__item--medium {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+@media (min-width: 768px) {
+    .bento-grid__item--medium {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+.bento-grid__item--large {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+@media (min-width: 768px) {
+    .bento-grid__item--large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bento-grid__item--large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+.bento-grid__item--wide {
+    grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+    .bento-grid__item--wide {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bento-grid__item--wide {
+        grid-column: span 3;
+    }
+}
+
+@media (min-width: 1280px) {
+    .bento-grid__item--wide {
+        grid-column: span 4;
+    }
+}
+
+.bento-grid__item--tall {
+    grid-row: span 2;
+}
+
+/* Quote Cards */
+.quote-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-left: 4px solid #3b82f6;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #1e293b;
+    line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+    .quote-card {
+        font-size: 2rem;
+    }
+}
+
+.quote-card .card-bento__content {
+    color: #1e293b;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+/* Background Color Variants (-50 Tailwind colors) */
+.card-bento--slate { background-color: #f8fafc; }
+.card-bento--gray { background-color: #f9fafb; }
+.card-bento--zinc { background-color: #fafafa; }
+.card-bento--neutral { background-color: #fafafa; }
+.card-bento--stone { background-color: #fafaf9; }
+.card-bento--red { background-color: #fef2f2; }
+.card-bento--orange { background-color: #fff7ed; }
+.card-bento--amber { background-color: #fffbeb; }
+.card-bento--yellow { background-color: #fefce8; }
+.card-bento--lime { background-color: #f7fee7; }
+.card-bento--green { background-color: #f0fdf4; }
+.card-bento--emerald { background-color: #ecfdf5; }
+.card-bento--teal { background-color: #f0fdfa; }
+.card-bento--cyan { background-color: #ecfeff; }
+.card-bento--sky { background-color: #f0f9ff; }
+.card-bento--blue { background-color: #eff6ff; }
+.card-bento--indigo { background-color: #eef2ff; }
+.card-bento--violet { background-color: #f5f3ff; }
+.card-bento--purple { background-color: #faf5ff; }
+.card-bento--fuchsia { background-color: #fdf4ff; }
+.card-bento--pink { background-color: #fdf2f8; }
+.card-bento--rose { background-color: #fff1f2; }
 
 /* Smooth scrolling */
 html {
