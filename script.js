@@ -5,7 +5,7 @@
 
 /**
  * Service Expansion Module
- * Handles expandable children and adult service sections
+ * Handles expandable children and adult service sections with smooth animations
  */
 class ServiceExpansion {
   constructor() {
@@ -15,105 +15,96 @@ class ServiceExpansion {
   init() {
     // Wait a bit to ensure DOM is fully loaded
     setTimeout(() => {
-      this.setupElements();
+      this.setupCollapsibleSections();
     }, 100);
   }
 
-  setupElements() {
-    const childrenToggle = document.getElementById("children-toggle");
-    const childrenServices = document.getElementById("children-services");
-    const childrenChevron = document.getElementById("children-chevron");
-    
-    const adultsToggle = document.getElementById("adults-toggle");
-    const adultsServices = document.getElementById("adults-services");
-    const adultsChevron = document.getElementById("adults-chevron");
+  setupCollapsibleSections() {
+    this.setupCollapsible('children-toggle', 'children-services', 'children-chevron');
+    this.setupCollapsible('adults-toggle', 'adults-services', 'adults-chevron');
+  }
 
-    console.log('Service elements found:', {
-      childrenToggle: !!childrenToggle,
-      childrenServices: !!childrenServices,
-      adultsToggle: !!adultsToggle,
-      adultsServices: !!adultsServices
+  setupCollapsible(toggleId, panelId, chevronId) {
+    const btn = document.getElementById(toggleId);
+    const panel = document.getElementById(panelId);
+    const chevron = chevronId ? document.getElementById(chevronId) : null;
+    
+    if (!btn || !panel) {
+      console.warn(`Collapsible elements not found: ${toggleId}, ${panelId}`);
+      return;
+    }
+
+    const labelEl = btn.querySelector('.toggle-label');
+
+    // Prepare panel without flashing content - ensure it starts collapsed
+    panel.classList.add('hidden');
+    panel.style.overflow = 'hidden';
+    panel.style.maxHeight = '0px';
+    panel.style.transition = '';
+
+    const setExpanded = (expanded) => {
+      btn.setAttribute('aria-expanded', String(expanded));
+      if (chevron) chevron.classList.toggle('rotate-180', expanded);
+      if (labelEl) {
+        labelEl.textContent = expanded
+          ? 'Behandlungsbereiche ausblenden'
+          : 'Alle Behandlungsbereiche anzeigen';
+      }
+    };
+
+    const animate = (expand) => {
+      if (expand) {
+        // Show the panel first
+        panel.classList.remove('hidden');
+      }
+      
+      const start = panel.getBoundingClientRect().height;
+      panel.style.maxHeight = 'none';
+      const target = panel.scrollHeight;
+      panel.style.maxHeight = start + 'px';
+      void panel.offsetHeight; // reflow
+      panel.style.transition = 'max-height 300ms ease';
+      panel.style.maxHeight = (expand ? target : 0) + 'px';
+      
+      const onEnd = (e) => {
+        if (e.propertyName !== 'max-height') return;
+        panel.style.transition = '';
+        if (expand) {
+          panel.style.maxHeight = 'none';
+        } else {
+          panel.style.maxHeight = '0px';
+          panel.classList.add('hidden');
+        }
+        panel.removeEventListener('transitionend', onEnd);
+      };
+      panel.addEventListener('transitionend', onEnd);
+    };
+
+    // Set initial collapsed state
+    setExpanded(false);
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const next = !expanded;
+      setExpanded(next);
+      animate(next);
     });
 
-    if (childrenToggle && childrenServices && childrenChevron) {
-      childrenToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.toggleSection(childrenServices, childrenToggle, childrenChevron, "children");
-      });
-    }
-
-    if (adultsToggle && adultsServices && adultsChevron) {
-      adultsToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.toggleSection(adultsServices, adultsToggle, adultsChevron, "adults");
-      });
-    }
+    console.log(`Collapsible setup complete for ${toggleId}`);
   }
 
-  toggleSection(serviceElement, toggleButton, chevronElement, sectionType) {
-    const isHidden = serviceElement.classList.contains("hidden");
-    console.log(`Toggling ${sectionType} section. Currently hidden:`, isHidden);
-    
-    if (isHidden) {
-      // First hide the other section (exclusive behavior)
-      this.hideOtherSection(sectionType);
+  scrollToPanel(panel) {
+    // Add a small delay to ensure the panel is fully expanded
+    setTimeout(() => {
+      const offsetTop = panel.offsetTop;
+      const headerHeight = 80; // Account for fixed header
+      const scrollPosition = offsetTop - headerHeight;
       
-      // Show the requested section
-      serviceElement.classList.remove("hidden");
-      chevronElement.style.transform = "rotate(180deg)";
-      toggleButton.setAttribute("aria-expanded", "true");
-      toggleButton.querySelector("span").textContent = "Behandlungsbereiche ausblenden";
-      
-      // Smooth scroll into view
-      setTimeout(() => {
-        serviceElement.scrollIntoView({ 
-          behavior: "smooth", 
-          block: "nearest" 
-        });
-      }, 100);
-    } else {
-      // Hide the section
-      serviceElement.classList.add("hidden");
-      chevronElement.style.transform = "rotate(0deg)";
-      toggleButton.setAttribute("aria-expanded", "false");
-      toggleButton.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
-    }
-  }
-
-  hideOtherSection(currentSectionType) {
-    if (currentSectionType === "children") {
-      // Hide adults section
-      const adultsServices = document.getElementById("adults-services");
-      const adultsToggle = document.getElementById("adults-toggle");
-      const adultsChevron = document.getElementById("adults-chevron");
-      
-      if (adultsServices && !adultsServices.classList.contains("hidden")) {
-        adultsServices.classList.add("hidden");
-        if (adultsToggle) {
-          adultsToggle.setAttribute("aria-expanded", "false");
-          adultsToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
-        }
-        if (adultsChevron) {
-          adultsChevron.style.transform = "rotate(0deg)";
-        }
-      }
-    } else if (currentSectionType === "adults") {
-      // Hide children section
-      const childrenServices = document.getElementById("children-services");
-      const childrenToggle = document.getElementById("children-toggle");
-      const childrenChevron = document.getElementById("children-chevron");
-      
-      if (childrenServices && !childrenServices.classList.contains("hidden")) {
-        childrenServices.classList.add("hidden");
-        if (childrenToggle) {
-          childrenToggle.setAttribute("aria-expanded", "false");
-          childrenToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
-        }
-        if (childrenChevron) {
-          childrenChevron.style.transform = "rotate(0deg)";
-        }
-      }
-    }
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
+    }, 100);
   }
 }
 
