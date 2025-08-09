@@ -71,8 +71,6 @@ class ServiceExpansion {
         panel.style.transition = '';
         if (expand) {
           panel.style.maxHeight = 'none';
-          // Scroll to the panel content when expanding
-          this.scrollToPanel(panel);
         } else {
           panel.style.maxHeight = '0px';
           panel.classList.add('hidden');
