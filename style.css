@@ -497,22 +497,15 @@ html {
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0,0,0,0.10);
 }
 
-/* Active underline indicator for desktop nav */
+/* Desktop nav container */
 #desktop-menu {
     position: relative;
 }
 
-.nav-underline {
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    height: 4px; /* fat underline */
-    width: 0;
-    background: #111827; /* black */
-    border-radius: 9999px;
-    transform: translateX(0);
-    transition: transform 250ms var(--transition-bounce), width 250ms var(--transition-bounce);
-    pointer-events: none;
+/* Active nav icon coloring (desktop + mobile) */
+.nav-link.active i,
+.mobile-menu-item.active i {
+    color: var(--primary) !important;
 }
 
 /* Mobile menu items */

@@ -634,7 +634,6 @@ class ScrollSpy {
     this.scrollOffset = 100;
     this.desktopMenu = null;
     this.desktopLinks = [];
-    this.underlineEl = null;
     this.isUserNavigating = false;
     this.scrollEndTimer = null;
 
@@ -645,7 +644,6 @@ class ScrollSpy {
     this.findElements();
     this.bindEvents();
     this.updateActiveSection();
-    this.positionUnderlineToCurrent();
   }
 
   findElements() {
@@ -662,13 +660,6 @@ class ScrollSpy {
     this.desktopLinks = this.desktopMenu
       ? Array.from(this.desktopMenu.querySelectorAll(".nav-link"))
       : [];
-
-    // Create underline element if on desktop
-    if (this.desktopMenu && !this.underlineEl) {
-      this.underlineEl = document.createElement("div");
-      this.underlineEl.className = "nav-underline";
-      this.desktopMenu.appendChild(this.underlineEl);
-    }
   }
 
   bindEvents() {
@@ -692,25 +683,22 @@ class ScrollSpy {
     // Update on resize
     window.addEventListener("resize", () => {
       this.updateActiveSection();
-      this.positionUnderlineToCurrent();
     });
 
     // Update on orientation change
     window.addEventListener("orientationchange", () => {
       setTimeout(() => {
         this.updateActiveSection();
-        this.positionUnderlineToCurrent();
       }, 100);
     });
 
-    // Immediate underline move on click of desktop links
+    // Immediate active state on click of desktop links
     this.desktopLinks.forEach((link) => {
       link.addEventListener("click", () => {
         this.isUserNavigating = true;
         // Optimistically mark as active to avoid flicker
         this.navLinks.forEach((l) => l.classList.remove("active"));
         link.classList.add("active");
-        this.moveUnderlineToLink(link);
         this.scheduleScrollEndDetection();
       });
     });
@@ -754,37 +742,13 @@ class ScrollSpy {
 
       if (activeLink) {
         activeLink.classList.add("active");
-        // Move underline for desktop menu
-        this.moveUnderlineToLink(
-          this.desktopLinks.find((l) => l.getAttribute("href") === `#${sectionId}`)
-        );
       }
     }
 
     this.activeSection = sectionId;
   }
 
-  moveUnderlineToLink(link) {
-    if (!this.desktopMenu || !this.underlineEl || !link) return;
-    const containerRect = this.desktopMenu.getBoundingClientRect();
-    const textSpan = link.querySelector("span");
-    const targetRect = (textSpan || link).getBoundingClientRect();
-    const inset = 12; // px inset on both sides
-    const width = Math.max(0, targetRect.width - inset * 2);
-    const left = targetRect.left - containerRect.left + inset;
-    this.underlineEl.style.width = `${width}px`;
-    this.underlineEl.style.transform = `translateX(${left}px)`;
-  }
-
-  positionUnderlineToCurrent() {
-    if (!this.desktopMenu || !this.underlineEl) return;
-    const activeDesktopLink = this.desktopLinks.find((l) =>
-      l.classList.contains("active")
-    );
-    if (activeDesktopLink) {
-      this.moveUnderlineToLink(activeDesktopLink);
-    }
-  }
+  
 
   scheduleScrollEndDetection() {
     if (this.scrollEndTimer) {
@@ -794,7 +758,6 @@ class ScrollSpy {
     this.scrollEndTimer = setTimeout(() => {
       this.isUserNavigating = false;
       this.updateActiveSection();
-      this.positionUnderlineToCurrent();
     }, 250);
   }
 }
