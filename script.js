@@ -36,11 +36,11 @@ class ServiceExpansion {
 
     const labelEl = btn.querySelector('.toggle-label');
 
-    // Prepare panel without flashing content
-    const wasHidden = panel.classList.contains('hidden');
-    if (wasHidden) panel.classList.remove('hidden');
+    // Prepare panel without flashing content - ensure it starts collapsed
+    panel.classList.remove('hidden');
     panel.style.overflow = 'hidden';
     panel.style.maxHeight = '0px';
+    panel.style.transition = '';
 
     const setExpanded = (expanded) => {
       btn.setAttribute('aria-expanded', String(expanded));
@@ -69,6 +69,9 @@ class ServiceExpansion {
       };
       panel.addEventListener('transitionend', onEnd);
     };
+
+    // Set initial collapsed state
+    setExpanded(false);
 
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
