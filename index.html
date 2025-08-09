@@ -136,87 +136,15 @@
         </div>
 
         <!-- Quick Info Cards -->
-        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6">
-          <div>
-            <div class="card-bento card-bento--green">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-green-600">
-                  <i class="fas fa-child"></i>
-                </div>
-                <div>
-                  <h3 class="card-bento__title">Kinderlogopädie</h3>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">
-                  Spielerische Therapie & kindgerechte Methoden
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card-bento card-bento--purple">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-purple-600">
-                  <i class="fas fa-user-md"></i>
-                </div>
-                <div>
-                  <h3 class="card-bento__title">Erwachsenentherapie</h3>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">
-                  Neurologische & funktionelle Störungen
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card-bento card-bento--orange">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-orange-600">
-                  <i class="fas fa-home"></i>
-                </div>
-                <div>
-                  <h3 class="card-bento__title">Hausbesuche</h3>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">
-                  Bei medizinischer Notwendigkeit möglich
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="card-bento card-bento--teal">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-teal-600">
-                  <i class="fas fa-shield-alt"></i>
-                </div>
-                <div>
-                  <h3 class="card-bento__title">Kassenleistung</h3>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">
-                  Alle gesetzlichen Krankenkassen
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Moved to About section for better layout -->
       </div>
     </section>
 
     <!-- Inspirational Quote -->
     <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-8">
-        <div class="quote-card card-bento">
-          <div class="card-bento__body card-bento__body--full-padding text-center">
+        <div class="quote-card card-bento quote-asymmetrical">
+          <div class="card-bento__body card-bento__body--full-padding">
             <p class="card-bento__content">
               „Die Sprache begleitet mich nicht nur beruflich, sondern auch
               ganz persönlich im Alltag mit meinen eigenen Kindern."
@@ -234,7 +162,7 @@
       <div class="max-w-7xl mx-auto px-8">
         <!-- Simplified two-column layout -->
         <div class="grid gap-8 lg:grid-cols-2 items-start">
-          <!-- Text content (no card) -->
+          <!-- Text content and overview list -->
           <div>
             <div class="flex items-center gap-3 mb-4">
               <div>
@@ -268,6 +196,49 @@
                 Nach meiner Elternzeit fühle ich mich nun bereit, meinen eigenen Weg zu gehen – mit Herz, Fachwissen und
                 einem offenen Ohr für Ihre Anliegen.
               </p>
+            </div>
+
+            <!-- Quick Overview List (moved from hero section) -->
+            <div class="mt-8">
+              <h4 class="text-lg font-semibold text-gray-800 mb-4">Überblick</h4>
+              <ul class="overview-list">
+                <li class="overview-list-item overview-list-item--green">
+                  <div class="overview-item-icon">
+                    <i class="fas fa-child"></i>
+                  </div>
+                  <div class="overview-item-content">
+                    <h3>Kinderlogopädie</h3>
+                    <p>Spielerische Therapie & kindgerechte Methoden</p>
+                  </div>
+                </li>
+                <li class="overview-list-item overview-list-item--purple">
+                  <div class="overview-item-icon">
+                    <i class="fas fa-user-md"></i>
+                  </div>
+                  <div class="overview-item-content">
+                    <h3>Erwachsenentherapie</h3>
+                    <p>Neurologische & funktionelle Störungen</p>
+                  </div>
+                </li>
+                <li class="overview-list-item overview-list-item--orange">
+                  <div class="overview-item-icon">
+                    <i class="fas fa-home"></i>
+                  </div>
+                  <div class="overview-item-content">
+                    <h3>Hausbesuche</h3>
+                    <p>Bei medizinischer Notwendigkeit möglich</p>
+                  </div>
+                </li>
+                <li class="overview-list-item overview-list-item--teal">
+                  <div class="overview-item-icon">
+                    <i class="fas fa-shield-alt"></i>
+                  </div>
+                  <div class="overview-item-content">
+                    <h3>Kassenleistung</h3>
+                    <p>Alle gesetzlichen Krankenkassen</p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -343,8 +314,8 @@
     <!-- Inspirational Quote 2 -->
     <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-8">
-        <div class="quote-card card-bento">
-          <div class="card-bento__body card-bento__body--full-padding text-center">
+        <div class="quote-card card-bento quote-asymmetrical">
+          <div class="card-bento__body card-bento__body--full-padding">
             <p class="card-bento__content">
               „Mit Herz, Fachwissen und einem offenen Ohr für Ihre Anliegen."
             </p>
@@ -754,13 +725,13 @@
 
         <!-- Call to Action -->
         <div class="mt-12">
-          <div class="card-bento card-bento--blue">
+          <div class="card-bento" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
             <div class="card-bento__header">
-              <div class="card-bento__icon card-bento__icon--large bg-blue-600">
+              <div class="card-bento__icon card-bento__icon--large bg-white text-blue-600">
                 <i class="fas fa-phone"></i>
               </div>
               <div>
-                <h4 class="card-bento__title card-bento__title--large">
+                <h4 class="card-bento__title card-bento__title--large text-white">
                   Benötigen Sie eine Beratung?
                 </h4>
                 <p class="card-bento__subtitle text-blue-100">
@@ -771,7 +742,7 @@
             </div>
             <div class="card-bento__footer">
               <a href="#contact"
-                class="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors">
+                class="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-lg ml-0">
                 <i class="fas fa-phone"></i>
                 <span>Jetzt Termin vereinbaren</span>
               </a>
@@ -784,8 +755,8 @@
     <!-- Inspirational Quote 3 -->
     <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-8">
-        <div class="quote-card card-bento">
-          <div class="card-bento__body card-bento__body--full-padding text-center">
+        <div class="quote-card card-bento quote-asymmetrical">
+          <div class="card-bento__body card-bento__body--full-padding">
             <p class="card-bento__content">
               „Jeder Fortschritt beginnt mit dem ersten Wort."
             </p>
@@ -1022,8 +993,8 @@
     <!-- Inspirational Quote 4 -->
     <section class="py-16 bg-white">
       <div class="max-w-4xl mx-auto px-8">
-        <div class="quote-card card-bento">
-          <div class="card-bento__body card-bento__body--full-padding text-center">
+        <div class="quote-card card-bento quote-asymmetrical">
+          <div class="card-bento__body card-bento__body--full-padding">
             <p class="card-bento__content">
               „Ich freue mich darauf, Sie oder Ihr Kind ein Stück des Weges
               begleiten zu dürfen."
@@ -1051,7 +1022,7 @@
 
         <div class="grid gap-6 grid-cols-1 lg:grid-cols-3">
           <!-- Contact Form Card -->
-          <div class="lg:col-span-2">
+          <div class="lg:col-span-1">
             <div class="card-bento card-bento--blue">
               <div class="card-bento__header">
                 <div class="card-bento__icon bg-blue-600">
@@ -1107,67 +1078,70 @@
             </div>
           </div>
 
-          <!-- Practice Info Card -->
-          <div>
-            <div class="card-bento card-bento--green">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-green-600">
-                  <i class="fas fa-map-marker-alt"></i>
+          <!-- Contact Info Column -->
+          <div class="lg:col-span-1">
+            <!-- Practice Info Card -->
+            <div class="mb-6">
+              <div class="card-bento card-bento--green">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-green-600">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="card-bento__title">Praxis-Adresse</h4>
+                  </div>
                 </div>
-                <div>
-                  <h4 class="card-bento__title">Praxis-Adresse</h4>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <div class="space-y-3">
-                  <div class="flex items-start space-x-3">
-                    <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mt-1"
-                      aria-hidden="true">
-                      <i class="fas fa-map-marker-alttext-xs"></i>
-                    </div>
-                    <div>
-                      <p class="card-bento__content">
-                        Musterstraße 123<br />12345 Musterstadt
-                      </p>
+                <div class="card-bento__body">
+                  <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                      <div class="w-5 h-5 bg-green-600 rounded-full flex items-center justify-center mt-1"
+                        aria-hidden="true">
+                        <i class="fas fa-map-marker-alttext-xs"></i>
+                      </div>
+                      <div>
+                        <p class="card-bento__content">
+                          Musterstraße 123<br />12345 Musterstadt
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Contact Details Card -->
-          <div>
-            <div class="card-bento card-bento--orange">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-orange-600 text-white">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div>
-                  <h4 class="card-bento__title">Kontaktdaten</h4>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <div class="space-y-3">
-                  <div class="flex items-start space-x-3">
-                    <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1"
-                      aria-hidden="true">
-                      <i class="fas fa-phone text-white text-xs"></i>
-                    </div>
-                    <div>
-                      <p class="card-bento__content">+49 123 456789</p>
-                    </div>
+            <!-- Contact Details Card -->
+            <div>
+              <div class="card-bento card-bento--orange">
+                <div class="card-bento__header">
+                  <div class="card-bento__icon bg-orange-600 text-white">
+                    <i class="fas fa-phone"></i>
                   </div>
-
-                  <div class="flex items-start space-x-3">
-                    <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1"
-                      aria-hidden="true">
-                      <i class="fas fa-envelope text-white text-xs"></i>
+                  <div>
+                    <h4 class="card-bento__title">Kontaktdaten</h4>
+                  </div>
+                </div>
+                <div class="card-bento__body">
+                  <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                      <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1"
+                        aria-hidden="true">
+                        <i class="fas fa-phone text-white text-xs"></i>
+                      </div>
+                      <div>
+                        <p class="card-bento__content">+49 123 456789</p>
+                      </div>
                     </div>
-                    <div>
-                      <p class="card-bento__content">
-                        info@logopaedie-sagmeister.de
-                      </p>
+
+                    <div class="flex items-start space-x-3">
+                      <div class="w-5 h-5 bg-orange-600 rounded-full flex items-center justify-center mt-1"
+                        aria-hidden="true">
+                        <i class="fas fa-envelope text-white text-xs"></i>
+                      </div>
+                      <div>
+                        <p class="card-bento__content">
+                          info@logopaedie-sagmeister.de
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1176,30 +1150,32 @@
           </div>
 
           <!-- Call to Action Card -->
-          <div class="lg:col-span-3">
-            <div class="card-bento card-bento--teal">
-              <div class="card-bento__body card-bento__body--full-padding text-center">
-                <div class="card-bento__icon card-bento__icon--large bg-teal-600 text-white mx-auto mb-4">
-                  <i class="fas fa-calendar-check"></i>
-                </div>
-                <h4 class="card-bento__title card-bento__title--large mb-4">
-                  Bereit für den ersten Schritt?
-                </h4>
-                <p class="card-bento__content text-lg mb-6">
-                  Kontaktieren Sie mich gerne für ein unverbindliches
-                  Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre
-                  Therapie.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                  <a href="tel:+49123456789" class="card-bento__action">
-                    <i class="fas fa-phone"></i>
-                    <span>Anrufen</span>
-                  </a>
-                  <a href="mailto:info@logopaedie-sagmeister.de"
-                    class="card-bento__action card-bento__action--secondary">
-                    <i class="fas fa-envelope"></i>
-                    <span>E-Mail schreiben</span>
-                  </a>
+          <div class="lg:col-span-1">
+            <div class="card-bento card-bento--teal h-full">
+              <div class="card-bento__body card-bento__body--full-padding flex flex-col justify-center h-full">
+                <div class="text-center">
+                  <div class="card-bento__icon card-bento__icon--large bg-teal-600 text-white mx-auto mb-4">
+                    <i class="fas fa-calendar-check"></i>
+                  </div>
+                  <h4 class="card-bento__title card-bento__title--large mb-4">
+                    Bereit für den ersten Schritt?
+                  </h4>
+                  <p class="card-bento__content text-lg mb-6">
+                    Kontaktieren Sie mich gerne für ein unverbindliches
+                    Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre
+                    Therapie.
+                  </p>
+                  <div class="flex flex-wrap justify-center gap-4">
+                    <a href="tel:+49123456789" class="card-bento__action">
+                      <i class="fas fa-phone"></i>
+                      <span>Anrufen</span>
+                    </a>
+                    <a href="mailto:info@logopaedie-sagmeister.de"
+                      class="card-bento__action card-bento__action--secondary">
+                      <i class="fas fa-envelope"></i>
+                      <span>E-Mail schreiben</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
