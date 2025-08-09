@@ -771,7 +771,7 @@ class ScrollSpy {
     const targetRect = (textSpan || link).getBoundingClientRect();
     const inset = 12; // px inset on both sides
     const width = Math.max(0, targetRect.width - inset * 2);
-    const left = targetRect.left - containerRect.left + inset;
+    const left = targetRect.left - containerRect.left;
     this.underlineEl.style.width = `${width}px`;
     this.underlineEl.style.transform = `translateX(${left}px)`;
   }
