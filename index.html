@@ -136,7 +136,48 @@
         </div>
 
         <!-- Quick Info Cards -->
-        <!-- Moved to About section for better layout -->
+        <div class="mt-8">
+          <ul class="overview-list">
+            <li class="overview-list-item overview-list-item--green">
+              <div class="overview-item-icon">
+                <i class="fas fa-child"></i>
+              </div>
+              <div class="overview-item-content">
+                <h3>Kinderlogopädie</h3>
+                <p>Spielerische Therapie & kindgerechte Methoden</p>
+              </div>
+            </li>
+            <li class="overview-list-item overview-list-item--purple">
+              <div class="overview-item-icon">
+                <i class="fas fa-user-md"></i>
+              </div>
+              <div class="overview-item-content">
+                <h3>Erwachsenentherapie</h3>
+                <p>Neurologische & funktionelle Störungen</p>
+              </div>
+            </li>
+            <li class="overview-list-item overview-list-item--orange">
+              <div class="overview-item-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <div class="overview-item-content">
+                <h3>Hausbesuche</h3>
+                <p>Bei medizinischer Notwendigkeit möglich</p>
+              </div>
+            </li>
+            <li class="overview-list-item overview-list-item--teal">
+              <div class="overview-item-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="overview-item-content">
+                <h3>Kassenleistung</h3>
+                <p>Alle gesetzlichen Krankenkassen</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       </div>
     </section>
 
@@ -161,8 +202,8 @@
     <section id="about" class="py-16 bg-gray-50" aria-labelledby="about-title">
       <div class="max-w-7xl mx-auto px-8">
         <!-- Simplified two-column layout -->
-        <div class="grid gap-8 lg:grid-cols-2 items-start">
-          <!-- Text content and overview list -->
+        <div class="grid gap-8 lg:grid-cols-2 items-start about-grid">
+          <!-- Text content and list -->
           <div>
             <div class="flex items-center gap-3 mb-4">
               <div>
@@ -181,7 +222,7 @@
                 Kindern. Ich weiß, wie vielfältig, herausfordernd und gleichzeitig faszinierend die sprachliche
                 Entwicklung sein kann.
               </p>
-              <p class="mt-6 text-lg">
+              <p>
                 Die Erfahrungen aus meinem Familienalltag bereichern meine Arbeit und schenken mir ein feines Gespür für
                 die Bedürfnisse meiner Patientinnen und Patienten – unabhängig von Alter oder Lebenssituation.
               </p>
@@ -198,48 +239,26 @@
               </p>
             </div>
 
-            <!-- Quick Overview List (moved from hero section) -->
-            <div class="mt-8">
-              <h4 class="text-lg font-semibold text-gray-800 mb-4">Überblick</h4>
-              <ul class="overview-list">
-                <li class="overview-list-item overview-list-item--green">
-                  <div class="overview-item-icon">
-                    <i class="fas fa-child"></i>
-                  </div>
-                  <div class="overview-item-content">
-                    <h3>Kinderlogopädie</h3>
-                    <p>Spielerische Therapie & kindgerechte Methoden</p>
-                  </div>
-                </li>
-                <li class="overview-list-item overview-list-item--purple">
-                  <div class="overview-item-icon">
-                    <i class="fas fa-user-md"></i>
-                  </div>
-                  <div class="overview-item-content">
-                    <h3>Erwachsenentherapie</h3>
-                    <p>Neurologische & funktionelle Störungen</p>
-                  </div>
-                </li>
-                <li class="overview-list-item overview-list-item--orange">
-                  <div class="overview-item-icon">
-                    <i class="fas fa-home"></i>
-                  </div>
-                  <div class="overview-item-content">
-                    <h3>Hausbesuche</h3>
-                    <p>Bei medizinischer Notwendigkeit möglich</p>
-                  </div>
-                </li>
-                <li class="overview-list-item overview-list-item--teal">
-                  <div class="overview-item-icon">
-                    <i class="fas fa-shield-alt"></i>
-                  </div>
-                  <div class="overview-item-content">
-                    <h3>Kassenleistung</h3>
-                    <p>Alle gesetzlichen Krankenkassen</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <!-- Facts as simple list (replaces cards) -->
+            <ul class="about-list mt-8" aria-label="Kurzübersicht">
+              <li>
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span class="about-item-text"><strong>Ausbildung:</strong> Medau-Schule bis 2017</span>
+              </li>
+              <li>
+                <i class="fas fa-briefcase" aria-hidden="true"></i>
+                <span class="about-item-text"><strong>Erfahrung:</strong> 3 Jahre Praxiserfahrung</span>
+              </li>
+              <li>
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                <span class="about-item-text"><strong>Familie:</strong> Mutter von drei Kindern</span>
+              </li>
+              <li>
+                <i class="fas fa-users" aria-hidden="true"></i>
+                <span class="about-item-text"><strong>Zielgruppe:</strong> Kinder, Jugendliche, Erwachsene</span>
+              </li>
+            </ul>
+
           </div>
 
           <!-- Profile Image Card -->
@@ -254,60 +273,6 @@
           </div>
         </div>
 
-        <!-- Small facts grid -->
-        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-10">
-          <div>
-            <div class="card-bento card-bento--emerald">
-              <div class="card-bento__header">
-                <div>
-                  <h4 class="card-bento__title">Ausbildung</h4>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">Medau-Schule bis 2017</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card-bento card-bento--amber">
-              <div class="card-bento__header">
-                <div>
-                  <h4 class="card-bento__title">Erfahrung</h4>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">3 Jahre Praxiserfahrung</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card-bento card-bento--rose">
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-rose-600  text-white">
-                  <i class="fas fa-heart"></i>
-                </div>
-                <div>
-                  <h4 class="card-bento__title">Familie</h4>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">Mutter von drei Kindern</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="card-bento card-bento--indigo">
-              <div class="card-bento__header">
-                <div>
-                  <h4 class="card-bento__title">Zielgruppe</h4>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">Kinder, Jugendliche, Erwachsene</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -742,7 +707,7 @@
             </div>
             <div class="card-bento__footer">
               <a href="#contact"
-                class="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-lg ml-0">
+                class="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 ml-6 py-3 rounded-lg font-bold hover:bg-blue-50 transition-all duration-300 hover:scale-105 hover:shadow-lg ml-0">
                 <i class="fas fa-phone"></i>
                 <span>Jetzt Termin vereinbaren</span>
               </a>
@@ -1021,8 +986,8 @@
         </div>
 
         <div class="grid gap-6 grid-cols-1 lg:grid-cols-3">
-          <!-- Contact Form Card -->
-          <div class="lg:col-span-1">
+          <!-- Contact Form Card (2/3 width on large screens) -->
+          <div class="lg:col-span-2">
             <div class="card-bento card-bento--blue">
               <div class="card-bento__header">
                 <div class="card-bento__icon bg-blue-600">
@@ -1078,8 +1043,8 @@
             </div>
           </div>
 
-          <!-- Contact Info Column -->
-          <div class="lg:col-span-1">
+          <!-- Contact Info Column (1/3 width on large screens) -->
+          <div class="lg:col-span-1 flex flex-col">
             <!-- Practice Info Card -->
             <div class="mb-6">
               <div class="card-bento card-bento--green">
@@ -1149,8 +1114,8 @@
             </div>
           </div>
 
-          <!-- Call to Action Card -->
-          <div class="lg:col-span-1">
+          <!-- Call to Action Card (full width below on large screens) -->
+          <div class="lg:col-span-3">
             <div class="card-bento card-bento--teal h-full">
               <div class="card-bento__body card-bento__body--full-padding flex flex-col justify-center h-full">
                 <div class="text-center">

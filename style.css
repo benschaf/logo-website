@@ -616,26 +616,11 @@ html {
                 0 2px 6px rgba(59, 130, 246, 0.15);
 }
 
-.btn-primary::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
 .btn-primary:hover {
     background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), 
                 0 4px 12px rgba(59, 130, 246, 0.25);
-}
-
-.btn-primary:hover::before {
-    left: 100%;
 }
 
 .btn-primary:active {
@@ -700,26 +685,11 @@ html {
                 0 1px 4px rgba(59, 130, 246, 0.15);
 }
 
-.card-bento__action::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-    transition: left 0.4s;
-}
-
 .card-bento__action:hover {
     background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35),
                 0 3px 8px rgba(59, 130, 246, 0.2);
-}
-
-.card-bento__action:hover::before {
-    left: 100%;
 }
 
 .card-bento__action--secondary {
@@ -1109,3 +1079,44 @@ html {
         color: black !important;
     }
 } 
+
+/* About list (replaces cards under Über mich) */
+.about-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+.about-list li {
+    color: #374151; /* gray-700 */
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: start;
+    column-gap: 0.5rem;
+}
+.about-item-text {
+    display: inline;
+}
+.about-list strong {
+    color: #111827; /* gray-900 */
+}
+
+.about-list i {
+    color: #2563eb; /* blue-600 */
+    line-height: 1.25rem;
+    margin-top: 2px;
+}
+
+/* Ensure two-column layout for About on large screens even without utility framework */
+.about-grid {
+    grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) { /* lg breakpoint */
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
