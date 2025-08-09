@@ -37,7 +37,7 @@ class ServiceExpansion {
     const labelEl = btn.querySelector('.toggle-label');
 
     // Prepare panel without flashing content - ensure it starts collapsed
-    panel.classList.remove('hidden');
+    panel.classList.add('hidden');
     panel.style.overflow = 'hidden';
     panel.style.maxHeight = '0px';
     panel.style.transition = '';
@@ -53,6 +53,11 @@ class ServiceExpansion {
     };
 
     const animate = (expand) => {
+      if (expand) {
+        // Show the panel first
+        panel.classList.remove('hidden');
+      }
+      
       const start = panel.getBoundingClientRect().height;
       panel.style.maxHeight = 'none';
       const target = panel.scrollHeight;
@@ -64,7 +69,14 @@ class ServiceExpansion {
       const onEnd = (e) => {
         if (e.propertyName !== 'max-height') return;
         panel.style.transition = '';
-        panel.style.maxHeight = expand ? 'none' : '0px';
+        if (expand) {
+          panel.style.maxHeight = 'none';
+          // Scroll to the panel content when expanding
+          this.scrollToPanel(panel);
+        } else {
+          panel.style.maxHeight = '0px';
+          panel.classList.add('hidden');
+        }
         panel.removeEventListener('transitionend', onEnd);
       };
       panel.addEventListener('transitionend', onEnd);
@@ -81,6 +93,20 @@ class ServiceExpansion {
     });
 
     console.log(`Collapsible setup complete for ${toggleId}`);
+  }
+
+  scrollToPanel(panel) {
+    // Add a small delay to ensure the panel is fully expanded
+    setTimeout(() => {
+      const offsetTop = panel.offsetTop;
+      const headerHeight = 80; // Account for fixed header
+      const scrollPosition = offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
+    }, 100);
   }
 }
 
