@@ -94,8 +94,16 @@ body {
 
 /* Enhanced section spacing */
 section {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+/* Extra small screens - reduce padding even more */
+@media (max-width: 480px) {
+    section {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
 }
 
 @media (min-width: 768px) {
