@@ -55,7 +55,10 @@ class ServiceExpansion {
     console.log(`Toggling ${sectionType} section. Currently hidden:`, isHidden);
     
     if (isHidden) {
-      // Show the section
+      // First hide the other section (exclusive behavior)
+      this.hideOtherSection(sectionType);
+      
+      // Show the requested section
       serviceElement.classList.remove("hidden");
       chevronElement.style.transform = "rotate(180deg)";
       toggleButton.setAttribute("aria-expanded", "true");
@@ -74,6 +77,42 @@ class ServiceExpansion {
       chevronElement.style.transform = "rotate(0deg)";
       toggleButton.setAttribute("aria-expanded", "false");
       toggleButton.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
+    }
+  }
+
+  hideOtherSection(currentSectionType) {
+    if (currentSectionType === "children") {
+      // Hide adults section
+      const adultsServices = document.getElementById("adults-services");
+      const adultsToggle = document.getElementById("adults-toggle");
+      const adultsChevron = document.getElementById("adults-chevron");
+      
+      if (adultsServices && !adultsServices.classList.contains("hidden")) {
+        adultsServices.classList.add("hidden");
+        if (adultsToggle) {
+          adultsToggle.setAttribute("aria-expanded", "false");
+          adultsToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
+        }
+        if (adultsChevron) {
+          adultsChevron.style.transform = "rotate(0deg)";
+        }
+      }
+    } else if (currentSectionType === "adults") {
+      // Hide children section
+      const childrenServices = document.getElementById("children-services");
+      const childrenToggle = document.getElementById("children-toggle");
+      const childrenChevron = document.getElementById("children-chevron");
+      
+      if (childrenServices && !childrenServices.classList.contains("hidden")) {
+        childrenServices.classList.add("hidden");
+        if (childrenToggle) {
+          childrenToggle.setAttribute("aria-expanded", "false");
+          childrenToggle.querySelector("span").textContent = "Alle Behandlungsbereiche anzeigen";
+        }
+        if (childrenChevron) {
+          childrenChevron.style.transform = "rotate(0deg)";
+        }
+      }
     }
   }
 }
