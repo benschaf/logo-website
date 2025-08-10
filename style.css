@@ -98,14 +98,6 @@ section, nav {
     padding-right: 1rem !important;
 }
 
-/* Extra small screens - reduce padding even more */
-@media (max-width: 480px) {
-    section, nav {
-        padding-left: 0.3rem !important;
-        padding-right: 0.3rem !important;
-    }
-}
-
 @media (min-width: 768px) {
     section, nav {
         padding-left: 3rem !important;
