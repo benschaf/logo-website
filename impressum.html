@@ -34,70 +34,109 @@
         </div>
 
         <!-- Desktop Menu -->
-        <div id="desktop-menu" class="hidden md:flex space-x-8 relative" role="menubar">
-          <a href="index.html"
+        <div id="desktop-menu" class="hidden md:flex relative" role="menubar">
+          <a
+            href="index.html"
             class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
-            role="menuitem">
+            role="menuitem"
+          >
             <i class="fas fa-home text-sm" aria-hidden="true"></i>
             <span>Home</span>
           </a>
-          <a href="index.html#about"
+          <a
+            href="index.html#about"
             class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
-            role="menuitem">
+            role="menuitem"
+          >
             <i class="fas fa-user text-sm" aria-hidden="true"></i>
             <span>Über mich</span>
           </a>
-          <a href="index.html#services"
+          <a
+            href="index.html#services"
             class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
-            role="menuitem">
+            role="menuitem"
+          >
             <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
             <span>Leistungen</span>
           </a>
-          <a href="index.html#info"
+          <a
+            href="index.html#info"
             class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
-            role="menuitem">
+            role="menuitem"
+          >
             <i class="fas fa-info-circle text-sm" aria-hidden="true"></i>
             <span>Informationen</span>
           </a>
-          <a href="index.html#contact"
+          <a
+            href="index.html#contact"
             class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
-            role="menuitem">
+            role="menuitem"
+          >
             <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
             <span>Kontakt</span>
           </a>
+          <!-- underline indicator injected by JS -->
         </div>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-gray-900 hover:text-gray-700 transition-colors"
-          aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen">
-          <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+        <button
+          class="md:hidden p-2 rounded-lg transition-colors"
+          id="mobile-menu-btn"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fas fa-bars text-black" aria-hidden="true"></i>
         </button>
       </div>
-    </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-200 hidden" role="menu">
-      <div class="max-w-6xl mx-auto">
-        <div class="py-4 space-y-2">
-          <a href="index.html" class="mobile-menu-item" role="menuitem">
-            <span>Home</span>
+      <!-- Mobile Menu -->
+      <div
+        class="md:hidden hidden"
+        id="mobile-menu"
+        role="menu"
+        aria-labelledby="mobile-menu-btn"
+      >
+        <div class="py-2 space-y-2">
+          <a
+            href="index.html"
+            class="mobile-menu-item"
+            role="menuitem"
+          >
             <i class="fas fa-home" aria-hidden="true"></i>
+            <span>Home</span>
           </a>
-          <a href="index.html#about" class="mobile-menu-item" role="menuitem">
-            <span>Über mich</span>
+          <a
+            href="index.html#about"
+            class="mobile-menu-item"
+            role="menuitem"
+          >
             <i class="fas fa-user" aria-hidden="true"></i>
+            <span>Über mich</span>
           </a>
-          <a href="index.html#services" class="mobile-menu-item" role="menuitem">
-            <span>Leistungen</span>
+          <a
+            href="index.html#services"
+            class="mobile-menu-item"
+            role="menuitem"
+          >
             <i class="fas fa-stethoscope" aria-hidden="true"></i>
+            <span>Leistungen</span>
           </a>
-          <a href="index.html#info" class="mobile-menu-item" role="menuitem">
-            <span>Informationen</span>
+          <a
+            href="index.html#info"
+            class="mobile-menu-item"
+            role="menuitem"
+          >
             <i class="fas fa-info-circle" aria-hidden="true"></i>
+            <span>Informationen</span>
           </a>
-          <a href="index.html#contact" class="mobile-menu-item" role="menuitem">
-            <span>Kontakt</span>
+          <a
+            href="index.html#contact"
+            class="mobile-menu-item"
+            role="menuitem"
+          >
             <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>Kontakt</span>
           </a>
         </div>
       </div>
@@ -195,12 +234,15 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-12" role="contentinfo">
+  <footer class="bg-gray-900 text-gray-200 py-12 px-8" role="contentinfo">
     <div class="max-w-7xl mx-auto">
       <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Brand Card -->
         <div>
-          <div class="card-bento" style="background-color: #374151; color: white">
+          <div
+            class="card-bento"
+            style="background-color: #1f2937; color: white"
+          >
             <div class="card-bento__header">
               <div class="card-bento__icon bg-blue-600 text-white">
                 <span class="font-bold text-lg">ES</span>
@@ -213,7 +255,7 @@
               </div>
             </div>
             <div class="card-bento__body">
-              <p class="card-bento__content text-gray-300">
+              <p class="card-bento__content text-gray-200">
                 Professionelle Sprachtherapie mit individueller Betreuung für
                 Kinder und Erwachsene.
               </p>
@@ -223,9 +265,12 @@
 
         <!-- Quick Links Card -->
         <div>
-          <div class="card-bento" style="background-color: #374151; color: white">
+          <div
+            class="card-bento"
+            style="background-color: #1f2937; color: white"
+          >
             <div class="card-bento__header">
-              <div class="card-bento__icon bg-blue-400 text-white">
+              <div class="card-bento__icon bg-blue-500 text-white">
                 <i class="fas fa-link"></i>
               </div>
               <div>
@@ -233,20 +278,39 @@
               </div>
             </div>
             <div class="card-bento__body">
-              <nav class="space-y-2" role="navigation" aria-label="Footer Navigation">
-                <a href="index.html" class="footer-link">
+              <nav
+                class="space-y-2 footer-nav"
+                role="navigation"
+                aria-label="Footer Navigation"
+              >
+                <a
+                  href="index.html"
+                  class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
+                >
                   <i class="fas fa-home text-sm" aria-hidden="true"></i>
                   <span>Home</span>
                 </a>
-                <a href="index.html#about" class="footer-link">
+                <a
+                  href="index.html#about"
+                  class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
+                >
                   <i class="fas fa-user text-sm" aria-hidden="true"></i>
                   <span>Über mich</span>
                 </a>
-                <a href="index.html#services" class="footer-link">
-                  <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
+                <a
+                  href="index.html#services"
+                  class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
+                >
+                  <i
+                    class="fas fa-stethoscope text-sm"
+                    aria-hidden="true"
+                  ></i>
                   <span>Leistungen</span>
                 </a>
-                <a href="index.html#contact" class="footer-link">
+                <a
+                  href="index.html#contact"
+                  class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
+                >
                   <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
                   <span>Kontakt</span>
                 </a>
@@ -257,9 +321,12 @@
 
         <!-- Contact Info Card -->
         <div>
-          <div class="card-bento" style="background-color: #374151; color: white">
+          <div
+            class="card-bento"
+            style="background-color: #1f2937; color: white"
+          >
             <div class="card-bento__header">
-              <div class="card-bento__icon bg-blue-400 text-white">
+              <div class="card-bento__icon bg-blue-500 text-white">
                 <i class="fas fa-address-card"></i>
               </div>
               <div>
@@ -267,9 +334,12 @@
               </div>
             </div>
             <div class="card-bento__body">
-              <address class="space-y-2 text-gray-300 not-italic text-sm">
+              <address class="space-y-2 text-gray-200 not-italic text-sm">
                 <p class="flex items-center space-x-2">
-                  <i class="fas fa-map-marker-alt text-sm" aria-hidden="true"></i>
+                  <i
+                    class="fas fa-map-marker-alt text-sm"
+                    aria-hidden="true"
+                  ></i>
                   <span>Musterstraße 123, 12345 Musterstadt</span>
                 </p>
                 <p class="flex items-center space-x-2">
@@ -284,17 +354,22 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <!-- Copyright -->
       <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p class="text-gray-400">
+        <p class="text-gray-300">
           &copy; 2025 Logopädie Praxis Eva Sagmeister. Alle Rechte
           vorbehalten.
-          <a href="datenschutz.html" class="hover:text-white transition-colors">Datenschutz</a>
+          <a
+            href="datenschutz.html"
+            class="hover:text-white transition-colors"
+            >Datenschutz</a
+          >
           |
-          <a href="impressum.html" class="hover:text-white transition-colors">Impressum</a>
+          <a href="impressum.html" class="hover:text-white transition-colors"
+            >Impressum</a
+          >
         </p>
       </div>
     </div>
