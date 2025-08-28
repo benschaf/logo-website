@@ -888,10 +888,7 @@ class HeaderTransparency {
 
     if (shouldBeTransparent && !this.isTransparent) {
       this.makeTransparent();
-    } else if (
-      (!shouldBeTransparent && this.isTransparent) ||
-      isMobileMenuExpanded
-    ) {
+    } else if (!shouldBeTransparent || isMobileMenuExpanded) {
       this.makeSolid();
     }
   }
