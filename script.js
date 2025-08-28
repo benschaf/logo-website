@@ -763,6 +763,69 @@ class ScrollSpy {
 }
 
 /**
+ * Parallax Effect Module
+ * Handles parallax scrolling effect for hero background
+ */
+class ParallaxEffect {
+  constructor() {
+    this.heroBackground = document.querySelector('.hero-background');
+    this.isActive = false;
+    
+    this.init();
+  }
+
+  init() {
+    if (!this.heroBackground) {
+      console.warn("Parallax background element not found");
+      return;
+    }
+
+    // Check if device supports parallax (desktop only for performance)
+    this.isActive = window.innerWidth > 768 && !this.isMobile();
+    
+    if (this.isActive) {
+      this.bindEvents();
+    }
+  }
+
+  bindEvents() {
+    // Throttled scroll event for performance
+    let ticking = false;
+
+    window.addEventListener("scroll", () => {
+      if (!ticking && this.isActive) {
+        requestAnimationFrame(() => {
+          this.updateParallax();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Update on resize
+    window.addEventListener("resize", () => {
+      this.isActive = window.innerWidth > 768 && !this.isMobile();
+    });
+  }
+
+  updateParallax() {
+    const scrolled = window.pageYOffset;
+    const viewport = window.innerHeight;
+    
+    // Only apply parallax if hero is visible
+    if (scrolled < viewport) {
+      const speed = 0.5; // Parallax speed factor
+      const yPos = scrolled * speed;
+      this.heroBackground.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    }
+  }
+
+  isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+}
+
+/**
  * Header Transparency Module
  * Handles transparent header when at top, solid when scrolling
  */
@@ -855,6 +918,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = new ContactForm();
   const scrollSpy = new ScrollSpy();
   const headerTransparency = new HeaderTransparency();
+  const parallaxEffect = new ParallaxEffect();
 
   // Log successful initialization
   console.log(

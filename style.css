@@ -562,6 +562,13 @@ html {
     z-index: 1;
 }
 
+/* Disable parallax on mobile for better performance */
+@media (max-width: 768px) {
+    .hero-background {
+        background-attachment: scroll;
+    }
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -590,6 +597,29 @@ html {
     border: 1px solid rgba(255, 255, 255, 0.3);
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Service Peek Section */
+.service-peek-section {
+    transform: translateY(-2rem);
+}
+
+.service-peek-section .overview-list {
+    padding-top: 2rem;
+}
+
+/* Enhanced card shadows for the peek effect */
+.service-peek-section .overview-list-item {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15),
+                0 5px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.service-peek-section .overview-list-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2),
+                0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* ==========================================================================
@@ -1040,6 +1070,22 @@ html {
         padding: var(--spacing-md) var(--spacing-lg);
         font-size: 0.875rem;
     }
+    
+    /* Mobile adjustments for hero section */
+    .hero-parallax {
+        min-height: 80vh;
+    }
+    
+    .service-peek-section {
+        transform: translateY(-1rem);
+        padding: 1rem 0;
+    }
+    
+    .service-peek-section .overview-list {
+        padding-top: 1rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1050,6 +1096,19 @@ html {
     .flip-card-front,
     .flip-card-back {
         padding: var(--spacing-lg);
+    }
+    
+    /* Even smaller hero on very small screens */
+    .hero-parallax {
+        min-height: 70vh;
+    }
+    
+    .hero-text h1 span:first-child {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text h1 span:last-child {
+        font-size: 1rem;
     }
 }
 
