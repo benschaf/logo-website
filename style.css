@@ -144,13 +144,6 @@ h6 {
   }
 }
 
-@media (min-width: 1024px) {
-  .overview-list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
-  }
-}
-
 .overview-list-item {
   display: flex;
   align-items: flex-start;
@@ -166,23 +159,6 @@ h6 {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.overview-list-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--item-color, #3b82f6);
-  border-radius: 0 2px 2px 0;
-}
-
-.overview-list-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 3px 10px rgba(0, 0, 0, 0.05);
-  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .overview-list-item--green {
@@ -202,27 +178,27 @@ h6 {
 }
 
 .overview-item-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  font-size: 2rem;
   color: white;
   flex-shrink: 0;
   background: var(--item-color, #3b82f6);
 }
 
 .overview-item-content h3 {
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #111827;
   margin: 0 0 0.25rem 0;
 }
 
 .overview-item-content p {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #6b7280;
   margin: 0;
   line-height: 1.4;
@@ -1223,7 +1199,6 @@ html {
 
 /* About list (replaces cards under Über mich) */
 .about-list {
-  margin: 0;
   padding-left: 0;
   list-style: none;
   display: grid;
