@@ -544,15 +544,29 @@ html {
   position: relative;
 }
 
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  display: block;
+  text-wrap: nowrap;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-link i {
+    display: none;
+  }
+}
+ 
 /* Active nav icon coloring (desktop + mobile) */
-.nav-link.active i,
-.mobile-menu-item.active i {
-  color: var(--primary) !important;
+.nav-link.active,
+.mobile-menu-item.active {
+  background-color: var(--secondary) !important;
 }
 
 /* Mobile menu items */
 .mobile-menu-item {
   display: block;
+  background-color: #fff;
   padding: var(--spacing-md) var(--spacing-lg);
   color: #111827;
   text-decoration: none;
@@ -562,20 +576,13 @@ html {
 
 /* Mobile Menu Container - Light, no blur */
 #mobile-menu {
-  background: #ffffff !important;
   border-radius: var(--radius-lg);
-  border-top: 1px solid rgba(17, 24, 39, 0.08);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
 }
 
 .mobile-menu-item:hover {
   background-color: #f3f4f6;
   color: #111827;
-}
-
-.mobile-menu-item:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
 }
 
 /* ==========================================================================
@@ -913,7 +920,7 @@ html {
 /* Form Input Styles */
 .form-input {
   width: 100%;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   border: 1px solid #d1d5db;
   border-radius: var(--radius-lg);
   font-size: 1rem;
@@ -974,7 +981,6 @@ html {
 .nav-link:hover i,
 .footer-link:hover i {
   transform: scale(1.15) rotate(3deg);
-  color: var(--primary);
 }
 
 /* Footer Link Styles */
@@ -1020,12 +1026,14 @@ html {
 }
 
 #mobile-menu-btn:hover {
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
   transform: scale(1.05);
 }
 
+#mobile-menu-btn i {
+  transition: transform 0.3s ease;
+}
+
 #mobile-menu-btn:hover i {
-  color: white;
   transform: rotate(90deg);
 }
 
@@ -1235,4 +1243,8 @@ html {
     grid-template-columns: 1fr 1fr;
     align-items: start;
   }
+}
+
+.footer-nav {
+    padding-left: 0 !important;
 }
