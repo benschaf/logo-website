@@ -36,7 +36,9 @@
 :root {
   /* Evas Farben */
   --eva-background: #a598b5;
+  --eva-background-light: #e9e0f4;
   --eva-primary: #00a8f4;
+  --eva-primary-light: #cce0e9;
 
   /* Color Palette - Soft Pastels */
   --primary: #f8bbd9; /* Soft pink */
@@ -276,7 +278,6 @@ h6 {
 
 .card-bento__subtitle {
   font-size: 0.875rem;
-  color: #6b7280;
   margin: 0;
   margin-top: 0.25rem;
 }
@@ -294,7 +295,6 @@ h6 {
 }
 
 .card-bento__content {
-  color: #4b5563;
   line-height: 1.6;
 }
 
@@ -474,6 +474,14 @@ h6 {
 }
 .card-bento--rose {
   background-color: #fff1f2;
+}
+
+.card-bento--standard {
+  background-color: var(--eva-background-light)
+}
+
+.card-bento--primary {
+  background-color: var(--eva-primary-light)
 }
 
 /* Compact Service Card Styles */
@@ -695,7 +703,6 @@ html {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4),
     0 4px 12px rgba(59, 130, 246, 0.25);
@@ -752,8 +759,6 @@ html {
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
   text-decoration: none;
   border-radius: 0.75rem;
   font-weight: 600;
@@ -763,15 +768,20 @@ html {
   font-size: 0.9rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 3px 12px rgba(59, 130, 246, 0.25),
-    0 1px 4px rgba(59, 130, 246, 0.15);
+}
+
+.card-bento__action--pink {
+  background: var(--eva-background);
+  color: #000;
+}
+
+.card-bento__action--cyan {
+  background: var(--eva-primary);
+  color: #000;
 }
 
 .card-bento__action:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35),
-    0 3px 8px rgba(59, 130, 246, 0.2);
 }
 
 .card-bento__action--secondary {
