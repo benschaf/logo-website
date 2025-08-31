@@ -487,7 +487,6 @@ h6 {
 /* Compact Service Card Styles */
 .compact-service-card {
   height: auto;
-  min-height: 140px;
   border: 2px solid transparent;
   transition: all 0.3s ease;
   background-color: #fefefe;
@@ -703,9 +702,9 @@ html {
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4),
-    0 4px 12px rgba(59, 130, 246, 0.25);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)), var(--eva-primary);
+  transform: none;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3), 0 2px 6px rgba(59, 130, 246, 0.15);
 }
 
 .btn-primary:active {
@@ -741,11 +740,9 @@ html {
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  color: white;
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-  border-color: #1d4ed8;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, rgba(29, 78, 216, 0.10) 100%);
+  color: #3b82f6;
+  transform: none;
 }
 
 .btn-secondary:focus {
@@ -781,7 +778,16 @@ html {
 }
 
 .card-bento__action:hover {
-  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06));
+  transform: none;
+}
+
+.card-bento__action--pink:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)), var(--eva-background);
+}
+
+.card-bento__action--cyan:hover {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06)), var(--eva-primary);
 }
 
 .card-bento__action--secondary {
@@ -793,9 +799,6 @@ html {
 
 .card-bento__action--secondary:hover {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border-color: #3b82f6;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
 }
 
 /* ==========================================================================

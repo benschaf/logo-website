@@ -193,23 +193,34 @@
       </section>
 
       <section class="py-12 bg-gray-50 relative -mt-16 z-10">
-        <div class="max-w-7xl mx-auto">
-          <h3 id="services-title" class="text-4xl font-bold text-gray-800 mb-4">
-            Willkommen in meiner logopädischen Praxis!
-          </h3>
-          <p class="text-l text-gray-800 mb-6 max-w-4xl">
-            Wir als Praxis legen großen Wert auf eine vertrauensvolle Atmosphäre
-            und eine Therapie, die auf die individuellen Bedürfnisse jedes
-            Einzelnen zugeschnitten ist.
-          </p>
-          <p class="text-l text-gray-800 mb-6 max-w-4xl">
-            Sprache, Stimme und Kommunikation sind für uns weit mehr als nur
-            Werkzeuge, sie sind die Grundlage dafür, wie wir uns ausdrücken,
-            verstanden werden und mit anderen in Beziehung treten. Jeder Mensch
-            verdient es, seine eigene Stimme zu finden und nutzen zu können.
-            Genau dabei möchten wir unsere Patientinnen und Patienten
-            unterstützen.
-          </p>
+        <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 items-center">
+          <div class="order-2 md:order-1">
+            <h3 id="services-title" class="text-4xl font-bold text-gray-800 mb-4">
+              Willkommen in meiner logopädischen Praxis!
+            </h3>
+            <p class="text-l text-gray-800 mb-6 max-w-4xl">
+              Wir als Praxis legen großen Wert auf eine vertrauensvolle Atmosphäre
+              und eine Therapie, die auf die individuellen Bedürfnisse jedes
+              Einzelnen zugeschnitten ist.
+            </p>
+            <p class="text-l text-gray-800 mb-6 max-w-4xl">
+              Sprache, Stimme und Kommunikation sind für uns weit mehr als nur
+              Werkzeuge, sie sind die Grundlage dafür, wie wir uns ausdrücken,
+              verstanden werden und mit anderen in Beziehung treten. Jeder Mensch
+              verdient es, seine eigene Stimme zu finden und nutzen zu können.
+              Genau dabei möchten wir unsere Patientinnen und Patienten
+              unterstützen.
+            </p>
+          </div>
+          <figure class="order-1 md:order-2">
+            <img
+              src="images/mutter-tochter-spiel.jpeg"
+              alt="Mutter und Tochter spielen gemeinsam am Tisch"
+              class="rounded-2xl shadow-lg w-full h-64 sm:h-80 md:h-[28rem] object-cover object-center"
+              loading="lazy"
+            />
+            <figcaption class="sr-only">Spielerische Therapie in freundlicher Atmosphäre</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -243,11 +254,15 @@
             <div
               class="services-section flex flex-wrap lg:flex-nowrap items-top gap-6"
             >
-            <div class="w-full lg:w-1/2">
-              <img src="images/kind.jpeg" alt="Kind" class="rounded-lg shadow-lg w-full h-auto" />
-            </div>
+              <div class="w-full lg:w-[44%] lg:flex-none">
+                <img
+                  src="images/kind.jpeg"
+                  alt="Kind"
+                  class="rounded-lg shadow-lg w-full h-auto"
+                />
+              </div>
               <!-- Children's Services Main Card -->
-              <div class="card-bento card-bento--standard">
+              <div class="card-bento card-bento--standard w-full lg:w-[56%] lg:flex-none">
                 <div class="card-bento__header">
                   <div>
                     <h4 class="card-bento__title card-bento__title--large">
@@ -276,7 +291,7 @@
                       <i class="fas fa-clock mt-1"></i>
                       <div>
                         <p class="text-sm font-medium">Dauer</p>
-                        <p class="text-sm ">30-45 Min</p>
+                        <p class="text-sm">30-45 Min</p>
                       </div>
                     </div>
                     <div class="flex items-start gap-2">
@@ -678,9 +693,9 @@
           <div class="grid gap-8 lg:grid-cols-2 items-start about-grid">
             <!-- Profile Image -->
             <img
-              src="images/portrait-eva-sagmeister-close.webp"
+              src="images/portrait.jpeg"
               alt="Eva Sagmeister - Logopädin"
-              class="w-full h-full object-cover rounded-2xl"
+              class="w-full max-h-[42rem] object-cover object-[center_20%] rounded-2xl"
             />
 
             <!-- Text content and list -->
@@ -745,34 +760,32 @@
           <!-- Top row: image + prescription card -->
           <div class="grid gap-6 lg:grid-cols-2 lg:items-stretch">
             <!-- Opening Hours -->
-              <div class="card-bento card-bento--standard lg:h-full">
-                <div class="card-bento__header">
-                  <div>
-                    <h4 class="card-bento__title">Sprechzeiten</h4>
-                    <p class="card-bento__subtitle">
-                      Termine nach Vereinbarung
-                    </p>
-                  </div>
+            <div class="card-bento card-bento--standard lg:h-full">
+              <div class="card-bento__header">
+                <div>
+                  <h4 class="card-bento__title">Sprechzeiten</h4>
+                  <p class="card-bento__subtitle">Termine nach Vereinbarung</p>
                 </div>
-                <div class="card-bento__body">
-                  <div class="space-y-3">
-                    <div class="flex justify-between items-center">
-                      <span class="text-gray-700 font-medium"
-                        >Montag - Donnerstag:</span
-                      >
-                      <span class="text-gray-600">8:00 - 18:00 Uhr</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                      <span class="text-gray-700 font-medium">Freitag:</span>
-                      <span class="text-gray-600">8:00 - 16:00 Uhr</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                      <span class="text-gray-700 font-medium">Samstag:</span>
-                      <span class="text-gray-600">Nach Vereinbarung</span>
-                    </div>
+              </div>
+              <div class="card-bento__body">
+                <div class="space-y-3">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-700 font-medium"
+                      >Montag - Donnerstag:</span
+                    >
+                    <span class="text-gray-600">8:00 - 18:00 Uhr</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-700 font-medium">Freitag:</span>
+                    <span class="text-gray-600">8:00 - 16:00 Uhr</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-700 font-medium">Samstag:</span>
+                    <span class="text-gray-600">Nach Vereinbarung</span>
                   </div>
                 </div>
               </div>
+            </div>
 
             <!-- Insurance Coverage -->
             <div class="lg:h-full">
@@ -793,24 +806,25 @@
                     <div class="flex items-center space-x-2 text-green-700">
                       <i class="fas fa-check text-green-600"></i>
                       <span class="text-sm font-medium"
-                      >Alle gesetzlichen Krankenkassen</span
+                        >Alle gesetzlichen Krankenkassen</span
                       >
                     </div>
                     <div class="flex items-center space-x-2 text-green-700">
                       <i class="fas fa-check text-green-600"></i>
                       <span class="text-sm font-medium"
-                      >Private Krankenkassen</span
+                        >Private Krankenkassen</span
                       >
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
 
           <!-- Three “nice features” cards with titles and full padding -->
-          <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+          <div
+            class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6"
+          >
             <div>
               <div class="card-bento card-bento--cyan">
                 <div class="card-bento__header">
@@ -820,7 +834,8 @@
                 </div>
                 <div class="card-bento__body card-bento__body--full-padding">
                   <p class="card-bento__content">
-                    Bei medizinischer Notwendigkeit und eingeschränkter Mobilität.
+                    Bei medizinischer Notwendigkeit und eingeschränkter
+                    Mobilität.
                   </p>
                 </div>
               </div>
@@ -860,16 +875,20 @@
           <!-- Low-emphasis subtext (merged with “Vielen Dank”) -->
           <div class="mt-4 text-sm text-gray-600 space-y-2">
             <p>
-              Ärztliche Verordnung erforderlich: Behandlung nur mit gültigem Rezept. Rezepte sind 28 Tage ab Ausstellungsdatum gültig.
+              Ärztliche Verordnung erforderlich: Behandlung nur mit gültigem
+              Rezept. Rezepte sind 28 Tage ab Ausstellungsdatum gültig.
             </p>
             <p>
-              Terminabsagen: Bei Absagen weniger als 24 Stunden vorher oder Nichterscheinen kann der Ausfall gemäß § 615 BGB privat berechnet werden.
+              Terminabsagen: Bei Absagen weniger als 24 Stunden vorher oder
+              Nichterscheinen kann der Ausfall gemäß § 615 BGB privat berechnet
+              werden.
             </p>
             <p>
-              Vielen Dank für Ihr Verständnis! Diese Regelungen helfen mir dabei, Ihnen eine professionelle und planbare Behandlung zu bieten.
+              Vielen Dank für Ihr Verständnis! Diese Regelungen helfen mir
+              dabei, Ihnen eine professionelle und planbare Behandlung zu
+              bieten.
             </p>
           </div>
-
         </div>
       </section>
 
@@ -880,56 +899,48 @@
         aria-labelledby="contact-title"
       >
         <div class="max-w-7xl mx-auto">
-          <!-- Section Header -->
-          <div class="text-center mb-12">
-            <h3
-              id="contact-title"
-              class="text-4xl font-bold text-gray-800 mb-4"
-            >
-              Kontakt
-            </h3>
-            <p class="text-xl text-gray-600">
-              Vereinbaren Sie einen Termin oder nehmen Sie Kontakt mit mir auf
-            </p>
-          </div>
-
-            <!-- Call to Action Card (full width below on large screens) -->
-            <div class="lg:col-span-3 mb-6">
-              <div class="card-bento card-bento--primary h-full">
-                <div
-                  class="card-bento__body card-bento__body--full-padding flex flex-col justify-center h-full"
-                >
-                  <div class="text-center">
-                    <div
-                      class="card-bento__icon card-bento__icon--large bg-teal-600 text-white mx-auto mb-4"
+          <!-- Call to Action Card (full width below on large screens) -->
+          <div class="lg:col-span-3 mb-6">
+            <div class="card-bento card-bento--primary h-full">
+              <div
+                class="card-bento__body card-bento__body--full-padding flex flex-col justify-center h-full"
+              >
+                <div class="text-center">
+                  <h4 class="card-bento__title card-bento__title--large mb-4">
+                    Bereit für den ersten Schritt?
+                  </h4>
+                  <p class="card-bento__content text-lg mb-6">
+                    Kontaktieren Sie mich gerne für ein unverbindliches
+                    Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre
+                    Therapie.
+                  </p>
+                  <div
+                    class="card-bento__footer flex flex-wrap justify-center gap-3 sm:gap-4"
+                  >
+                    <a
+                      href="tel:+4915785320411"
+                      class="card-bento__action card-bento__action--cyan"
+                      role="button"
+                      aria-label="Telefonanruf starten"
                     >
-                      <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <h4 class="card-bento__title card-bento__title--large mb-4">
-                      Bereit für den ersten Schritt?
-                    </h4>
-                    <p class="card-bento__content text-lg mb-6">
-                      Kontaktieren Sie mich gerne für ein unverbindliches
-                      Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre
-                      Therapie.
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                      <a href="tel:+4915785320411" class="card-bento__action">
-                        <i class="fas fa-phone"></i>
-                        <span>Anrufen</span>
-                      </a>
-                      <a
-                        href="mailto:praxis@sag-meister.de"
-                        class="card-bento__action card-bento__action--secondary"
-                      >
-                        <i class="fas fa-envelope"></i>
-                        <span>E-Mail schreiben</span>
-                      </a>
-                    </div>
+                      <i class="fas fa-phone" aria-hidden="true"></i>
+                      <span>Anrufen</span>
+                    </a>
+                    <a
+                      href="mailto:praxis@sag-meister.de"
+                      class="card-bento__action card-bento__action--secondary"
+                      role="button"
+                      aria-label="E-Mail an Praxis senden"
+                    >
+                      <i class="fas fa-envelope" aria-hidden="true"></i>
+                      <span>E-Mail schreiben</span>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+
 
           <div class="grid gap-6 grid-cols-1 lg:grid-cols-3">
             <!-- Contact Form Card (2/3 width on large screens) -->
@@ -950,10 +961,7 @@
                         for="name"
                         class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
                       >
-                        <i
-                          class="fas fa-user"
-                          aria-hidden="true"
-                        ></i>
+                        <i class="fas fa-user" aria-hidden="true"></i>
                         <span>Vor- und Nachname</span>
                       </label>
                       <input
@@ -970,10 +978,7 @@
                         for="phone"
                         class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
                       >
-                        <i
-                          class="fas fa-phone"
-                          aria-hidden="true"
-                        ></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <span>Telefon</span>
                       </label>
                       <input
@@ -990,10 +995,7 @@
                         for="email"
                         class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
                       >
-                        <i
-                          class="fas fa-envelope"
-                          aria-hidden="true"
-                        ></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <span>E-Mail</span>
                       </label>
                       <input
@@ -1010,10 +1012,7 @@
                         for="message"
                         class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
                       >
-                        <i
-                          class="fas fa-comment"
-                          aria-hidden="true"
-                        ></i>
+                        <i class="fas fa-comment" aria-hidden="true"></i>
                         <span>Nachricht</span>
                       </label>
                       <textarea
@@ -1025,7 +1024,10 @@
                         placeholder="Ihre Nachricht"
                       ></textarea>
                     </div>
-                    <button type="submit" class="card-bento__action w-full">
+                    <button
+                      type="submit"
+                      class="card-bento__action card-bento__action--cyan"
+                    >
                       <i class="fas fa-paper-plane" aria-hidden="true"></i>
                       <span>Nachricht senden</span>
                     </button>
@@ -1051,9 +1053,7 @@
                           class="w-5 h-5 rounded-full flex items-center justify-center mt-1"
                           aria-hidden="true"
                         >
-                          <i
-                            class="fas fa-map-marker-alt text-xs"
-                          ></i>
+                          <i class="fas fa-map-marker-alt text-xs"></i>
                         </div>
                         <div>
                           <p class="card-bento__content">
@@ -1067,7 +1067,7 @@
               </div>
 
               <!-- Contact Details Card -->
-              <div>
+              <div class="mb-6">
                 <div class="card-bento card-bento--standard">
                   <div class="card-bento__header">
                     <div>
@@ -1076,7 +1076,7 @@
                   </div>
                   <div class="card-bento__body">
                     <div class="space-y-3">
-                        <div class="flex items-start space-x-3">
+                      <div class="flex items-start space-x-3">
                         <div
                           class="w-5 h-5 rounded-full flex items-center justify-center mt-1"
                           aria-hidden="true"
@@ -1105,8 +1105,19 @@
                   </div>
                 </div>
               </div>
-            </div>
 
+          <!-- New: nice wide image card before the form/info grid -->
+          <div>
+            <figure class="relative overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="images/spiel-strasse.jpeg"
+                alt="Kind spielt mit Kreide ein Hüpfspiel auf der Straße"
+                class="w-full h-64 sm:h-80 md:h-[26rem] object-cover"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+            </div>
           </div>
         </div>
       </section>
