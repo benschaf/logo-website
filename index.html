@@ -204,9 +204,29 @@
             </div>
           </div>
         </div>
+
+        <!-- Overlay quote (visible on lg and larger) -->
+        <div class="hero-quote-overlay hidden sm:hidden md:!block">
+          <figure class="hero-quote">
+            <blockquote class="hero-quote__text">
+              <span class="hero-quote__part"
+                >„Ein Wort kann klein <br>beginnen und doch<br> eine große Tür
+                öffnen.“</span
+              >
+            </blockquote>
+          </figure>
+        </div>
       </section>
 
       <section class="py-12 bg-gray-50 relative -mt-16 z-10">
+        <!-- Mobile quote (visible below hero on small screens) -->
+        <div class="px-6 md:hidden">
+          <figure class="hero-quote-inline">
+            <blockquote class="hero-quote-inline__text">
+              „Ein Wort kann klein beginnen und doch eine große Tür öffnen.“
+            </blockquote>
+          </figure>
+        </div>
         <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 items-center">
           <div class="order-2 md:order-1">
             <h3
