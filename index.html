@@ -27,6 +27,20 @@
       href="images/logo-logopaedie-sagmeister-black.webp"
       type="image/webp"
     />
+    <style>
+      /* Prevent headings from hiding behind the fixed navbar */
+      :root {
+        --anchor-offset: 88px;
+      }
+      @media (min-width: 768px) {
+        :root {
+          --anchor-offset: 96px;
+        }
+      }
+      section[id] {
+        scroll-margin-top: var(--anchor-offset);
+      }
+    </style>
   </head>
 
   <body class="bg-gray-50">
@@ -57,15 +71,6 @@
               <span>Home</span>
             </a>
             <a
-              href="#about"
-              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
-              role="menuitem"
-              data-section="about"
-            >
-              <i class="fas fa-user text-sm" aria-hidden="true"></i>
-              <span>Über mich</span>
-            </a>
-            <a
               href="#services"
               class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
               role="menuitem"
@@ -73,6 +78,15 @@
             >
               <i class="fas fa-stethoscope text-sm" aria-hidden="true"></i>
               <span>Leistungen</span>
+            </a>
+            <a
+              href="#about"
+              class="nav-link text-black hover:text-black font-medium transition-colors flex items-center space-x-1"
+              role="menuitem"
+              data-section="about"
+            >
+              <i class="fas fa-user text-sm" aria-hidden="true"></i>
+              <span>Über mich</span>
             </a>
             <a
               href="#info"
@@ -125,15 +139,6 @@
               <span>Home</span>
             </a>
             <a
-              href="#about"
-              class="mobile-menu-item"
-              role="menuitem"
-              data-section="about"
-            >
-              <i class="fas fa-user" aria-hidden="true"></i>
-              <span>Über mich</span>
-            </a>
-            <a
               href="#services"
               class="mobile-menu-item"
               role="menuitem"
@@ -141,6 +146,15 @@
             >
               <i class="fas fa-stethoscope" aria-hidden="true"></i>
               <span>Leistungen</span>
+            </a>
+            <a
+              href="#about"
+              class="mobile-menu-item"
+              role="menuitem"
+              data-section="about"
+            >
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span>Über mich</span>
             </a>
             <a
               href="#info"
@@ -195,20 +209,23 @@
       <section class="py-12 bg-gray-50 relative -mt-16 z-10">
         <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 items-center">
           <div class="order-2 md:order-1">
-            <h3 id="services-title" class="text-4xl font-bold text-gray-800 mb-4">
+            <h3
+              id="welcome-title"
+              class="text-4xl font-bold text-gray-800 mb-4"
+            >
               Willkommen in meiner logopädischen Praxis!
             </h3>
             <p class="text-l text-gray-800 mb-6 max-w-4xl">
-              Wir als Praxis legen großen Wert auf eine vertrauensvolle Atmosphäre
-              und eine Therapie, die auf die individuellen Bedürfnisse jedes
-              Einzelnen zugeschnitten ist.
+              Wir als Praxis legen großen Wert auf eine vertrauensvolle
+              Atmosphäre und eine Therapie, die auf die individuellen
+              Bedürfnisse jedes Einzelnen zugeschnitten ist.
             </p>
             <p class="text-l text-gray-800 mb-6 max-w-4xl">
               Sprache, Stimme und Kommunikation sind für uns weit mehr als nur
               Werkzeuge, sie sind die Grundlage dafür, wie wir uns ausdrücken,
-              verstanden werden und mit anderen in Beziehung treten. Jeder Mensch
-              verdient es, seine eigene Stimme zu finden und nutzen zu können.
-              Genau dabei möchten wir unsere Patientinnen und Patienten
+              verstanden werden und mit anderen in Beziehung treten. Jeder
+              Mensch verdient es, seine eigene Stimme zu finden und nutzen zu
+              können. Genau dabei möchten wir unsere Patientinnen und Patienten
               unterstützen.
             </p>
           </div>
@@ -219,13 +236,19 @@
               class="rounded-2xl shadow-lg w-full h-64 sm:h-80 md:h-[28rem] object-cover object-center"
               loading="lazy"
             />
-            <figcaption class="sr-only">Spielerische Therapie in freundlicher Atmosphäre</figcaption>
+            <figcaption class="sr-only">
+              Spielerische Therapie in freundlicher Atmosphäre
+            </figcaption>
           </figure>
         </div>
       </section>
 
       <!-- Services Section -->
-      <section class="pb-12 pt-4 bg-gray-50">
+      <section
+        id="services"
+        class="pb-12 pt-4 bg-gray-50"
+        aria-labelledby="services-title"
+      >
         <div class="max-w-7xl mx-auto">
           <!-- Section Header -->
           <div class="mb-12">
@@ -262,7 +285,9 @@
                 />
               </div>
               <!-- Children's Services Main Card -->
-              <div class="card-bento card-bento--standard w-full lg:w-[56%] lg:flex-none">
+              <div
+                class="card-bento card-bento--standard w-full lg:w-[56%] lg:flex-none"
+              >
                 <div class="card-bento__header">
                   <div>
                     <h4 class="card-bento__title card-bento__title--large">
@@ -906,9 +931,9 @@
                 class="card-bento__body card-bento__body--full-padding flex flex-col justify-center h-full"
               >
                 <div class="text-center">
-                  <h4 class="card-bento__title card-bento__title--large mb-4">
-                    Bereit für den ersten Schritt?
-                  </h4>
+                  <h2 class="card-bento__title card-bento__title--large mb-4">
+                    Kontakt
+                  </h2>
                   <p class="card-bento__content text-lg mb-6">
                     Kontaktieren Sie mich gerne für ein unverbindliches
                     Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre
@@ -940,7 +965,6 @@
               </div>
             </div>
           </div>
-
 
           <div class="grid gap-6 grid-cols-1 lg:grid-cols-3">
             <!-- Contact Form Card (2/3 width on large screens) -->
@@ -1106,17 +1130,17 @@
                 </div>
               </div>
 
-          <!-- New: nice wide image card before the form/info grid -->
-          <div>
-            <figure class="relative overflow-hidden rounded-2xl shadow-lg">
-              <img
-                src="images/spiel-strasse.jpeg"
-                alt="Kind spielt mit Kreide ein Hüpfspiel auf der Straße"
-                class="w-full h-64 sm:h-80 md:h-[26rem] object-cover"
-                loading="lazy"
-              />
-            </figure>
-          </div>
+              <!-- New: nice wide image card before the form/info grid -->
+              <div>
+                <figure class="relative overflow-hidden rounded-2xl shadow-lg">
+                  <img
+                    src="images/spiel-strasse.jpeg"
+                    alt="Kind spielt mit Kreide ein Hüpfspiel auf der Straße"
+                    class="w-full h-64 sm:h-80 md:h-[26rem] object-cover"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
             </div>
           </div>
         </div>
@@ -1181,13 +1205,6 @@
                     <span>Home</span>
                   </a>
                   <a
-                    href="#about"
-                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
-                  >
-                    <i class="fas fa-user text-sm" aria-hidden="true"></i>
-                    <span>Über mich</span>
-                  </a>
-                  <a
                     href="#services"
                     class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
                   >
@@ -1196,6 +1213,23 @@
                       aria-hidden="true"
                     ></i>
                     <span>Leistungen</span>
+                  </a>
+                  <a
+                    href="#about"
+                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
+                  >
+                    <i class="fas fa-user text-sm" aria-hidden="true"></i>
+                    <span>Über mich</span>
+                  </a>
+                  <a
+                    href="#info"
+                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
+                  >
+                    <i
+                      class="fas fa-info-circle text-sm"
+                      aria-hidden="true"
+                    ></i>
+                    <span>Informationen</span>
                   </a>
                   <a
                     href="#contact"
