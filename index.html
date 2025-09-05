@@ -360,257 +360,77 @@
                   </div>
 
                   <!-- TODO: Punkt davor -->
-                  <style>
-                    /* Children's detailed services as a simple bulleted list */
-                    #children-services .grid {
-                      display: block;
-                      margin: 0;
-                      padding: 0;
-                    }
-                    #children-services .grid > div {
-                      margin: 0;
-                      padding: 0;
-                    }
+                  <ul id="children-services" class="hidden mt-6 services-list">
+                    <li class="service-item">
+                      <h6 class="service-title">Dyslalie</h6>
+                      <p class="service-description">
+                        Artikulationsstörungen – fehlerhaftes Bilden von
+                        Lauten (z. B. „Tatze" statt „Katze").
+                      </p>
+                    </li>
 
-                    /* Turn each former card into a clean list row with a visible bullet */
-                    #children-services .compact-service-card {
-                      position: relative;
-                      display: block;
-                      list-style: none;
-                      margin: 0 0 0.5rem 0;
-                      background: transparent !important;
-                      border: 0 !important;
-                      box-shadow: none !important;
-                      border-radius: 0 !important;
-                      padding-top: 0 !important;
-                      padding-right: 0 !important;
-                      padding-bottom: 0 !important;
-                    }
-                    #children-services .compact-service-card::before {
-                      content: "";
-                      position: absolute;
-                      left: 0.25rem;
-                      top: 0.6rem;
-                      width: 0.375rem;
-                      height: 0.375rem;
-                      border-radius: 9999px;
-                      background: #374151; /* gray-700 */
-                    }
+                    <li class="service-item">
+                      <h6 class="service-title">Hörstörungen</h6>
+                      <p class="service-description">
+                        Sprachentwicklungsstörungen bei
+                        Hörbeeinträchtigungen.
+                      </p>
+                    </li>
 
-                    /* Strip inner card paddings and backgrounds */
-                    #children-services .compact-header,
-                    #children-services .compact-body,
-                    #children-services .card-bento__header,
-                    #children-services .card-bento__body {
-                      padding: 0;
-                      margin: 0;
-                      background: none;
-                    }
+                    <li class="service-item">
+                      <h6 class="service-title">Dysgrammatismus</h6>
+                      <p class="service-description">
+                        Schwierigkeiten beim korrekten Bilden von Sätzen
+                        und Wortbeugung.
+                      </p>
+                    </li>
 
-                    /* Title and description styling */
-                    #children-services .compact-title {
-                      display: inline;
-                      font-size: 1rem;
-                      font-weight: 600;
-                      color: #1f2937; /* gray-800 */
-                      margin: 0;
-                    }
-                    #children-services .compact-content {
-                      display: block;
-                      font-size: 0.95rem;
-                      color: #374151; /* gray-700 */
-                      margin: 0.25rem 0 0.75rem;
-                    }
+                    <li class="service-item">
+                      <h6 class="service-title">Rhinophonie</h6>
+                      <p class="service-description">
+                        Näseln durch Gaumensegelprobleme oder strukturelle
+                        Besonderheiten.
+                      </p>
+                    </li>
 
-                    /* Remove decorative accents */
-                    #children-services .card-bento--pink::before,
-                    #children-services .card-bento--pink::after {
-                      content: none !important;
-                    }
-                  </style>
-                  <div id="children-services" class="hidden mt-6">
-                    <div
-                      class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3"
-                    >
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Dyslalie
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Artikulationsstörungen – fehlerhaftes Bilden von
-                              Lauten (z. B. „Tatze" statt „Katze").
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">AVWS</h6>
+                      <p class="service-description">
+                        Auditive Wahrnehmungs- und Verarbeitungsstörungen.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Hörstörungen
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Sprachentwicklungsstörungen bei
-                              Hörbeeinträchtigungen.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Wortschatz</h6>
+                      <p class="service-description">
+                        Eingeschränkter Wortschatz beim Verstehen oder
+                        aktiven Gebrauch.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Dysgrammatismus
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Schwierigkeiten beim korrekten Bilden von Sätzen
-                              und Wortbeugung.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Sprachentwicklung</h6>
+                      <p class="service-description">
+                        Allgemeine Auffälligkeiten in Wortschatz,
+                        Grammatik und Aussprache.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Rhinophonie
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Näseln durch Gaumensegelprobleme oder strukturelle
-                              Besonderheiten.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Myofunktionelle Störung</h6>
+                      <p class="service-description">
+                        Fehlfunktionen der Mund- und Gesichtsmuskulatur.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                AVWS
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Auditive Wahrnehmungs- und Verarbeitungsstörungen.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Wortschatz
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Eingeschränkter Wortschatz beim Verstehen oder
-                              aktiven Gebrauch.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Sprachentwicklung
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Allgemeine Auffälligkeiten in Wortschatz,
-                              Grammatik und Aussprache.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Myofunktionelle Störung
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Fehlfunktionen der Mund- und Gesichtsmuskulatur.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Stottern
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Wiederholungen, Dehnungen und Blockaden im
-                              Redefluss.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Stottern</h6>
+                      <p class="service-description">
+                        Wiederholungen, Dehnungen und Blockaden im
+                        Redefluss.
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -675,231 +495,63 @@
                   </div>
 
                   <!-- Adults Detailed Services (now inside the card) -->
-                  <div id="adults-services" class="hidden mt-6">
-                    <div
-                      class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3"
-                    >
-                      <div>
-                        <div
-                          class="card-bento card-bento--cyan compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Aphasie
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Sprach- und Sprechstörungen nach Schlaganfall oder
-                              neurologischen Erkrankungen.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                  <ul id="adults-services" class="hidden mt-6 services-list">
+                    <li class="service-item">
+                      <h6 class="service-title">Aphasie</h6>
+                      <p class="service-description">
+                        Sprach- und Sprechstörungen nach Schlaganfall oder
+                        neurologischen Erkrankungen.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--cyan compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Sprechapraxie
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Störung der Planung von Artikulationsbewegungen.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Sprechapraxie</h6>
+                      <p class="service-description">
+                        Störung der Planung von Artikulationsbewegungen.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--cyan compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Dysarthrie
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Koordinationsstörung von Stimme, Artikulation und
-                              Atmung.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Dysarthrie</h6>
+                      <p class="service-description">
+                        Koordinationsstörung von Stimme, Artikulation und
+                        Atmung.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--cyan compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Dysphagie
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Schluckstörungen verschiedener Ursachen.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Dysphagie</h6>
+                      <p class="service-description">
+                        Schluckstörungen verschiedener Ursachen.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--cyan compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Dysphonie
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Stimmstörungen funktioneller oder organischer
-                              Ursachen.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Dysphonie</h6>
+                      <p class="service-description">
+                        Stimmstörungen funktioneller oder organischer
+                        Ursachen.
+                      </p>
+                    </li>
 
-                      <div>
-                        <div
-                          class="card-bento card-bento--cyan compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Facialisparesen
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Lähmungen der Gesichtsmuskulatur mit Auswirkung
-                              auf Mimik und Sprechen.
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          class="card-bento card-bento--pink compact-service-card"
-                        >
-                          <div class="card-bento__header compact-header">
-                            <div>
-                              <h6 class="card-bento__title compact-title">
-                                Stottern
-                              </h6>
-                            </div>
-                          </div>
-                          <div class="card-bento__body compact-body">
-                            <p class="card-bento__content compact-content">
-                              Wiederholungen, Dehnungen und Blockaden im
-                              Redefluss.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    <li class="service-item">
+                      <h6 class="service-title">Facialisparesen</h6>
+                      <p class="service-description">
+                        Lähmungen der Gesichtsmuskulatur mit Auswirkung
+                        auf Mimik und Sprechen.
+                      </p>
+                    </li>
 
-                  <style>
-                    /* Unified detailed services as a simple bulleted list (children + adults) */
+                    <li class="service-item">
+                      <h6 class="service-title">Stottern</h6>
+                      <p class="service-description">
+                        Wiederholungen, Dehnungen und Blockaden im
+                        Redefluss.
+                      </p>
+                    </li>
+                  </ul>
 
-                    /* Make the inner "grid" containers behave like a single column list */
-                    #children-services .grid,
-                    #adults-services .grid {
-                      display: block;
-                      margin: 0;
-                      padding: 0;
-                    }
-                    #children-services .grid > div,
-                    #adults-services .grid > div {
-                      margin: 0;
-                      padding: 0;
-                    }
 
-                    /* Each item becomes a clean list row with a visible bullet */
-                    #children-services .compact-service-card,
-                    #adults-services .compact-service-card {
-                      position: relative;
-                      display: block;
-                      list-style: none;
-                      margin: 0 0 0.5rem 0;
-                      background: transparent !important;
-                      border: 0 !important;
-                      box-shadow: none !important;
-                      border-radius: 0 !important;
-                      padding-top: 0 !important;
-                      padding-right: 0 !important;
-                      padding-bottom: 0 !important;
-                    }
-                    #children-services .compact-service-card::before,
-                    #adults-services .compact-service-card::before {
-                      content: "";
-                      position: absolute;
-                      left: 0.25rem;
-                      top: 0.6rem;
-                      width: 0.375rem;
-                      height: 0.375rem;
-                      border-radius: 9999px;
-                      background: #374151; /* gray-700 */
-                    }
-
-                    /* Strip inner paddings and backgrounds */
-                    #children-services .compact-header,
-                    #adults-services .compact-header,
-                    #children-services .compact-body,
-                    #adults-services .compact-body,
-                    #children-services .card-bento__header,
-                    #adults-services .card-bento__header,
-                    #children-services .card-bento__body,
-                    #adults-services .card-bento__body {
-                      padding: 0;
-                      margin: 0;
-                      background: none;
-                    }
-
-                    /* Title and description styling */
-                    #children-services .compact-title,
-                    #adults-services .compact-title {
-                      display: inline;
-                      font-size: 1rem;
-                      font-weight: 600; /* bold-ish title */
-                      color: #1f2937; /* gray-800 */
-                      margin: 0;
-                    }
-                    #children-services .compact-content,
-                    #adults-services .compact-content {
-                      display: block;
-                      font-size: 0.95rem;
-                      color: #374151; /* gray-700 */
-                      margin: 0.25rem 0 0.75rem;
-                    }
-
-                    /* Remove decorative accents from colored "card" variants inside the lists */
-                    #children-services .card-bento--pink::before,
-                    #children-services .card-bento--pink::after,
-                    #adults-services .card-bento--pink::before,
-                    #adults-services .card-bento--pink::after,
-                    #adults-services .card-bento--cyan::before,
-                    #adults-services .card-bento--cyan::after {
-                      content: none !important;
-                    }
-                  </style>
                 </div>
               </div>
             </div>

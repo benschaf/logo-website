@@ -521,7 +521,57 @@ h6 {
   color: #6b7280;
 }
 
-/* Service Sections Visual Connection */
+/* ==========================================================================
+   Service Lists Styles (converted from div cards to semantic ul/li)
+   ========================================================================== */
+
+/* Base styling for service lists */
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each service item styled as a list row with custom bullet */
+.services-list .service-item {
+  position: relative;
+  display: block;
+  margin: 0 0 0.5rem 0;
+  padding-left: 1rem;
+}
+
+/* Custom bullet point for service items */
+.services-list .service-item::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.6rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: #374151; /* gray-700 */
+}
+
+/* Service title styling */
+.services-list .service-title {
+  display: inline;
+  font-size: 1rem;
+  font-weight: 600; /* bold-ish title */
+  color: #1f2937; /* gray-800 */
+  margin: 0;
+}
+
+/* Service description styling */
+.services-list .service-description {
+  display: block;
+  font-size: 0.95rem;
+  color: #374151; /* gray-700 */
+  margin: 0.25rem 0 0.75rem;
+}
+
+/* ==========================================================================
+   Service Sections Visual Connection
+   ========================================================================== */
 #children-services,
 #adults-services {
   padding: 0.5rem;
