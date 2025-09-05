@@ -4,6 +4,125 @@
  */
 
 /**
+ * Centralized Scroll Manager
+ * Handles throttling and debouncing of scroll events for all modules
+ */
+class ScrollManager {
+  constructor() {
+    this.scrollHandlers = new Set();
+    this.resizeHandlers = new Set();
+    this.isScrolling = false;
+    this.scrollEndTimer = null;
+    this.ticking = false;
+    
+    this.init();
+  }
+
+  init() {
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    // Throttled scroll event using requestAnimationFrame
+    window.addEventListener("scroll", () => {
+      if (!this.ticking) {
+        requestAnimationFrame(() => {
+          this.handleScroll();
+          this.ticking = false;
+        });
+        this.ticking = true;
+      }
+    }, { passive: true });
+
+    // Handle resize and orientation changes
+    window.addEventListener("resize", () => {
+      this.handleResize();
+    });
+
+    window.addEventListener("orientationchange", () => {
+      setTimeout(() => {
+        this.handleResize();
+      }, 100);
+    });
+  }
+
+  // Register a scroll handler
+  addScrollHandler(handler) {
+    this.scrollHandlers.add(handler);
+  }
+
+  // Remove a scroll handler
+  removeScrollHandler(handler) {
+    this.scrollHandlers.delete(handler);
+  }
+
+  // Register a resize handler
+  addResizeHandler(handler) {
+    this.resizeHandlers.add(handler);
+  }
+
+  // Remove a resize handler
+  removeResizeHandler(handler) {
+    this.resizeHandlers.delete(handler);
+  }
+
+  handleScroll() {
+    this.isScrolling = true;
+    
+    // Execute all registered scroll handlers
+    this.scrollHandlers.forEach(handler => {
+      try {
+        handler();
+      } catch (error) {
+        console.warn('Scroll handler error:', error);
+      }
+    });
+
+    // Debounce scroll end detection
+    this.debounceScrollEnd();
+  }
+
+  handleResize() {
+    // Execute all registered resize handlers
+    this.resizeHandlers.forEach(handler => {
+      try {
+        handler();
+      } catch (error) {
+        console.warn('Resize handler error:', error);
+      }
+    });
+  }
+
+  debounceScrollEnd() {
+    if (this.scrollEndTimer) {
+      clearTimeout(this.scrollEndTimer);
+    }
+    
+    this.scrollEndTimer = setTimeout(() => {
+      this.isScrolling = false;
+      // Notify handlers that scrolling has ended
+      this.scrollHandlers.forEach(handler => {
+        if (typeof handler.onScrollEnd === 'function') {
+          try {
+            handler.onScrollEnd();
+          } catch (error) {
+            console.warn('Scroll end handler error:', error);
+          }
+        }
+      });
+    }, 250);
+  }
+
+  // Check if currently scrolling
+  getIsScrolling() {
+    return this.isScrolling;
+  }
+}
+
+// Create global scroll manager instance
+const scrollManager = new ScrollManager();
+
+/**
  * Service Expansion Module
  * Handles expandable children and adult service sections with smooth animations
  */
@@ -663,34 +782,23 @@ class ScrollSpy {
   }
 
   bindEvents() {
-    // Throttled scroll event
-    let ticking = false;
-
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          if (this.isUserNavigating) {
-            this.scheduleScrollEndDetection();
-          } else {
-            this.updateActiveSection();
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-
-    // Update on resize
-    window.addEventListener("resize", () => {
-      this.updateActiveSection();
-    });
-
-    // Update on orientation change
-    window.addEventListener("orientationchange", () => {
-      setTimeout(() => {
+    // Create scroll handler for centralized management
+    this.scrollHandler = () => {
+      if (this.isUserNavigating) {
+        this.scheduleScrollEndDetection();
+      } else {
         this.updateActiveSection();
-      }, 100);
-    });
+      }
+    };
+
+    // Create resize handler for centralized management
+    this.resizeHandler = () => {
+      this.updateActiveSection();
+    };
+
+    // Register with centralized scroll manager
+    scrollManager.addScrollHandler(this.scrollHandler);
+    scrollManager.addResizeHandler(this.resizeHandler);
 
     // Immediate active state on click of desktop links
     this.desktopLinks.forEach((link) => {
@@ -702,6 +810,19 @@ class ScrollSpy {
         this.scheduleScrollEndDetection();
       });
     });
+  }
+
+  // Cleanup method for proper event listener removal
+  destroy() {
+    if (this.scrollHandler) {
+      scrollManager.removeScrollHandler(this.scrollHandler);
+    }
+    if (this.resizeHandler) {
+      scrollManager.removeResizeHandler(this.resizeHandler);
+    }
+    if (this.scrollEndTimer) {
+      clearTimeout(this.scrollEndTimer);
+    }
   }
 
   updateActiveSection() {
@@ -789,23 +910,45 @@ class ParallaxEffect {
   }
 
   bindEvents() {
-    // Throttled scroll event for performance
-    let ticking = false;
-
-    window.addEventListener("scroll", () => {
-      if (!ticking && this.isActive) {
-        requestAnimationFrame(() => {
-          this.updateParallax();
-          ticking = false;
-        });
-        ticking = true;
+    // Create scroll handler for centralized management
+    this.scrollHandler = () => {
+      if (this.isActive) {
+        this.updateParallax();
       }
-    });
+    };
 
-    // Update on resize
-    window.addEventListener("resize", () => {
+    // Create resize handler for centralized management
+    this.resizeHandler = () => {
+      const wasActive = this.isActive;
       this.isActive = window.innerWidth > 768 && !this.isMobile();
-    });
+      
+      // If parallax state changed, update registration
+      if (wasActive !== this.isActive) {
+        if (this.isActive) {
+          scrollManager.addScrollHandler(this.scrollHandler);
+        } else {
+          scrollManager.removeScrollHandler(this.scrollHandler);
+          // Reset transform when disabled
+          this.heroBackground.style.transform = '';
+        }
+      }
+    };
+
+    // Register handlers with centralized scroll manager
+    if (this.isActive) {
+      scrollManager.addScrollHandler(this.scrollHandler);
+    }
+    scrollManager.addResizeHandler(this.resizeHandler);
+  }
+
+  // Cleanup method for proper event listener removal
+  destroy() {
+    if (this.scrollHandler) {
+      scrollManager.removeScrollHandler(this.scrollHandler);
+    }
+    if (this.resizeHandler) {
+      scrollManager.removeResizeHandler(this.resizeHandler);
+    }
   }
 
   updateParallax() {
@@ -850,33 +993,39 @@ class HeaderTransparency {
   }
 
   bindEvents() {
-    // Throttled scroll event for performance
-    let ticking = false;
+    // Create scroll handler for centralized management
+    this.scrollHandler = () => {
+      this.updateHeaderState();
+    };
 
-    window.addEventListener("scroll", () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
+    // Create resize handler for centralized management
+    this.resizeHandler = () => {
+      this.updateHeaderState();
+    };
+
+    // Register with centralized scroll manager
+    scrollManager.addScrollHandler(this.scrollHandler);
+    scrollManager.addResizeHandler(this.resizeHandler);
+
+    // Update on mobile menu toggle
+    if (this.mobileMenuBtn) {
+      this.mobileMenuBtn.addEventListener("click", () => {
+        // Use setTimeout to ensure menu state is updated first
+        setTimeout(() => {
           this.updateHeaderState();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
+        }, 0);
+      });
+    }
+  }
 
-    this.mobileMenuBtn.addEventListener("click", () => {
-      this.updateHeaderState();
-    });
-
-    // Update on resize and orientation change
-    window.addEventListener("resize", () => {
-      this.updateHeaderState();
-    });
-
-    window.addEventListener("orientationchange", () => {
-      setTimeout(() => {
-        this.updateHeaderState();
-      }, 100);
-    });
+  // Cleanup method for proper event listener removal
+  destroy() {
+    if (this.scrollHandler) {
+      scrollManager.removeScrollHandler(this.scrollHandler);
+    }
+    if (this.resizeHandler) {
+      scrollManager.removeResizeHandler(this.resizeHandler);
+    }
   }
 
   updateHeaderState() {
