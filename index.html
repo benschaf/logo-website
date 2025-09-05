@@ -40,6 +40,10 @@
       section[id] {
         scroll-margin-top: var(--anchor-offset);
       }
+
+      /* Make hero a positioning context and keep bg layers behind content */
+      #home.hero-parallax { position: relative; min-height: 78vh; }
+      .hero-background, .hero-overlay { position: absolute; inset: 0; z-index: 0; }
     </style>
   </head>
 
@@ -188,31 +192,29 @@
         <div class="hero-overlay"></div>
 
         <!-- Hero Content -->
-        <div class="hero-content">
-          <div class="max-w-7xl mx-auto">
-            <div class="hero-text">
+        <div class="absolute inset-0 z-20">
+          <!-- Title badge: phone top-left, large bottom-right -->
+          <div
+            class="absolute top-28 left-5 sm:top-32 sm:left-8 lg:top-auto lg:left-auto lg:bottom-24 lg:right-16"
+          >
+            <div class="inline-block rounded-3xl bg-white/70 backdrop-blur-md shadow-lg px-6 lg:px-24 py-4 lg:py-6">
               <h1 id="hero-title" class="leading-tight">
-                <span
-                  class="block text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 tracking-tight"
-                  >Logopädie</span
-                >
-                <span
-                  class="block text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mt-2"
-                  >Eva Sagmeister</span
-                >
+                <span class="block text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 tracking-tight">
+                  Logopädie
+                </span>
+                <span class="block text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mt-1">
+                  Eva Sagmeister
+                </span>
               </h1>
             </div>
           </div>
         </div>
 
-        <!-- Overlay quote (visible on lg and larger) -->
-        <div class="hero-quote-overlay hidden sm:hidden md:!block">
-          <figure class="hero-quote">
-            <blockquote class="hero-quote__text">
-              <span class="hero-quote__part"
-                >„Ein Wort kann klein <br>beginnen und doch<br> eine große Tür
-                öffnen.“</span
-              >
+        <!-- Quote: only on large screens, top-left -->
+        <div class="block max-[1023px]:hidden absolute top-16 left-8 z-20 max-w-md">
+          <figure>
+            <blockquote class="mt-16 rounded-2xl bg-white/60 backdrop-blur-md shadow-md px-5 py-4 text-gray-800 text-lg leading-snug">
+              „Ein Wort kann klein beginnen und doch eine große Tür öffnen.“
             </blockquote>
           </figure>
         </div>
@@ -220,7 +222,7 @@
 
       <section class="py-12 bg-gray-50 relative -mt-16 z-10">
         <!-- Mobile quote (visible below hero on small screens) -->
-        <div class="px-6 md:hidden">
+        <div class="px-6 lg:hidden">
           <figure class="hero-quote-inline">
             <blockquote class="hero-quote-inline__text">
               „Ein Wort kann klein beginnen und doch eine große Tür öffnen.“
@@ -228,12 +230,23 @@
           </figure>
         </div>
         <div class="max-w-7xl mx-auto grid gap-8 sm:grid-cols-2 items-center">
+          <figure class="order-1 md:order-2">
+            <img
+              src="images/spiel-strasse.jpeg"
+              alt="Mutter und Tochter spielen gemeinsam am Tisch"
+              class="rounded-2xl shadow-lg block mx-auto w-full h-96 sm:h-80 md:h-[28rem] object-cover max-w-[18rem] max-h-[18rem]"
+              loading="lazy"
+            />
+            <figcaption class="sr-only">
+              Spielerische Therapie in freundlicher Atmosphäre
+            </figcaption>
+          </figure>
           <div class="order-2 sm:order-1">
             <h3
               id="welcome-title"
               class="text-4xl font-bold text-gray-800 mb-4"
             >
-              Willkommen in meiner logopädischen Praxis!
+              Willkommen in unserer<br />logopädischen Praxis!
             </h3>
             <p class="text-l text-gray-800 mb-6 max-w-4xl">
               Wir als Praxis legen großen Wert auf eine vertrauensvolle
@@ -241,29 +254,18 @@
               Bedürfnisse jedes Einzelnen zugeschnitten ist.
             </p>
             <p class="text-l text-gray-800 mb-6 max-w-4xl">
-              Sprache, Stimme und Kommunikation sind für uns weit mehr als nur
-              Werkzeuge, sie sind die Grundlage dafür, wie wir uns ausdrücken,
-              verstanden werden und mit anderen in Beziehung treten. Jeder
-              Mensch verdient es, seine eigene Stimme zu finden und nutzen zu
-              können. Genau dabei möchten wir unsere Patientinnen und Patienten
-              unterstützen.
+              Logopädie ist eine medizinisch-therapeutische Fachdisziplin, die
+              Sprach-, Sprech-, Stimm-, Schluck- und Hörbeeinträchtigungen
+              behandelt. Neben Therapie gehören auch Beratung, Prävention und
+              Rehabilitation zu unseren Aufgaben.
             </p>
           </div>
-          <figure class="order-1 md:order-2">
-            <img
-              src="images/mutter-sohn-spiel.jpeg"
-              alt="Mutter und Tochter spielen gemeinsam am Tisch"
-              class="rounded-2xl shadow-lg w-full h-96 sm:h-80 md:h-[28rem] object-cover object-center"
-              loading="lazy"
-            />
-            <figcaption class="sr-only">
-              Spielerische Therapie in freundlicher Atmosphäre
-            </figcaption>
-          </figure>
         </div>
       </section>
 
       <!-- Services Section -->
+      <!-- TODO make both sections the same with on lg screens -->
+      <!-- TODO use lists instead of cards for the leistungen -->
       <section
         id="services"
         class="pb-12 pt-4 bg-gray-50"
@@ -276,18 +278,18 @@
               id="services-title"
               class="text-4xl font-bold text-gray-800 mb-4"
             >
-              Meine Leistungen
+              Unsere Fachgebiete
             </h3>
             <p class="text-l text-gray-800 mb-6 max-w-4xl">
-              Bei einem Erstgespräch (Anamnese) nehme ich mir Zeit, um Ihren
-              aktuellen Stand sorgfältig zu erfassen. Durch gezielte
-              Beobachtungen, Fragen und gegebenenfalls diagnostische Tests
-              ermittle ich das genaue logopädische Störungsbild.
+              Zu Beginn jeder Behandlung führen wir ein ausführliches
+              Anamnesegespräch und gezielte Diagnostik durch. Darauf basierend
+              erstellen wir einen individuellen Therapieplan, der sich am Alter,
+              Entwicklungsstand und den persönlichen Bedürfnissen orientiert.
             </p>
             <p class="text-l text-gray-800 mb-6 max-w-4xl">
-              Auf dieser Grundlage plane ich eine individuell auf Sie oder Ihr
-              Kind abgestimmte logopädische Therapie, die sich an den jeweiligen
-              Bedürfnissen und Zielen orientiert.
+              Besonders wichtig ist uns die enge Zusammenarbeit mit Ärzten,
+              Kindergärten und anderen Fachbereichen sowie eine transparente
+              Kommunikation mit unseren Patienten.
             </p>
           </div>
 
@@ -295,86 +297,145 @@
           <div>
             <!-- Children's Services Section -->
             <div
-              class="services-section flex flex-wrap lg:flex-nowrap items-top gap-6"
+              class="services-section flex flex-col lg:flex-row items-start gap-6"
             >
-              <div class="w-full lg:w-[44%] lg:flex-none">
-              <img
-                src="images/kind.jpeg"
-                alt="Kind"
-                class="rounded-lg shadow-lg w-full h-72 sm:h-96 md:h-96 lg:h-[28rem] object-cover"
-              />
-              </div>
               <!-- Children's Services Main Card -->
-              <div
-              class="card-bento card-bento--standard w-full lg:w-[56%] lg:flex-none"
-              >
-              <div class="card-bento__header">
-                <div>
-                <h4 class="card-bento__title card-bento__title--large">
-                  Logopädie für Kinder
-                </h4>
-                <p class="card-bento__subtitle">
-                  Spielerische Therapie & kindgerechte Methoden
-                </p>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content">
-                Spezialisierte Behandlung für Kinder mit individuellen,
-                kindgerechten Methoden und spielerischen Ansätzen.
-                </p>
-                <p>
-                <span class="font-medium">
-                  Eltern werden aktiv in den Therapieprozess einbezogen.
-                </span>
-                </p>
-                <div
-                class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4"
-                aria-label="Behandlungsdetails"
-                >
-                <div class="flex items-start gap-2">
-                  <i class="fas fa-clock mt-1"></i>
+              <div class="card-bento card-bento--standard w-full lg:w-1/2">
+                <div class="card-bento__header">
                   <div>
-                  <p class="text-sm font-medium">Dauer</p>
-                  <p class="text-sm">30-45 Min</p>
+                    <h4 class="card-bento__title card-bento__title--large">
+                      Logopädie für Kinder
+                    </h4>
+                    <p class="card-bento__subtitle">
+                      Spielerische Therapie & kindgerechte Methoden
+                    </p>
                   </div>
                 </div>
-                <div class="flex items-start gap-2">
-                  <i class="fas fa-sync-alt mt-1"></i>
-                  <div>
-                  <p class="text-sm text-gray-600 font-medium">
-                    Häufigkeit
+                <div class="card-bento__body">
+                  <p class="card-bento__content">
+                    Spezialisierte Behandlung für Kinder mit individuellen,
+                    kindgerechten Methoden und spielerischen Ansätzen.
                   </p>
-                  <p class="text-sm text-gray-700">1-2x pro Woche</p>
-                  </div>
-                </div>
-                </div>
-                <div class="btn-card-action card-bento__footer">
-                <button
-                  id="children-toggle"
-                  aria-expanded="false"
-                  aria-controls="children-services"
-                  class="card-bento__action card-bento__action--pink"
-                >
-                  <span class="toggle-label"
-                  >Alle Behandlungsbereiche anzeigen</span
-                  >
-                  <i
-                  class="fas fa-chevron-down transition-transform"
-                  id="children-chevron"
-                  ></i>
-                </button>
-                </div>
-
-                <!-- Children's Detailed Services (now inside the card) -->
-                <div id="children-services" class="hidden mt-6">
-                <div
-                  class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3"
-                >
-                  <div>
+                  <p>
+                    <span class="font-medium">
+                      Eltern werden aktiv in den Therapieprozess einbezogen.
+                    </span>
+                  </p>
                   <div
-                    class="card-bento card-bento--pink compact-service-card"
+                    class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4"
+                    aria-label="Behandlungsdetails"
                   >
+                    <div class="flex items-start gap-2">
+                      <i class="fas fa-clock mt-1"></i>
+                      <div>
+                        <p class="text-sm font-medium">Dauer</p>
+                        <p class="text-sm">30-45 Min</p>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                      <i class="fas fa-sync-alt mt-1"></i>
+                      <div>
+                        <p class="text-sm text-gray-600 font-medium">
+                          Häufigkeit
+                        </p>
+                        <p class="text-sm text-gray-700">1-3x pro Woche</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="btn-card-action card-bento__footer">
+                    <button
+                      id="children-toggle"
+                      aria-expanded="false"
+                      aria-controls="children-services"
+                      class="card-bento__action card-bento__action--pink"
+                    >
+                      <span class="toggle-label"
+                        >Alle Behandlungsbereiche anzeigen</span
+                      >
+                      <i
+                        class="fas fa-chevron-down transition-transform"
+                        id="children-chevron"
+                      ></i>
+                    </button>
+                  </div>
+
+                  <!-- TODO: Punkt davor -->
+                  <style>
+                    /* Children's detailed services as a simple bulleted list */
+                    #children-services .grid {
+                      display: block;
+                      margin: 0;
+                      padding: 0;
+                    }
+                    #children-services .grid > div {
+                      margin: 0;
+                      padding: 0;
+                    }
+
+                    /* Turn each former card into a clean list row with a visible bullet */
+                    #children-services .compact-service-card {
+                      position: relative;
+                      display: block;
+                      list-style: none;
+                      margin: 0 0 0.5rem 0;
+                      background: transparent !important;
+                      border: 0 !important;
+                      box-shadow: none !important;
+                      border-radius: 0 !important;
+                      padding-top: 0 !important;
+                      padding-right: 0 !important;
+                      padding-bottom: 0 !important;
+                    }
+                    #children-services .compact-service-card::before {
+                      content: "";
+                      position: absolute;
+                      left: 0.25rem;
+                      top: 0.6rem;
+                      width: 0.375rem;
+                      height: 0.375rem;
+                      border-radius: 9999px;
+                      background: #374151; /* gray-700 */
+                    }
+
+                    /* Strip inner card paddings and backgrounds */
+                    #children-services .compact-header,
+                    #children-services .compact-body,
+                    #children-services .card-bento__header,
+                    #children-services .card-bento__body {
+                      padding: 0;
+                      margin: 0;
+                      background: none;
+                    }
+
+                    /* Title and description styling */
+                    #children-services .compact-title {
+                      display: inline;
+                      font-size: 1rem;
+                      font-weight: 600;
+                      color: #1f2937; /* gray-800 */
+                      margin: 0;
+                    }
+                    #children-services .compact-content {
+                      display: block;
+                      font-size: 0.95rem;
+                      color: #374151; /* gray-700 */
+                      margin: 0.25rem 0 0.75rem;
+                    }
+
+                    /* Remove decorative accents */
+                    #children-services .card-bento--pink::before,
+                    #children-services .card-bento--pink::after {
+                      content: none !important;
+                    }
+                  </style>
+                  <div id="children-services" class="hidden mt-6">
+                    <div
+                      class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3"
+                    >
+                      <div>
+                        <div
+                          class="card-bento card-bento--pink compact-service-card"
+                        >
                           <div class="card-bento__header compact-header">
                             <div>
                               <h6 class="card-bento__title compact-title">
@@ -517,7 +578,7 @@
                           <div class="card-bento__header compact-header">
                             <div>
                               <h6 class="card-bento__title compact-title">
-                                Myofunktion
+                                Myofunktionelle Störung
                               </h6>
                             </div>
                           </div>
@@ -528,16 +589,33 @@
                           </div>
                         </div>
                       </div>
+
+                      <div>
+                        <div
+                          class="card-bento card-bento--pink compact-service-card"
+                        >
+                          <div class="card-bento__header compact-header">
+                            <div>
+                              <h6 class="card-bento__title compact-title">
+                                Stottern
+                              </h6>
+                            </div>
+                          </div>
+                          <div class="card-bento__body compact-body">
+                            <p class="card-bento__content compact-content">
+                              Wiederholungen, Dehnungen und Blockaden im
+                              Redefluss.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Adults Services Section -->
-            <div class="services-section mt-12">
               <!-- Adults Services Main Card -->
-              <div class="card-bento card-bento--primary">
+              <div class="card-bento card-bento--primary w-full lg:w-1/2">
                 <div class="card-bento__header">
                   <div>
                     <h4 class="card-bento__title card-bento__title--large">
@@ -550,14 +628,13 @@
                 </div>
                 <div class="card-bento__body">
                   <p class="card-bento__content">
-                    Behandlung neurologischer und funktioneller Sprach-, Sprech-
-                    und Stimmstörungen bei Erwachsenen.
+                    Individuelle Therapie & alltagsnahe Ansätze. Gezielte
+                    Behandlung von Sprach-, Sprech-, Stimm- und Schluckstörungen
+                    mit Methoden, die auf Ihre persönlichen Bedürfnisse
+                    abgestimmt sind. Der Alltag und Ihre individuellen Ziele
+                    stehen dabei im Mittelpunkt.
                   </p>
-                  <p>
-                    <span class="font-medium">
-                      Moderne computergestützte Methoden kommen zum Einsatz.
-                    </span>
-                  </p>
+
                   <div
                     class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4"
                     aria-label="Behandlungsdetails"
@@ -566,7 +643,7 @@
                       <i class="fas fa-clock text-cyan-600 mt-1"></i>
                       <div>
                         <p class="text-sm text-gray-600 font-medium">Dauer</p>
-                        <p class="text-sm text-gray-700">45-60 Min</p>
+                        <p class="text-sm text-gray-700">30-60 Min</p>
                       </div>
                     </div>
                     <div class="flex items-start gap-2">
@@ -575,10 +652,11 @@
                         <p class="text-sm text-gray-600 font-medium">
                           Häufigkeit
                         </p>
-                        <p class="text-sm text-gray-700">2-3x pro Woche</p>
+                        <p class="text-sm text-gray-700">1-3x pro Woche</p>
                       </div>
                     </div>
                   </div>
+
                   <div class="card-bento__footer">
                     <button
                       id="adults-toggle"
@@ -717,9 +795,111 @@
                             </p>
                           </div>
                         </div>
+                        <div
+                          class="card-bento card-bento--pink compact-service-card"
+                        >
+                          <div class="card-bento__header compact-header">
+                            <div>
+                              <h6 class="card-bento__title compact-title">
+                                Stottern
+                              </h6>
+                            </div>
+                          </div>
+                          <div class="card-bento__body compact-body">
+                            <p class="card-bento__content compact-content">
+                              Wiederholungen, Dehnungen und Blockaden im
+                              Redefluss.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+
+                  <style>
+                    /* Unified detailed services as a simple bulleted list (children + adults) */
+
+                    /* Make the inner "grid" containers behave like a single column list */
+                    #children-services .grid,
+                    #adults-services .grid {
+                      display: block;
+                      margin: 0;
+                      padding: 0;
+                    }
+                    #children-services .grid > div,
+                    #adults-services .grid > div {
+                      margin: 0;
+                      padding: 0;
+                    }
+
+                    /* Each item becomes a clean list row with a visible bullet */
+                    #children-services .compact-service-card,
+                    #adults-services .compact-service-card {
+                      position: relative;
+                      display: block;
+                      list-style: none;
+                      margin: 0 0 0.5rem 0;
+                      background: transparent !important;
+                      border: 0 !important;
+                      box-shadow: none !important;
+                      border-radius: 0 !important;
+                      padding-top: 0 !important;
+                      padding-right: 0 !important;
+                      padding-bottom: 0 !important;
+                    }
+                    #children-services .compact-service-card::before,
+                    #adults-services .compact-service-card::before {
+                      content: "";
+                      position: absolute;
+                      left: 0.25rem;
+                      top: 0.6rem;
+                      width: 0.375rem;
+                      height: 0.375rem;
+                      border-radius: 9999px;
+                      background: #374151; /* gray-700 */
+                    }
+
+                    /* Strip inner paddings and backgrounds */
+                    #children-services .compact-header,
+                    #adults-services .compact-header,
+                    #children-services .compact-body,
+                    #adults-services .compact-body,
+                    #children-services .card-bento__header,
+                    #adults-services .card-bento__header,
+                    #children-services .card-bento__body,
+                    #adults-services .card-bento__body {
+                      padding: 0;
+                      margin: 0;
+                      background: none;
+                    }
+
+                    /* Title and description styling */
+                    #children-services .compact-title,
+                    #adults-services .compact-title {
+                      display: inline;
+                      font-size: 1rem;
+                      font-weight: 600; /* bold-ish title */
+                      color: #1f2937; /* gray-800 */
+                      margin: 0;
+                    }
+                    #children-services .compact-content,
+                    #adults-services .compact-content {
+                      display: block;
+                      font-size: 0.95rem;
+                      color: #374151; /* gray-700 */
+                      margin: 0.25rem 0 0.75rem;
+                    }
+
+                    /* Remove decorative accents from colored "card" variants inside the lists */
+                    #children-services .card-bento--pink::before,
+                    #children-services .card-bento--pink::after,
+                    #adults-services .card-bento--pink::before,
+                    #adults-services .card-bento--pink::after,
+                    #adults-services .card-bento--cyan::before,
+                    #adults-services .card-bento--cyan::after {
+                      content: none !important;
+                    }
+                  </style>
                 </div>
               </div>
             </div>
@@ -728,59 +908,60 @@
       </section>
 
       <!-- About Section -->
+      <!-- TODO stack the about section and image on smaller screens -->
       <section
         id="about"
         class="py-16 bg-gray-50"
         aria-labelledby="about-title"
       >
         <div class="max-w-7xl mx-auto">
+          <div class="flex items-center gap-3 mb-4">
+            <h3
+              id="services-title"
+              class="text-4xl font-bold text-gray-800 mb-4"
+            >
+              Über mich
+            </h3>
+          </div>
           <!-- Simplified two-column layout -->
-          <div class="grid gap-8 lg:grid-cols-2 items-start about-grid">
+          <div class="flex gap-8 items-start max-w-4xl flex-wrap">
             <!-- Profile Image -->
             <img
-              src="images/portrait.jpeg"
+              src="images/portrait-2.jpeg"
               alt="Eva Sagmeister - Logopädin"
-              class="w-full max-h-[42rem] object-cover object-[center_20%] rounded-2xl"
+              class="max-h-[20rem] max-w-[15rem] object-cover object-[center_20%] rounded-2xl"
             />
 
             <!-- Text content and list -->
             <div>
-              <div class="flex items-center gap-3 mb-4">
-                <div>
-                  <h3 id="about-title" class="text-3xl font-bold text-gray-800">
-                    Über mich
-                  </h3>
-                  <p class="text-gray-600">
-                    Mutter von drei Kindern - Zertifizierte Logopädin
-                  </p>
-                </div>
-              </div>
-              <div class="prose prose-blue max-w-none text-gray-700">
+              <div class="prose prose-blue max-w-xl text-gray-700">
                 <p class="pb-2">
-                  Mein Name ist Eva sagmeister und ich bin staatlich anerkannte
-                  Logopädin seit 2017.
+                  Mein Name ist Eva Sagmeister, ich bin staatlich anerkannte
+                  Logopädin und arbeite seit 2017 mit großer Freude in diesem
+                  Beruf.
                 </p>
                 <p class="pb-2">
-                  In den vergangenen Jahren durfte ich in meinem Beruf viele
-                  wertvolle Erfahrungen sammeln und zahlreiche Menschen auf
-                  ihrem sprachlichen Weg begleiten. Nun habe ich den Schritt
-                  gewagt, meine eigene Praxis zu eröffnen, ein Herzensprojekt,
-                  das mir die Möglichkeit gibt, meine Vorstellungen von
-                  individueller und einfühlsamer Therapie in die Tat umzusetzen.
+                  In den vergangenen Jahren durfte ich viele wertvolle
+                  Erfahrungen sammeln und zahlreiche Menschen auf ihrem
+                  sprachlichen Weg begleiten. Mit der Eröffnung meiner eigenen
+                  Praxis erfülle ich mir nun einen Herzenswunsch: einen Ort zu
+                  schaffen, an dem Therapie individuell, einfühlsam und ganz auf
+                  die Bedürfnisse meiner Patientinnen und Patienten abgestimmt
+                  ist.
                 </p>
                 <p class="pb-2">
                   Als Mutter weiß ich, wie wichtig Geduld, Verständnis und
-                  Einfühlungsvermögen sind. Eigenschaften, die mir nicht nur
-                  privat, sondern auch in meiner Arbeit als Logopädin täglich
-                  zugutekommen. Es liegt mir am Herzen, jedem Patienten und
-                  jeder Patientin mit Offenheit, Respekt und Wertschätzung zu
-                  begegnen.
+                  Empathie sind. Diese Eigenschaften prägen nicht nur mein
+                  privates Leben, sondern auch meine tägliche Arbeit. Mir ist es
+                  ein Anliegen, jedem Menschen mit Offenheit, Respekt und
+                  Wertschätzung zu begegnen.
                 </p>
                 <p class="pb-2">
-                  Für mich ist Logopädie weit mehr als Therapie: Es bedeutet,
+                  Für mich bedeutet Logopädie weit mehr als Therapie:
                   <strong
-                    >Menschen in ihrer Entwicklung zu unterstützen, ihnen
-                    Sicherheit zu geben und sie zu stärken.</strong
+                    >Es ist die Chance, Menschen in ihrer Entwicklung zu
+                    begleiten, ihnen Sicherheit zu geben und sie auf ihrem Weg
+                    zu stärken.</strong
                   >
                 </p>
               </div>
@@ -803,13 +984,15 @@
           </div>
 
           <!-- Top row: image + prescription card -->
-          <div class="grid gap-6 lg:grid-cols-2 lg:items-stretch">
+          <div class="lg:items-stretch max-w-3xl mx-auto">
             <!-- Opening Hours -->
             <div class="card-bento card-bento--standard lg:h-full">
               <div class="card-bento__header">
                 <div>
-                  <h4 class="card-bento__title">Sprechzeiten</h4>
-                  <p class="card-bento__subtitle">Termine nach Vereinbarung</p>
+                  <h4 class="card-bento__title">Wir sind für sie da:</h4>
+                  <p class="card-bento__subtitle">
+                    Termine nach Vereinbarung: +49 1578 5320411
+                  </p>
                 </div>
               </div>
               <div class="card-bento__body">
@@ -831,334 +1014,261 @@
                 </div>
               </div>
             </div>
-
-            <!-- Insurance Coverage -->
-            <div class="lg:h-full">
-              <div class="card-bento card-bento--primary lg:h-full">
-                <div class="card-bento__header">
-                  <div>
-                    <h4 class="card-bento__title">Kassenleistung</h4>
-                  </div>
+            <div class="mt-8 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+              <!-- Ablauf -->
+              <h3 id="ablauf-title" class="text-lg font-medium text-gray-900 mb-2">
+                Ablauf
+              </h3>
+              <div class="space-y-4">
+                <p class="text-gray-700 leading-relaxed">
+                  Nachdem Ihr Arzt Ihnen eine Verordnung für die logopädische
+                  Therapie ausgestellt hat, melden Sie sich einfach bei mir zur
+                  Terminvereinbarung. Damit die Verordnung nicht verfällt,
+                  schreibt Ihre Krankenkasse vor, dass die erste Therapie
+                  innerhalb von
+                  <span class="font-medium text-gray-900">28 Tagen</span> nach
+                  dem Ausstellungsdatum startet. Melden Sie sich also am besten
+                  zeitnah, damit wir einen geeigneten Termin finden können.
+                </p>
+                <div>
+                  <h4 class="italic text-gray-900">
+                    Diese Fachärzte können eine Heilmittelverordnung ausstellen:
+                  </h4>
+                  <ul class="mt-3 grid gap-2 sm:grid-cols-2 text-gray-700">
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="my-auto h-1.5 w-1.5 rounded-full bg-gray-400/80"
+                      ></span>
+                      <span>Hausärzte</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="my-auto h-1.5 w-1.5 rounded-full bg-gray-400/80"
+                      ></span>
+                      <span>Kinderärzte</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="my-auto h-1.5 w-1.5 rounded-full bg-gray-400/80"
+                      ></span>
+                      <span>HNO-Ärzte</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="my-auto h-1.5 w-1.5 rounded-full bg-gray-400/80"
+                      ></span>
+                      <span>Phoniater</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="my-auto h-1.5 w-1.5 rounded-full bg-gray-400/80"
+                      ></span>
+                      <span>Neurologen</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="my-auto h-1.5 w-1.5 rounded-full bg-gray-400/80"
+                      ></span>
+                      <span>Zahnärzte</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <span
+                        class="my-auto h-1.5 w-1.5 rounded-full bg-gray-400/80"
+                      ></span>
+                      <span>Kieferorthopäden</span>
+                    </li>
+                  </ul>
                 </div>
-                <div class="card-bento__body">
-                  <p class="card-bento__content">
-                    In meiner Praxis sowie bei Hausbesuchen werden Patientinnen
-                    und Patienten aller gesetzlichen Krankenkassen behandelt.
-                  </p>
+              </div>
+
+              <!-- Absagen -->
+              <h3 id="absagen-title" class="mt-8 text-lg font-medium text-gray-900 mb-2">
+                Absagen
+              </h3>
+              <div class="space-y-4">
+                <p class="text-gray-700 leading-relaxed">
+                  Ihr Termin ist fest für Sie reserviert. Sollten Sie verhindert
+                  sein, informieren Sie uns bitte spätestens
+                  <span class="font-medium text-gray-900"
+                    >24 Stunden vorher</span
+                  >. Auf diese Weise können wir den Termin an einen anderen
+                  Patienten vergeben.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Bitte beachten Sie: Krankenkassen übernehmen keine
+                  Ausfallkosten. Bei kurzfristigen oder nicht abgesagten
+                  Terminen müssen wir Ihnen auf Grundlage von
+                  <span class="font-medium text-gray-900">§ 615 BGB</span> die
+                  ausgefallene Behandlung privat in Rechnung stellen. Vielen
+                  Dank für Ihr Verständnis!
+                </p>
+              </div>
+
+              <!-- Kosten -->
+              <h3 id="kosten-title" class="mt-8 text-lg font-medium text-gray-900 mb-2">
+                Kosten
+              </h3>
+              <div class="space-y-4">
+                <p class="text-gray-700 leading-relaxed">
+                  Die Kosten für logopädische Behandlungen werden in der Regel
+                  sowohl von gesetzlichen als auch von privaten Krankenkassen
+                  übernommen.
+                </p>
+                <div class="grid gap-4 sm:grid-cols-2">
                   <div
-                    class="bg-green-50 border border-green-200 p-3 rounded-lg space-y-2 mt-4"
+                    class="rounded-lg border border-gray-200 bg-gray-50/60 p-4"
                   >
-                    <div class="flex items-center space-x-2 text-green-700">
-                      <i class="fas fa-check text-green-600"></i>
-                      <span class="text-sm font-medium"
-                        >Alle gesetzlichen Krankenkassen</span
+                    <h4 class="text-sm font-semibold text-gray-900">
+                      Kinder bis 18 Jahre
+                    </h4>
+                    <p class="mt-2 text-gray-700 leading-relaxed">
+                      Die Krankenkasse übernimmt die Kosten vollständig.
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg border border-gray-200 bg-gray-50/60 p-4"
+                  >
+                    <h4 class="text-sm font-semibold text-gray-900">
+                      Erwachsene
+                    </h4>
+                    <p class="mt-2 text-gray-700 leading-relaxed">
+                      Die Krankenkasse trägt den größten Teil der
+                      Behandlungskosten. Wenn keine Zuzahlungsbefreiung
+                      vorliegt, zahlen Sie lediglich
+                      <span class="font-medium text-gray-900"
+                        >10% Zuzahlung</span
                       >
-                    </div>
-                    <div class="flex items-center space-x-2 text-green-700">
-                      <i class="fas fa-check text-green-600"></i>
-                      <span class="text-sm font-medium"
-                        >Private Krankenkassen</span
+                      sowie einmalig
+                      <span class="font-medium text-gray-900"
+                        >10&nbsp;€ Verordnungsgebühr</span
                       >
-                    </div>
+                      pro Rezept.
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Three “nice features” cards with titles and full padding -->
-          <div
-            class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6"
-          >
-            <div>
-              <div class="card-bento card-bento--cyan">
-                <div class="card-bento__header">
-                  <div>
-                    <h4 class="card-bento__title">Hausbesuche möglich</h4>
-                  </div>
-                </div>
-                <div class="card-bento__body card-bento__body--full-padding">
-                  <p class="card-bento__content">
-                    Bei medizinischer Notwendigkeit und eingeschränkter
-                    Mobilität.
-                  </p>
-                </div>
+              <!-- Individuelle Betreuung -->
+              <h3 id="betreuung-title" class="mt-8 text-lg font-medium text-gray-900 mb-2">
+                Individuelle Betreuung
+              </h3>
+              <div class="space-y-4">
+                <p class="text-gray-700 leading-relaxed">
+                  <span class="font-medium text-gray-900"
+                    >Therapie in der Praxis oder bei Ihnen zu Hause</span
+                  >
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  Wir betreuen Sie sowohl in unserer Praxis als auch bei Bedarf
+                  im Rahmen von Hausbesuchen. Ob die Therapie bei Ihnen zu Hause
+                  stattfinden kann, entscheidet der behandelnde Arzt und
+                  vermerkt dies auf der Verordnung.
+                </p>
               </div>
             </div>
-
-            <div>
-              <div class="card-bento card-bento--cyan">
-                <div class="card-bento__header">
-                  <div>
-                    <h4 class="card-bento__title">Individuelle Diagnostik</h4>
-                  </div>
-                </div>
-                <div class="card-bento__body card-bento__body--full-padding">
-                  <p class="card-bento__content">
-                    Ausführliche Anamnese und gezielte Tests.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="card-bento card-bento--cyan">
-                <div class="card-bento__header">
-                  <div>
-                    <h4 class="card-bento__title">Familienorientiert</h4>
-                  </div>
-                </div>
-                <div class="card-bento__body card-bento__body--full-padding">
-                  <p class="card-bento__content">
-                    Einbeziehung der Familie in den Therapieprozess.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Low-emphasis subtext (merged with “Vielen Dank”) -->
-          <div class="mt-4 text-sm text-gray-600 space-y-2">
-            <p>
-              Ärztliche Verordnung erforderlich: Behandlung nur mit gültigem
-              Rezept. Rezepte sind 28 Tage ab Ausstellungsdatum gültig.
-            </p>
-            <p>
-              Terminabsagen: Bei Absagen weniger als 24 Stunden vorher oder
-              Nichterscheinen kann der Ausfall gemäß § 615 BGB privat berechnet
-              werden.
-            </p>
-            <p>
-              Vielen Dank für Ihr Verständnis! Diese Regelungen helfen mir
-              dabei, Ihnen eine professionelle und planbare Behandlung zu
-              bieten.
-            </p>
           </div>
         </div>
       </section>
 
-      <!-- Contact Section -->
       <section
         id="contact"
-        class="py-16 bg-gray-50"
+        class="py-20 bg-gray-50"
         aria-labelledby="contact-title"
       >
-            <h3 class="text-4xl font-bold text-gray-800 mb-4 text-center">Kontakt</h3>
-        <div class="max-w-7xl mx-auto">
-          <!-- Call to Action Card (full width below on large screens) -->
-          <div class="lg:col-span-3 mb-6">
-            <div class="card-bento card-bento--primary h-full">
-              <div
-                class="card-bento__body card-bento__body--full-padding flex flex-col justify-center h-full"
+        <div class="max-w-3xl mx-auto px-6">
+          <header class="text-center mb-8">
+            <h3
+              id="contact-title"
+              class="text-4xl font-bold text-gray-800 mb-3"
+            >
+              Kontakt
+            </h3>
+          </header>
+
+          <!-- TODO adjust background color -->
+          <!-- Subtle card with brand (card) color, not button color -->
+            <div class="card-bento--primary rounded-xl p-8 shadow-sm">
+            <p class="text-center text-lg text-gray-600">
+              Am besten per WhatsApp, Telefon oder E‑Mail.
+            </p>
+            <div class="mt-7 flex flex-wrap items-stretch gap-4 sm:justify-center">
+              <a
+              href="https://wa.me/4915785320411"
+              class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg bg-green-600 px-5 py-3.5 text-lg font-semibold text-white hover:bg-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
+              role="button"
+              aria-label="WhatsApp Chat starten"
+              rel="noopener noreferrer"
+              target="_blank"
               >
-                <div class="text-center p-6 pb-0">
-                  <p class="card-bento__content text-lg">
-                    Kontaktieren Sie mich gerne für ein unverbindliches
-                    Erstgespräch. Gemeinsam finden wir den besten Weg für Ihre
-                    Therapie.
-                  </p>
-                  <div
-                    class="card-bento__footer flex flex-wrap justify-center gap-3 sm:gap-4"
+              <i class="fab fa-whatsapp text-white" aria-hidden="true"></i>
+              <span>WhatsApp</span>
+              </a>
+              <a
+              href="tel:+4915785320411"
+              class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-lg font-semibold text-gray-900 hover:border-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              role="button"
+              aria-label="Telefonanruf starten"
+              >
+              <i class="fas fa-phone text-gray-700" aria-hidden="true"></i>
+              <span>Anrufen</span>
+              </a>
+              <a
+              href="mailto:praxis@sag-meister.de"
+              class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-lg font-semibold text-gray-900 hover:border-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              role="button"
+              aria-label="E‑Mail senden"
+              >
+              <i class="fas fa-envelope text-gray-700" aria-hidden="true"></i>
+              <span>E‑Mail</span>
+              </a>
+            </div>
+            </div>
+
+          <!-- Written out contact info -->
+          <div
+            class="mt-8 flex flex-col sm:flex-row gap-8 w-full sm:items-stretch"
+          >
+            <div class="card-bento--primary rounded-xl p-8 shadow-sm flex-1">
+              <h5 class="card-bento__title mb-3">Kontakt</h5>
+              <address class="space-y-2 not-italic text-sm">
+                <p class="flex items-center space-x-2">
+                  <i class="fas fa-phone text-sm" aria-hidden="true"></i>
+                  <a href="tel:+4915785320411" class="hover:underline"
+                    >Tel: +49 1578 5320411</a
                   >
-                    <a
-                      href="tel:+4915785320411"
-                      class="card-bento__action card-bento__action--cyan"
-                      role="button"
-                      aria-label="Telefonanruf starten"
-                    >
-                      <i class="fas fa-phone" aria-hidden="true"></i>
-                      <span>Anrufen</span>
-                    </a>
-                    <a
-                      href="mailto:praxis@sag-meister.de"
-                      class="card-bento__action card-bento__action--secondary"
-                      role="button"
-                      aria-label="E-Mail an Praxis senden"
-                    >
-                      <i class="fas fa-envelope" aria-hidden="true"></i>
-                      <span>E-Mail schreiben</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid gap-6 grid-cols-1 lg:grid-cols-3">
-            <!-- Contact Form Card (2/3 width on large screens) -->
-            <div class="lg:col-span-2">
-              <div class="card-bento card-bento--cyan">
-                <div class="card-bento__header">
-                  <div>
-                    <h4 class="card-bento__title">Kontaktformular</h4>
-                    <p class="card-bento__subtitle">
-                      Schreiben Sie mir eine Nachricht
-                    </p>
-                  </div>
-                </div>
-                <div class="card-bento__body">
-                  <form class="space-y-6" id="contact-form" novalidate>
-                    <div>
-                      <label
-                        for="name"
-                        class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
-                      >
-                        <i class="fas fa-user" aria-hidden="true"></i>
-                        <span>Vor- und Nachname</span>
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        class="form-input"
-                        placeholder="Ihr Name"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        for="phone"
-                        class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
-                      >
-                        <i class="fas fa-phone" aria-hidden="true"></i>
-                        <span>Telefon</span>
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        required
-                        class="form-input"
-                        placeholder="Ihre Telefonnummer"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        for="email"
-                        class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
-                      >
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <span>E-Mail</span>
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        class="form-input"
-                        placeholder="Ihre E-Mail-Adresse"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        for="message"
-                        class="block text-sm font-medium text-gray-700 mb-2 ml-4 flex items-center space-x-2"
-                      >
-                        <i class="fas fa-comment" aria-hidden="true"></i>
-                        <span>Nachricht</span>
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows="4"
-                        required
-                        class="form-input"
-                        placeholder="Ihre Nachricht"
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      class="card-bento__action card-bento__action--cyan"
-                    >
-                      <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                      <span>Nachricht senden</span>
-                    </button>
-                  </form>
-                </div>
-              </div>
+                </p>
+                <p class="flex items-center space-x-2">
+                  <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
+                  <a href="mailto:praxis@sag-meister.de" class="hover:underline"
+                    >praxis@sag-meister.de</a
+                  >
+                </p>
+              </address>
             </div>
 
-            <!-- Contact Info Column (1/3 width on large screens) -->
-            <div class="lg:col-span-1 flex flex-col">
-              <!-- Practice Info Card -->
-              <div class="mb-6">
-                <div class="card-bento card-bento--standard">
-                  <div class="card-bento__header">
-                    <div>
-                      <h4 class="card-bento__title">Praxis-Adresse</h4>
-                    </div>
-                  </div>
-                  <div class="card-bento__body">
-                    <div class="space-y-3">
-                      <div class="flex items-start space-x-3">
-                        <div
-                          class="w-5 h-5 rounded-full flex items-center justify-center mt-1"
-                          aria-hidden="true"
-                        >
-                          <i class="fas fa-map-marker-alt text-xs"></i>
-                        </div>
-                        <div>
-                          <p class="card-bento__content">
-                            Oeslauer Str. 26<br />96472 Rödental
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="card-bento--primary rounded-xl p-8 shadow-sm flex-1">
+              <h4 class="text-xl font-semibold text-gray-900 mb-3">
+                Praxis‑Adresse
+              </h4>
+              <div class="flex items-start gap-3 text-gray-700">
+                <i
+                  class="fas fa-map-marker-alt text-cyan-700 text-sm mt-1"
+                  aria-hidden="true"
+                ></i>
+                <address class="not-italic text-base">
+                  Oeslauer Str. 26<br />96472 Rödental
+                </address>
               </div>
-
-              <!-- Contact Details Card -->
-              <div class="mb-6">
-                <div class="card-bento card-bento--standard">
-                  <div class="card-bento__header">
-                    <div>
-                      <h4 class="card-bento__title">Kontaktdaten</h4>
-                    </div>
-                  </div>
-                  <div class="card-bento__body">
-                    <div class="space-y-3">
-                      <div class="flex items-start space-x-3">
-                        <div
-                          class="w-5 h-5 rounded-full flex items-center justify-center mt-1"
-                          aria-hidden="true"
-                        >
-                          <i class="fas fa-phone text-xs"></i>
-                        </div>
-                        <div>
-                          <p class="card-bento__content">+49 1578 5320411</p>
-                        </div>
-                      </div>
-
-                      <div class="flex items-start space-x-3">
-                        <div
-                          class="w-5 h-5 rounded-full flex items-center justify-center mt-1"
-                          aria-hidden="true"
-                        >
-                          <i class="fas fa-envelope text-xs"></i>
-                        </div>
-                        <div>
-                          <p class="card-bento__content">
-                            praxis@sag-meister.de
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- New: nice wide image card before the form/info grid -->
-              <div>
-                <figure class="relative overflow-hidden rounded-2xl shadow-lg">
-                  <img
-                    src="images/spiel-strasse.jpeg"
-                    alt="Kind spielt mit Kreide ein Hüpfspiel auf der Straße"
-                    class="w-full h-64 sm:h-80 md:h-[26rem] object-cover"
-                    loading="lazy"
-                  />
-                </figure>
-              </div>
+              <a
+                href="https://maps.google.com/?q=Oeslauer%20Str.%2026%2C%2096472%20R%C3%B6dental"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-4 inline-flex items-center gap-2 text-base text-cyan-700 hover:text-cyan-800 underline underline-offset-2"
+                aria-label="Route in Google Maps öffnen"
+              >
+                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                <span>Route planen</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1286,11 +1396,17 @@
                   </p>
                   <p class="flex items-center space-x-2">
                     <i class="fas fa-phone text-sm" aria-hidden="true"></i>
-                    <span>Tel: +49 1578 5320411</span>
+                    <a href="tel:+4915785320411" class="hover:underline"
+                      >+49 1578 5320411</a
+                    >
                   </p>
                   <p class="flex items-center space-x-2">
                     <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                    <span>praxis@sag-meister.de</span>
+                    <a
+                      href="mailto:praxis@sag-meister.de"
+                      class="hover:underline"
+                      >praxis@sag-meister.de</a
+                    >
                   </p>
                 </address>
               </div>

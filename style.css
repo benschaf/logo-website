@@ -609,7 +609,7 @@ html {
 /* Parallax Hero Section */
 .hero-parallax {
   position: relative;
-  min-height: 100dvh;
+  height: 90dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -621,7 +621,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("images/woman-doing-speech-therapy.webp");
+  background-image: url("images/hero-image-mother-son.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
