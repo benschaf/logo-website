@@ -1,0 +1,14 @@
+{
+  "name": "logo-website",
+  "version": "1.0.0",
+  "description": "Eva Sagmeister Logopädie Website with security hardening tools",
+  "scripts": {
+    "check-security": "node check-external-links.js",
+    "fix-security": "node check-external-links.js --fix",
+    "security-help": "node check-external-links.js --help"
+  },
+  "keywords": ["website", "logopädie", "security", "accessibility"],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
