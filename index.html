@@ -27,24 +27,6 @@
       href="images/logo-logopaedie-sagmeister-black.webp"
       type="image/webp"
     />
-    <style>
-      /* Prevent headings from hiding behind the fixed navbar */
-      :root {
-        --anchor-offset: 88px;
-      }
-      @media (min-width: 768px) {
-        :root {
-          --anchor-offset: 96px;
-        }
-      }
-      section[id] {
-        scroll-margin-top: var(--anchor-offset);
-      }
-
-      /* Make hero a positioning context and keep bg layers behind content */
-      #home.hero-parallax { position: relative; min-height: 78vh; }
-      .hero-background, .hero-overlay { position: absolute; inset: 0; z-index: 0; }
-    </style>
   </head>
 
   <body class="bg-gray-50">
@@ -360,75 +342,7 @@
                   </div>
 
                   <!-- TODO: Punkt davor -->
-                  <style>
-                    /* Children's detailed services as a simple bulleted list */
-                    #children-services .grid {
-                      display: block;
-                      margin: 0;
-                      padding: 0;
-                    }
-                    #children-services .grid > div {
-                      margin: 0;
-                      padding: 0;
-                    }
-
-                    /* Turn each former card into a clean list row with a visible bullet */
-                    #children-services .compact-service-card {
-                      position: relative;
-                      display: block;
-                      list-style: none;
-                      margin: 0 0 0.5rem 0;
-                      background: transparent !important;
-                      border: 0 !important;
-                      box-shadow: none !important;
-                      border-radius: 0 !important;
-                      padding-top: 0 !important;
-                      padding-right: 0 !important;
-                      padding-bottom: 0 !important;
-                    }
-                    #children-services .compact-service-card::before {
-                      content: "";
-                      position: absolute;
-                      left: 0.25rem;
-                      top: 0.6rem;
-                      width: 0.375rem;
-                      height: 0.375rem;
-                      border-radius: 9999px;
-                      background: #374151; /* gray-700 */
-                    }
-
-                    /* Strip inner card paddings and backgrounds */
-                    #children-services .compact-header,
-                    #children-services .compact-body,
-                    #children-services .card-bento__header,
-                    #children-services .card-bento__body {
-                      padding: 0;
-                      margin: 0;
-                      background: none;
-                    }
-
-                    /* Title and description styling */
-                    #children-services .compact-title {
-                      display: inline;
-                      font-size: 1rem;
-                      font-weight: 600;
-                      color: #1f2937; /* gray-800 */
-                      margin: 0;
-                    }
-                    #children-services .compact-content {
-                      display: block;
-                      font-size: 0.95rem;
-                      color: #374151; /* gray-700 */
-                      margin: 0.25rem 0 0.75rem;
-                    }
-
-                    /* Remove decorative accents */
-                    #children-services .card-bento--pink::before,
-                    #children-services .card-bento--pink::after {
-                      content: none !important;
-                    }
-                  </style>
-                  <div id="children-services" class="hidden mt-6">
+                  <div id="children-services" class="hidden mt-6 services-details">
                     <div
                       class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3"
                     >
@@ -675,7 +589,7 @@
                   </div>
 
                   <!-- Adults Detailed Services (now inside the card) -->
-                  <div id="adults-services" class="hidden mt-6">
+                  <div id="adults-services" class="hidden mt-6 services-details">
                     <div
                       class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3"
                     >
@@ -815,91 +729,6 @@
                       </div>
                     </div>
                   </div>
-
-                  <style>
-                    /* Unified detailed services as a simple bulleted list (children + adults) */
-
-                    /* Make the inner "grid" containers behave like a single column list */
-                    #children-services .grid,
-                    #adults-services .grid {
-                      display: block;
-                      margin: 0;
-                      padding: 0;
-                    }
-                    #children-services .grid > div,
-                    #adults-services .grid > div {
-                      margin: 0;
-                      padding: 0;
-                    }
-
-                    /* Each item becomes a clean list row with a visible bullet */
-                    #children-services .compact-service-card,
-                    #adults-services .compact-service-card {
-                      position: relative;
-                      display: block;
-                      list-style: none;
-                      margin: 0 0 0.5rem 0;
-                      background: transparent !important;
-                      border: 0 !important;
-                      box-shadow: none !important;
-                      border-radius: 0 !important;
-                      padding-top: 0 !important;
-                      padding-right: 0 !important;
-                      padding-bottom: 0 !important;
-                    }
-                    #children-services .compact-service-card::before,
-                    #adults-services .compact-service-card::before {
-                      content: "";
-                      position: absolute;
-                      left: 0.25rem;
-                      top: 0.6rem;
-                      width: 0.375rem;
-                      height: 0.375rem;
-                      border-radius: 9999px;
-                      background: #374151; /* gray-700 */
-                    }
-
-                    /* Strip inner paddings and backgrounds */
-                    #children-services .compact-header,
-                    #adults-services .compact-header,
-                    #children-services .compact-body,
-                    #adults-services .compact-body,
-                    #children-services .card-bento__header,
-                    #adults-services .card-bento__header,
-                    #children-services .card-bento__body,
-                    #adults-services .card-bento__body {
-                      padding: 0;
-                      margin: 0;
-                      background: none;
-                    }
-
-                    /* Title and description styling */
-                    #children-services .compact-title,
-                    #adults-services .compact-title {
-                      display: inline;
-                      font-size: 1rem;
-                      font-weight: 600; /* bold-ish title */
-                      color: #1f2937; /* gray-800 */
-                      margin: 0;
-                    }
-                    #children-services .compact-content,
-                    #adults-services .compact-content {
-                      display: block;
-                      font-size: 0.95rem;
-                      color: #374151; /* gray-700 */
-                      margin: 0.25rem 0 0.75rem;
-                    }
-
-                    /* Remove decorative accents from colored "card" variants inside the lists */
-                    #children-services .card-bento--pink::before,
-                    #children-services .card-bento--pink::after,
-                    #adults-services .card-bento--pink::before,
-                    #adults-services .card-bento--pink::after,
-                    #adults-services .card-bento--cyan::before,
-                    #adults-services .card-bento--cyan::after {
-                      content: none !important;
-                    }
-                  </style>
                 </div>
               </div>
             </div>

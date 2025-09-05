@@ -2,6 +2,34 @@
    Eva Sagmeister Logopädie Website Styles
    ========================================================================== */
 
+/* Navigation Anchor Offset Styles */
+:root {
+  --anchor-offset: 88px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --anchor-offset: 96px;
+  }
+}
+
+section[id] {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+/* Hero Parallax Positioning */
+#home.hero-parallax { 
+  position: relative; 
+  min-height: 78vh; 
+}
+
+.hero-background, 
+.hero-overlay { 
+  position: absolute; 
+  inset: 0; 
+  z-index: 0; 
+}
+
 /* Essential Utility Classes (in case Tailwind doesn't load) */
 .hidden {
   display: none !important;
@@ -1341,4 +1369,80 @@ html {
 
 .footer-nav {
   padding-left: 0 !important;
+}
+
+/* ==========================================================================
+   Services Details Styles (moved from inline styles)
+   ========================================================================== */
+
+/* Shared styles for service detail sections */
+.services-details .grid {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.services-details .grid > div {
+  margin: 0;
+  padding: 0;
+}
+
+/* Each service item becomes a clean list row with a visible bullet */
+.services-details .compact-service-card {
+  position: relative;
+  display: block;
+  list-style: none;
+  margin: 0 0 0.5rem 0;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.services-details .compact-service-card::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.6rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: #374151; /* gray-700 */
+}
+
+/* Strip inner card paddings and backgrounds */
+.services-details .compact-header,
+.services-details .compact-body,
+.services-details .card-bento__header,
+.services-details .card-bento__body {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+/* Title and description styling */
+.services-details .compact-title {
+  display: inline;
+  font-size: 1rem;
+  font-weight: 600; /* bold-ish title */
+  color: #1f2937; /* gray-800 */
+  margin: 0;
+}
+
+.services-details .compact-content {
+  display: block;
+  font-size: 0.95rem;
+  color: #374151; /* gray-700 */
+  margin: 0.25rem 0 0.75rem;
+}
+
+/* Remove decorative accents from colored "card" variants inside the lists */
+.services-details .card-bento--pink::before,
+.services-details .card-bento--pink::after,
+.services-details .card-bento--cyan::before,
+.services-details .card-bento--cyan::after {
+  content: none !important;
 }
