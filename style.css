@@ -606,9 +606,10 @@ html {
    Hero Section Styles
    ========================================================================== */
 
-/* Parallax Hero Section */
+/* Parallax Hero Section - positioning context for all hero elements */
 .hero-parallax {
   position: relative;
+  min-height: 78vh;
   height: 90dvh;
   display: flex;
   align-items: center;
