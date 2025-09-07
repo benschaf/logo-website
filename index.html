@@ -151,8 +151,37 @@
           }
         ]
       },
-      "openingHours": "Mo-Fr 08:00-18:00",
-      "sameAs": []
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday", 
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "potentialAction": [
+        {
+          "@type": "CommunicateAction",
+          "name": "Contact via WhatsApp",
+          "target": "https://wa.me/4915785320411"
+        },
+        {
+          "@type": "CommunicateAction", 
+          "name": "Call",
+          "target": "tel:+4915785320411"
+        },
+        {
+          "@type": "CommunicateAction",
+          "name": "Email",
+          "target": "mailto:praxis@sag-meister.de"
+        }
+      ]
     }
     </script>
   </head>
