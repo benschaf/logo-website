@@ -42,8 +42,15 @@
       }
 
       /* Make hero a positioning context and keep bg layers behind content */
-      #home.hero-parallax { position: relative; min-height: 78vh; }
-      .hero-background-img, .hero-overlay { position: absolute; inset: 0; }
+      #home.hero-parallax {
+        position: relative;
+        min-height: 78vh;
+      }
+      .hero-background-img,
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+      }
     </style>
   </head>
 
@@ -208,12 +215,18 @@
           <div
             class="absolute top-28 left-5 sm:top-32 sm:left-8 lg:top-auto lg:left-auto lg:bottom-24 lg:right-16"
           >
-            <div class="inline-block rounded-3xl bg-white/70 backdrop-blur-md shadow-lg px-6 lg:px-24 py-4 lg:py-6">
+            <div
+              class="inline-block rounded-3xl bg-white/70 backdrop-blur-md shadow-lg px-6 lg:px-24 py-4 lg:py-6"
+            >
               <h1 id="hero-title" class="leading-tight">
-                <span class="block text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 tracking-tight">
+                <span
+                  class="block text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 tracking-tight"
+                >
                   Logopädie
                 </span>
-                <span class="block text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mt-1">
+                <span
+                  class="block text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mt-1"
+                >
                   Eva Sagmeister
                 </span>
               </h1>
@@ -222,9 +235,13 @@
         </div>
 
         <!-- Quote: only on large screens, top-left -->
-        <div class="block max-[1023px]:hidden absolute top-16 left-8 z-20 max-w-md">
+        <div
+          class="block max-[1023px]:hidden absolute top-16 left-8 z-20 max-w-md"
+        >
           <figure>
-            <blockquote class="mt-16 rounded-2xl bg-white/60 backdrop-blur-md shadow-md px-5 py-4 text-gray-800 text-lg leading-snug">
+            <blockquote
+              class="mt-16 rounded-2xl bg-white/60 backdrop-blur-md shadow-md px-5 py-4 text-gray-800 text-lg leading-snug"
+            >
               „Ein Wort kann klein beginnen und doch eine große Tür öffnen.“
             </blockquote>
           </figure>
@@ -1033,7 +1050,10 @@
             </div>
             <div class="mt-8 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
               <!-- Ablauf -->
-              <h3 id="ablauf-title" class="text-lg font-medium text-gray-900 mb-2">
+              <h3
+                id="ablauf-title"
+                class="text-lg font-medium text-gray-900 mb-2"
+              >
                 Ablauf
               </h3>
               <div class="space-y-4">
@@ -1099,7 +1119,10 @@
               </div>
 
               <!-- Absagen -->
-              <h3 id="absagen-title" class="mt-8 text-lg font-medium text-gray-900 mb-2">
+              <h3
+                id="absagen-title"
+                class="mt-8 text-lg font-medium text-gray-900 mb-2"
+              >
                 Absagen
               </h3>
               <div class="space-y-4">
@@ -1122,7 +1145,10 @@
               </div>
 
               <!-- Kosten -->
-              <h3 id="kosten-title" class="mt-8 text-lg font-medium text-gray-900 mb-2">
+              <h3
+                id="kosten-title"
+                class="mt-8 text-lg font-medium text-gray-900 mb-2"
+              >
                 Kosten
               </h3>
               <div class="space-y-4">
@@ -1166,7 +1192,10 @@
               </div>
 
               <!-- Individuelle Betreuung -->
-              <h3 id="betreuung-title" class="mt-8 text-lg font-medium text-gray-900 mb-2">
+              <h3
+                id="betreuung-title"
+                class="mt-8 text-lg font-medium text-gray-900 mb-2"
+              >
                 Individuelle Betreuung
               </h3>
               <div class="space-y-4">
@@ -1204,42 +1233,44 @@
 
           <!-- TODO adjust background color -->
           <!-- Subtle card with brand (card) color, not button color -->
-            <div class="card-bento--primary rounded-xl p-8 shadow-sm">
+          <div class="card-bento--primary rounded-xl p-8 shadow-sm">
             <p class="text-center text-lg text-gray-600">
               Am besten per WhatsApp, Telefon oder E‑Mail.
             </p>
-            <div class="mt-7 flex flex-wrap items-stretch gap-4 sm:justify-center">
+            <div
+              class="mt-7 flex flex-wrap items-stretch gap-4 sm:justify-center"
+            >
               <a
-              href="https://wa.me/4915785320411"
-              class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg bg-green-600 px-5 py-3.5 text-lg font-semibold text-white hover:bg-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
-              role="button"
-              aria-label="WhatsApp Chat starten"
-              rel="noopener noreferrer"
-              target="_blank"
+                href="https://wa.me/4915785320411"
+                class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg bg-green-600 px-5 py-3.5 text-lg font-semibold text-white hover:bg-green-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
+                role="button"
+                aria-label="WhatsApp Chat starten"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-              <i class="fab fa-whatsapp text-white" aria-hidden="true"></i>
-              <span>WhatsApp</span>
+                <i class="fab fa-whatsapp text-white" aria-hidden="true"></i>
+                <span>WhatsApp</span>
               </a>
               <a
-              href="tel:+4915785320411"
-              class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-lg font-semibold text-gray-900 hover:border-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-              role="button"
-              aria-label="Telefonanruf starten"
+                href="tel:+4915785320411"
+                class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-lg font-semibold text-gray-900 hover:border-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                role="button"
+                aria-label="Telefonanruf starten"
               >
-              <i class="fas fa-phone text-gray-700" aria-hidden="true"></i>
-              <span>Anrufen</span>
+                <i class="fas fa-phone text-gray-700" aria-hidden="true"></i>
+                <span>Anrufen</span>
               </a>
               <a
-              href="mailto:praxis@sag-meister.de"
-              class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-lg font-semibold text-gray-900 hover:border-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-              role="button"
-              aria-label="E‑Mail senden"
+                href="mailto:praxis@sag-meister.de"
+                class="inline-flex w-full sm:flex-none sm:basis-56 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-3.5 text-lg font-semibold text-gray-900 hover:border-gray-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                role="button"
+                aria-label="E‑Mail senden"
               >
-              <i class="fas fa-envelope text-gray-700" aria-hidden="true"></i>
-              <span>E‑Mail</span>
+                <i class="fas fa-envelope text-gray-700" aria-hidden="true"></i>
+                <span>E‑Mail</span>
               </a>
             </div>
-            </div>
+          </div>
 
           <!-- Written out contact info -->
           <div
@@ -1295,158 +1326,17 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-200 py-12 px-8" role="contentinfo">
       <div class="max-w-7xl mx-auto">
-        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          <!-- Brand Card -->
-          <div>
-            <div
-              class="card-bento"
-              style="background-color: #1f2937; color: white"
-            >
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-blue-600 text-white">
-                  <span class="font-bold text-lg">ES</span>
-                </div>
-                <div>
-                  <h5 class="card-bento__title text-white">Eva Sagmeister</h5>
-                  <p class="card-bento__subtitle text-gray-300">
-                    Logopädie Praxis
-                  </p>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <p class="card-bento__content text-gray-200">
-                  Professionelle Sprachtherapie mit individueller Betreuung für
-                  Kinder und Erwachsene.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Quick Links Card -->
-          <div>
-            <div
-              class="card-bento"
-              style="background-color: #1f2937; color: white"
-            >
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-blue-500 text-white">
-                  <i class="fas fa-link"></i>
-                </div>
-                <div>
-                  <h5 class="card-bento__title text-white">Schnelllinks</h5>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <nav
-                  class="space-y-2 footer-nav"
-                  role="navigation"
-                  aria-label="Footer Navigation"
-                >
-                  <a
-                    href="#home"
-                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
-                  >
-                    <i class="fas fa-home text-sm" aria-hidden="true"></i>
-                    <span>Home</span>
-                  </a>
-                  <a
-                    href="#services"
-                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
-                  >
-                    <i
-                      class="fas fa-stethoscope text-sm"
-                      aria-hidden="true"
-                    ></i>
-                    <span>Leistungen</span>
-                  </a>
-                  <a
-                    href="#about"
-                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
-                  >
-                    <i class="fas fa-user text-sm" aria-hidden="true"></i>
-                    <span>Über mich</span>
-                  </a>
-                  <a
-                    href="#info"
-                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
-                  >
-                    <i
-                      class="fas fa-info-circle text-sm"
-                      aria-hidden="true"
-                    ></i>
-                    <span>Informationen</span>
-                  </a>
-                  <a
-                    href="#contact"
-                    class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
-                  >
-                    <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                    <span>Kontakt</span>
-                  </a>
-                </nav>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Info Card -->
-          <div>
-            <div
-              class="card-bento"
-              style="background-color: #1f2937; color: white"
-            >
-              <div class="card-bento__header">
-                <div class="card-bento__icon bg-blue-500 text-white">
-                  <i class="fas fa-address-card"></i>
-                </div>
-                <div>
-                  <h5 class="card-bento__title text-white">Kontakt</h5>
-                </div>
-              </div>
-              <div class="card-bento__body">
-                <address class="space-y-2 text-gray-200 not-italic text-sm">
-                  <p class="flex items-center space-x-2">
-                    <i
-                      class="fas fa-map-marker-alt text-sm"
-                      aria-hidden="true"
-                    ></i>
-                    <span>Oeslauer Str. 26, 96472 Rödental</span>
-                  </p>
-                  <p class="flex items-center space-x-2">
-                    <i class="fas fa-phone text-sm" aria-hidden="true"></i>
-                    <a href="tel:+4915785320411" class="hover:underline"
-                      >+49 1578 5320411</a
-                    >
-                  </p>
-                  <p class="flex items-center space-x-2">
-                    <i class="fas fa-envelope text-sm" aria-hidden="true"></i>
-                    <a
-                      href="mailto:praxis@sag-meister.de"
-                      class="hover:underline"
-                      >praxis@sag-meister.de</a
-                    >
-                  </p>
-                </address>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <!-- Copyright -->
-        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p class="text-gray-300">
-            &copy; 2025 Logopädie Praxis Eva Sagmeister. Alle Rechte
-            vorbehalten.
-            <a
-              href="datenschutz.html"
-              class="hover:text-white transition-colors"
-              >Datenschutz</a
-            >
-            |
-            <a href="impressum.html" class="hover:text-white transition-colors"
-              >Impressum</a
-            >
-          </p>
-        </div>
+        <p class="text-gray-300 text-center">
+          &copy; 2025 Logopädie Praxis Eva Sagmeister. Alle Rechte vorbehalten.
+          <a href="datenschutz.html" class="hover:text-white transition-colors"
+            >Datenschutz</a
+          >
+          |
+          <a href="impressum.html" class="hover:text-white transition-colors"
+            >Impressum</a
+          >
+        </p>
       </div>
     </footer>
 
