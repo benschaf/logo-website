@@ -165,6 +165,54 @@ website-eva/
 - Optimize images and assets
 - Minimize DOM queries with caching
 
+### Security
+- External links hardened with `rel="noopener noreferrer"`
+- Automated security validation and fixing tools included
+
+## 🔒 Security Features
+
+### External Links Hardening
+All external links with `target="_blank"` are automatically secured with `rel="noopener noreferrer"` to prevent:
+- **Reverse tabnabbing attacks**: New pages cannot access `window.opener`
+- **Privacy leaks**: New pages cannot access the referring URL
+
+### Security Validation Tools
+
+#### Quick Security Check
+```bash
+# Check all HTML files for security issues
+npm run check-security
+
+# Automatically fix any security issues found
+npm run fix-security
+
+# Show help and security details
+npm run security-help
+```
+
+#### Manual Tool Usage
+```bash
+# Check specific files
+node check-external-links.js index.html datenschutz.html
+
+# Check and fix all HTML files
+node check-external-links.js --fix
+
+# Check specific file and fix issues
+node check-external-links.js --fix index.html
+```
+
+#### Integration with CI/CD
+The security checker returns appropriate exit codes for automation:
+- `0`: All links are secure
+- `1`: Security issues found (when not using --fix)
+
+Example GitHub Actions integration:
+```yaml
+- name: Check external links security
+  run: npm run check-security
+```
+
 ## 🐛 Troubleshooting
 
 ### Common Issues
