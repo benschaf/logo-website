@@ -697,8 +697,12 @@ class ScrollSpy {
       link.addEventListener("click", () => {
         this.isUserNavigating = true;
         // Optimistically mark as active to avoid flicker
-        this.navLinks.forEach((l) => l.classList.remove("active"));
+        this.navLinks.forEach((l) => {
+          l.classList.remove("active");
+          l.removeAttribute("aria-current");
+        });
         link.classList.add("active");
+        link.setAttribute("aria-current", "true");
         this.scheduleScrollEndDetection();
       });
     });
@@ -728,12 +732,13 @@ class ScrollSpy {
   }
 
   setActiveSection(sectionId) {
-    // Remove active class from all links
+    // Remove active class and aria-current from all links
     this.navLinks.forEach((link) => {
       link.classList.remove("active");
+      link.removeAttribute("aria-current");
     });
 
-    // Add active class to current section's link
+    // Add active class and aria-current to current section's link
     if (sectionId) {
       const activeLink = this.navLinks.find((link) => {
         const href = link.getAttribute("href");
@@ -742,6 +747,7 @@ class ScrollSpy {
 
       if (activeLink) {
         activeLink.classList.add("active");
+        activeLink.setAttribute("aria-current", "true");
       }
     }
 
