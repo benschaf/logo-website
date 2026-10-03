@@ -1325,7 +1325,8 @@ html {
 /* ==========================================================================
    Praxisräume Galerie
    Mobile: horizontal swipe row (next image peeks in) instead of a tall stack
-   md+: regular 3-column grid
+   md: 2-column grid (4 images -> 2x2, no orphan)
+   lg+: 4 columns in a single row
    ========================================================================== */
 .room-gallery {
   position: relative; /* keeps absolutely positioned .sr-only captions inside the scroller */
@@ -1355,11 +1356,17 @@ html {
 @media (min-width: 768px) {
   .room-gallery {
     grid-auto-flow: row;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
     overflow: visible;
     margin-inline: 0;
     padding-inline: 0;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .room-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
