@@ -100,6 +100,7 @@
       },
       "telephone": "+49 1578 5320411",
       "email": "praxis@sag-meister.de",
+      "sameAs": ["https://www.instagram.com/logopadie_sagmeister"],
       "founder": {
         "@type": "Person",
         "name": "Eva Sagmeister",
@@ -229,7 +230,7 @@
               data-section="about"
             >
               <i class="fas fa-user text-sm" aria-hidden="true"></i>
-              <span>Über mich</span>
+              <span>Über uns</span>
             </a>
             <a
               href="#info"
@@ -297,7 +298,7 @@
               data-section="about"
             >
               <i class="fas fa-user" aria-hidden="true"></i>
-              <span>Über mich</span>
+              <span>Über uns</span>
             </a>
             <a
               href="#info"
@@ -399,6 +400,47 @@
               Rehabilitation zu unseren Aufgaben.
             </p>
           </div>
+        </div>
+
+        <!-- Praxisräume Galerie -->
+        <!-- Mobile: horizontal swipe row with peek; md+: 3-column grid -->
+        <div class="max-w-7xl mx-auto mt-12">
+          <h3 class="sr-only">Einblicke in unsere Praxisräume</h3>
+          <ul class="room-gallery" role="list">
+            <li>
+              <figure>
+                <img
+                  src="images/praxisraum-1.jpeg"
+                  alt="Spielecke in den Praxisräumen der Logopädie Sagmeister"
+                  class="w-full aspect-square object-cover rounded-2xl shadow-sm"
+                  loading="lazy"
+                />
+                <figcaption class="sr-only">Spielecke</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img
+                  src="images/praxisraum-2.jpeg"
+                  alt="Lernecke mit Tisch für die logopädische Therapie"
+                  class="w-full aspect-square object-cover rounded-2xl shadow-sm"
+                  loading="lazy"
+                />
+                <figcaption class="sr-only">Lernecke</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <img
+                  src="images/praxisraum-3.jpeg"
+                  alt="Spieleschrank mit Therapiematerialien in der Praxis"
+                  class="w-full aspect-square object-cover rounded-2xl shadow-sm"
+                  loading="lazy"
+                />
+                <figcaption class="sr-only">Spieleschrank</figcaption>
+              </figure>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -1047,39 +1089,72 @@
       </section>
 
       <!-- About Section -->
-      <!-- TODO stack the about section and image on smaller screens -->
       <section
         id="about"
         class="py-16 bg-gray-50"
         aria-labelledby="about-title"
       >
         <div class="max-w-7xl mx-auto">
-          <div class="flex items-center gap-3 mb-4">
-            <h2
-              id="about-title"
-              class="text-4xl font-bold text-gray-800 mb-4"
-            >
-              Über mich
-            </h2>
-          </div>
-          <!-- Simplified two-column layout -->
-          <div class="flex gap-8 items-start max-w-4xl flex-wrap">
-            <!-- Profile Image -->
-            <img
-              src="images/portrait-2.jpeg"
-              alt="Eva Sagmeister - Logopädin"
-              class="max-h-[20rem] max-w-[15rem] object-cover object-[center_20%] rounded-2xl"
-            />
-
-            <!-- Text content and list -->
+          <!-- Intro: Text + Teamfoto (same 2-column pattern as the welcome section) -->
+          <div class="grid gap-8 md:grid-cols-2 items-center mb-12 md:mb-16">
             <div>
-              <div class="prose prose-blue max-w-xl text-gray-700">
-                <p class="pb-2">
+              <h2
+                id="about-title"
+                class="text-4xl font-bold text-gray-800 mb-4"
+              >
+                Über uns
+              </h2>
+              <p class="text-l text-gray-800 mb-6 max-w-xl">
+                Hinter unserer Praxis steht ein kleines, herzliches Team mit
+                viel Erfahrung und Freude an der Arbeit mit Menschen jeden
+                Alters. Gemeinsam begleiten wir Sie und Ihre Kinder mit Geduld,
+                Fachwissen und einem offenen Ohr.
+              </p>
+            </div>
+            <figure>
+              <img
+                src="images/teamfoto-praxis.jpeg"
+                alt="Eva Sagmeister und Katharina-Luise Sander - das Team der Logopädie Sagmeister"
+                class="w-full aspect-[4/3] object-cover object-[center_30%] rounded-2xl shadow-lg"
+                loading="lazy"
+              />
+              <figcaption class="sr-only">
+                Eva Sagmeister und Katharina-Luise Sander
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Team-Profile im Zickzack-Layout -->
+          <div class="flex flex-col gap-6 md:gap-8">
+            <!-- Profil: Eva Sagmeister (Bild links, Text rechts) -->
+            <article
+              class="card-bento card-bento--standard team-profile p-6 md:p-8"
+              aria-labelledby="profile-eva-title"
+            >
+              <img
+                src="images/portrait-2.jpeg"
+                alt="Eva Sagmeister - Logopädin"
+                class="team-profile__img shadow-sm"
+                loading="lazy"
+              />
+              <header class="team-profile__head">
+                <h3
+                  id="profile-eva-title"
+                  class="text-2xl font-bold text-gray-800"
+                >
+                  Eva Sagmeister
+                </h3>
+                <p class="text-gray-600">
+                  Staatlich anerkannte Logopädin &middot; Praxisinhaberin
+                </p>
+              </header>
+              <div class="team-profile__text text-gray-700 leading-relaxed">
+                <p>
                   Mein Name ist Eva Sagmeister, ich bin staatlich anerkannte
                   Logopädin und arbeite seit 2017 mit großer Freude in diesem
                   Beruf.
                 </p>
-                <p class="pb-2">
+                <p>
                   In den vergangenen Jahren durfte ich viele wertvolle
                   Erfahrungen sammeln und zahlreiche Menschen auf ihrem
                   sprachlichen Weg begleiten. Mit der Eröffnung meiner eigenen
@@ -1088,23 +1163,58 @@
                   die Bedürfnisse meiner Patientinnen und Patienten abgestimmt
                   ist.
                 </p>
-                <p class="pb-2">
+                <p>
                   Als Mutter weiß ich, wie wichtig Geduld, Verständnis und
                   Empathie sind. Diese Eigenschaften prägen nicht nur mein
                   privates Leben, sondern auch meine tägliche Arbeit. Mir ist es
                   ein Anliegen, jedem Menschen mit Offenheit, Respekt und
                   Wertschätzung zu begegnen.
                 </p>
-                <p class="pb-2">
+                <p>
                   Für mich bedeutet Logopädie weit mehr als Therapie:
-                  <strong
+                  <strong class="text-gray-900"
                     >Es ist die Chance, Menschen in ihrer Entwicklung zu
                     begleiten, ihnen Sicherheit zu geben und sie auf ihrem Weg
                     zu stärken.</strong
                   >
                 </p>
               </div>
-            </div>
+            </article>
+
+            <!-- Profil: Katharina-Luise Sander (gespiegelt: Bild rechts, Text links) -->
+            <article
+              class="card-bento card-bento--primary team-profile team-profile--reverse p-6 md:p-8"
+              aria-labelledby="profile-katharina-title"
+            >
+              <img
+                src="images/portrait-katharina.jpeg"
+                alt="Katharina-Luise Sander - Logopädin"
+                class="team-profile__img shadow-sm"
+                loading="lazy"
+              />
+              <header class="team-profile__head">
+                <h3
+                  id="profile-katharina-title"
+                  class="text-2xl font-bold text-gray-800"
+                >
+                  Katharina-Luise Sander
+                </h3>
+                <p class="text-gray-600">Staatlich anerkannte Logopädin</p>
+              </header>
+              <div class="team-profile__text text-gray-700 leading-relaxed">
+                <p>
+                  Mein Name ist Katharina-Luise Sander, ich bin staatlich
+                  anerkannte Logopädin und arbeite seit 2018 mit viel Herz in
+                  diesem Beruf.
+                </p>
+                <p>
+                  Ich freue mich sehr, Teil des Teams zu sein. Besonders wichtig
+                  ist mir, dass sich Groß und Klein bei uns wohlfühlen und jede
+                  Therapie mit Freude, Motivation und kleinen
+                  Erfolgserlebnissen verbunden ist.
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -1486,7 +1596,7 @@
                     class="footer-link flex items-center space-x-2 text-gray-200 hover:text-white transition-colors"
                   >
                     <i class="fas fa-user text-sm" aria-hidden="true"></i>
-                    <span>Über mich</span>
+                    <span>Über uns</span>
                   </a>
                   <a
                     href="#info"
@@ -1545,6 +1655,17 @@
                       href="mailto:praxis@sag-meister.de"
                       class="hover:underline"
                       >praxis@sag-meister.de</a
+                    >
+                  </p>
+                  <p class="flex items-center space-x-2">
+                    <i class="fab fa-instagram text-sm" aria-hidden="true"></i>
+                    <a
+                      href="https://www.instagram.com/logopadie_sagmeister"
+                      class="hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram: @logopadie_sagmeister (öffnet in neuem Tab)"
+                      >@logopadie_sagmeister</a
                     >
                   </p>
                 </address>
